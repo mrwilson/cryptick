@@ -1,0 +1,88 @@
+---
+title: Guess the Clue
+layout: base
+---
+<style>
+    form {
+        display: flex;
+        flex-wrap: wrap;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    #clue_section {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        button {
+            margin: 2em;
+            padding: 1em;
+            font-size: x-large;
+        }
+    }
+
+    header, nav {
+        display: none;
+        visibility: hidden;
+    }
+
+    span {
+        width: 1em;
+        height: 1em;
+        flex-basis: 100%;
+    }
+
+    input {
+        padding: 0.5em;
+        margin-right: -4px;
+        width: 1em;
+        height: 1em;
+        font-size: xxx-large;
+        text-align: center;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        caret-color: transparent;
+        border: solid black 4px;
+    }
+
+    .validating {
+        .letter {
+            pointer-events: none;
+        }
+
+        .letter:valid {
+            background: lightgreen;
+        }
+        .letter:invalid {
+            background: lightcoral;
+        }
+    }
+
+    #validate::after {
+        content: "Check!"
+    }
+
+    .validating + #validate {
+        &::after {
+            content: "Try again?"
+        }
+    }
+</style>
+
+<section id="clue_section">
+    <h1 id="clue"></h1>
+    <form id="answer" target="_blank"></form>
+
+    <button id="validate"></button>
+</section>
+
+<script type="module">
+    import { MiniClue } from "./guess.js";
+
+    new MiniClue(answer, validate).renderClue(
+        JSON.parse(atob(window.location.hash.substring(1)))
+    );
+</script>
