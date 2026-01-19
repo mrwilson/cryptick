@@ -14,8 +14,13 @@ layout: base
     #clue_section {
         display: flex;
         align-content: center;
-        justify-content: center;
+        justify-content: space-evenly;
+        row-gap: 5em;
         flex-wrap: wrap;
+
+        h1 {
+            font-size: xxx-large;
+        }
 
         button {
             flex-basis: 100%;
@@ -30,6 +35,7 @@ layout: base
     header, nav {
         display: none;
         visibility: hidden;
+
     }
 
     span {
@@ -93,6 +99,8 @@ layout: base
 
 <script type="module">
     import { MiniClue } from "./guess.js";
+
+    document.querySelector('body > header').remove()
 
     new MiniClue(answer, validate).renderClue(
         JSON.parse(atob(window.location.hash.substring(1)))
