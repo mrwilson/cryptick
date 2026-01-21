@@ -1,108 +1,140 @@
----
-title: Guess the Clue
-layout: base
----
-<style>
-    form {
-        display: flex;
-        flex-wrap: wrap;
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Guess The Clue</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-        align-items: center;
-        justify-content: center;
-    }
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="keywords" content="cryptic, crossword, clues"/>
+        <meta name="description" content="Guess The Clue!"/>
+        <meta property="og:title" content="Guess The Clue"/>
+        <meta property="og:site_name" content="Guess The Clue"/>
 
-    #clue_section {
-        display: flex;
-        align-content: center;
-        justify-content: space-evenly;
-        row-gap: 5em;
-        flex-wrap: wrap;
+        <style>
+            :root {
+                --colour-base: #8EDC6F;
+                --colour-green: #43a856ff;
+                --colour-green-aa: #358544;
+                --colour-green-aaa: #286433;
+                --colour-green-2: #64bd76ff;
+                --colour-green-3: #85cb91ff;
+                --colour-green-4: #75c585ff;
+                --colour-teal: #9bbcabff;
+                --colour-grey: #9fa6b4ff;
+            }
 
-        h1 {
-            font-size: xxx-large;
-        }
+            html {
+                max-width: min(120ch, 100% - 4rem);
+                margin-inline: auto;
+                color-scheme: light dark;
 
-        button {
-            flex-basis: 100%;
-            background: none;
-            border: none;
-            margin: 2em;
-            padding: 1em;
-            font-size: xx-large;
-        }
-    }
+                body {
+                    font-family: system-ui;
+                    font-size: 1.25rem;
+                    line-height: 1.5;
+                }
 
-    header, nav {
-        display: none;
-        visibility: hidden;
+                form {
+                    display: flex;
+                    flex-wrap: wrap;
 
-    }
+                    align-items: center;
+                    justify-content: center;
+                }
 
-    span {
-        width: 1em;
-        height: 1em;
-        flex-basis: 100%;
-    }
+                #clue_section {
+                    display: flex;
+                    align-content: center;
+                    justify-content: space-evenly;
+                    row-gap: 5em;
+                    flex-wrap: wrap;
 
-    input {
-        padding: 0.5em;
-        margin-right: -4px;
-        width: 1em;
-        height: 1em;
-        font-size: xxx-large;
-        text-align: center;
-        font-family: sans-serif;
-        text-transform: uppercase;
-        caret-color: transparent;
-        border: solid black 4px;
-    }
+                    h1 {
+                        color: var(--colour-green);
+                        font-size: xxx-large;
+                    }
 
-    @media (max-width: 728px) {
-        input {
-            font-size: large;
-        }
-    }
+                    button {
+                        flex-basis: 100%;
+                        background: none;
+                        border: none;
+                        margin: 2em;
+                        padding: 1em;
+                        font-size: xx-large;
+                    }
+                }
 
-    .word {
-        padding: 1em;
-    }
+                span {
+                    width: 1em;
+                    height: 1em;
+                    flex-basis: 100%;
+                }
 
-    .validating {
-        .letter {
-            pointer-events: none;
-        }
+                input {
+                    padding: 0.5em;
+                    margin-right: -4px;
+                    width: 1em;
+                    height: 1em;
+                    font-size: xxx-large;
+                    text-align: center;
+                    font-family: sans-serif;
+                    text-transform: uppercase;
+                    caret-color: transparent;
+                    border: solid black 4px;
+                }
 
-        .letter:valid {
-            background: lightgreen;
-        }
-        .letter:invalid {
-            background: lightcoral;
-        }
-    }
+                @media (max-width: 728px) {
+                    input {
+                        font-size: large;
+                    }
+                }
 
-    #validate::after {
-        content: "Check!"
-    }
+                .word {
+                    padding: 1em;
+                }
 
-    .validating + #validate {
-        &::after {
-            content: "Try again?"
-        }
-    }
-</style>
+                .validating {
+                    .letter {
+                        pointer-events: none;
+                    }
 
-<section id="clue_section">
-    <h1 id="clue"></h1>
-    <form id="answer" target="_blank"></form>
-    <button id="validate"></button>
-</section>
+                    .letter:valid {
+                        background: lightgreen;
+                    }
 
-<script type="module">
-    import { MiniClue } from "./guess.js";
+                    .letter:invalid {
+                        background: lightcoral;
+                    }
+                }
 
-    document.querySelector('body > header').remove()
+                #validate::after {
+                    content: "Check!"
+                }
 
-    new MiniClue(answer, validate).renderClue(
-        JSON.parse(atob(window.location.hash.substring(1)))
-    );
-</script>
+                .validating + #validate {
+                    &::after {
+                        content: "Try again?"
+                    }
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <main>
+            <section id="clue_section">
+                <h1 id="clue"></h1>
+                <form id="answer" target="_blank"></form>
+                <button id="validate"></button>
+            </section>
+
+            <script type="module">
+                import { MiniClue } from "./guess.js";
+
+                new MiniClue(answer, validate).renderClue(
+                    JSON.parse(atob(window.location.hash.substring(1)))
+                );
+            </script>
+        </main>
+    </body>
+</html>
