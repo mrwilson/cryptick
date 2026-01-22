@@ -1,0 +1,26 @@
+{
+  "name": "guess-the-clue",
+  "version": "0.0.0",
+  "description": "Guess the cryptic clue!",
+  "keywords": [
+    "crossword"
+  ],
+  "homepage": "https://github.com/mrwilson/guess-the-clue#readme",
+  "bugs": {
+    "url": "https://github.com/mrwilson/guess-the-clue/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrwilson/guess-the-clue.git"
+  },
+  "license": "MIT",
+  "author": "Alex Wilson",
+  "type": "es6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "vitest": "^4.0.17"
+  }
+}
