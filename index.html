@@ -125,15 +125,22 @@
             <section id="clue_section">
                 <h1 id="clue"></h1>
                 <form id="answer" target="_blank"></form>
-                <button id="validate"></button>
+                <button title="Validate" id="validate"></button>
             </section>
 
             <script type="module">
                 import { MiniClue } from "./miniclue/index.js";
 
-                new MiniClue(answer, validate).renderClue(
+                const miniClue = new MiniClue(
+                    document.getElementById('answer'),
+                    document.getElementById('clue')
+                );
+
+                miniClue.renderClue(
                     JSON.parse(atob(window.location.hash.substring(1)))
                 );
+
+                document.getElementById('validate').onclick = (e) => miniClue.validate(e);
             </script>
         </main>
     </body>
