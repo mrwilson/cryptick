@@ -15,11 +15,7 @@ export class MiniClue {
         }
     }
 
-    renderClue(params) {
-        document.querySelector('meta[name="description"]').setAttribute("content",
-            `[BETA] ${params.c}`
-        );
-
+    renderClue(params, clue) {
         let words = params.a.split(' ')
 
         clue.textContent = `${params.c} (${words.map(x => x.length).join(",")})`;
