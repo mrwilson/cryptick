@@ -1,5 +1,4 @@
 export class MiniClue {
-  validateElement;
   constructor(answerElement, clueElement, validateElement) {
     this.answerElement = answerElement;
     this.clueElement = clueElement;
@@ -25,7 +24,7 @@ export class MiniClue {
 
     this.#navigate();
 
-    this.validate.onclick = (_) => miniClue.validate();
+    this.validateElement.onclick = (_) => this.validate();
   }
 
   #navigate() {
