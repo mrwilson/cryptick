@@ -19,21 +19,23 @@ html {
         font-size: 1.25rem;
         line-height: 1.5;
         font-family: sans-serif;
+        background: var( --colour-teal);
     }
 
     #clue_section {
-        height: 100vh;
+        height: 80vh;
         width: 100%;
         display: grid;
         grid-template:
             "clue" auto
-            "answer" auto
+            "answer" 40%
+            "reveal" 10%
             "keyboard" env(keyboard-inset-height, 0px);
         align-content: center;
         justify-content: center;
 
         #clue {
-            color: var(--colour-green);
+            color: var(--colour-green-aaa);
             grid-row: 1;
             text-align: center;
         }
@@ -43,7 +45,7 @@ html {
             flex-wrap: wrap;
 
             align-items: center;
-            justify-content: center;
+            justify-content: space-around;
             grid-row: 2;
 
             .word {
@@ -51,8 +53,9 @@ html {
             }
 
             .letter {
-                padding: 0.3em;
+                padding: 0.2em;
                 margin-right: -4px;
+                /*margin-top: 0.5em;*/
 
                 width: 1em;
                 height: 1em;
@@ -62,16 +65,40 @@ html {
                 text-transform: uppercase;
                 caret-color: transparent;
                 border: solid black 4px;
+
+                &:focus {
+                    outline: none;
+                }
             }
 
-            &:valid {
+            &:valid > .word {
                 background: lightgreen;
+            }
+
+            &:not(:has(> .word)) + #buttons {
+                display: none;
             }
 
             @media (max-width: 728px) {
                 .letter {
                     font-size: x-large;
                 }
+            }
+        }
+
+        #buttons {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+
+            button {
+                width: 8em;
+                background: var(--colour-green-aaa);
+                color: white;
+                font-size: medium;
+                border-radius: 1.5em;
+                padding: 0.5em;
+                border-width: 0;
             }
         }
     }

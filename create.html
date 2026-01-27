@@ -14,61 +14,69 @@
             height: 80vh;
             display: grid;
             grid-template:
-            "title" auto
-            "maker" 1fr
-            "clue" auto
-            "url" 1fr
+            "title" 15%
+            "maker" 25%
+            "clue" 15%
+            "url" 15%
             "copy" auto
             "keyboard" env(keyboard-inset-height, 0px);
             align-content: center;
             justify-content: center;
+            background: var( --colour-teal);
 
             #title {
-                color: var(--colour-green);
+                color: var(--colour-green-aaa);
                 grid-row: 1;
-                text-align: center;
             }
 
             textarea {
-                width: auto;
                 resize: none;
                 padding: 1em;
                 border: none;
                 border-bottom: solid black 2px;
-                field-sizing: fixed;
+
+                &:focus {
+                    outline: none;
+                }
             }
 
             #maker {
                 display: inline-grid;
                 grid-row: 2;
-                row-gap: 4em;
-
-                h2 {
-                    color: var(--colour-green-2);
-                }
-
-
+                row-gap: 2em;
 
                 textarea[name="answer"] {
                     text-transform: uppercase;
                 }
-
             }
 
             #clue {
-                color: var(--colour-green);
+                background-color: var(--colour-green-aaa);
+                border: none;
                 grid-row: 3;
+                width: 90%;
+                height: 1px;
+                margin: auto;
             }
 
             #url {
-                color: var(--colour-green);
+                color: var(--colour-green-aaa);
                 grid-row: 4;
                 word-break: break-all;
+                height: 5em;
+                border: none;
             }
 
             #copy {
                 grid-row: 5;
                 margin: 1em;
+
+                background: var(--colour-green-aaa);
+                color: white;
+                font-size: medium;
+                border-radius: 1.5em;
+                padding: 0.5em;
+                border-width: 0;
             }
         }
     </style>
@@ -80,7 +88,7 @@
         <textarea name="clue" placeholder="My clue, what do you think?" rows="1"></textarea>
         <textarea name="answer" placeholder="ANSWER" rows="1"></textarea>
     </form>
-    <h2 id="clue">My clue</h2>
+    <hr id="clue">
     <textarea id="url" rows="3" readonly></textarea>
     <button id="copy" onclick="navigator.clipboard.writeText(url.value)">Copy To Clipboard</button>
     <script>
