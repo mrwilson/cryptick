@@ -30,25 +30,11 @@
                 const miniClue = new MiniClue(
                     document.getElementById('answer'),
                     document.getElementById('clue'),
+                    document.getElementById('reveal-letter'),
+                    document.getElementById('reveal-all'),
                 );
 
                 miniClue.renderClue(clue);
-
-                document.getElementById('reveal-all').onclick = (e) => {
-                    [...document.querySelectorAll('.letter')]
-                        .forEach(letter => {
-                            letter.value = letter.pattern[1];
-                        })
-                }
-
-                document.getElementById('reveal-letter').onclick = (e) => {
-                    let letters = [...document.querySelectorAll('.letter')]
-                        .filter(letter => letter.validity.valueMissing || !letter.validity.valid)
-
-                    let letter = letters[Math.floor(Math.random()*letters.length)]
-
-                    letter.value = letter.pattern[1];
-                }
             </script>
         </main>
     </body>

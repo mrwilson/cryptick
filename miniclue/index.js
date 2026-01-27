@@ -1,7 +1,14 @@
 export class MiniClue {
-  constructor(answerElement, clueElement) {
+  constructor(
+    answerElement,
+    clueElement,
+    revealLetterElement,
+    revealWordElement,
+  ) {
     this.answerElement = answerElement;
     this.clueElement = clueElement;
+    this.revealLetterElement = revealLetterElement;
+    this.revealWordElement = revealWordElement;
     this.letters = [];
   }
 
@@ -15,6 +22,21 @@ export class MiniClue {
       .forEach((l) => this.answerElement.appendChild(l));
 
     this.#navigate();
+
+    this.revealWordElement.onclick = (_) => {
+      this.letters.forEach((letter) => (letter.value = letter.pattern[1]));
+    };
+
+    this.revealLetterElement.onclick = (_) => {
+      let missingLetters = this.letters.filter(
+        (letter) => letter.validity.valueMissing || !letter.validity.valid,
+      );
+
+      let letter =
+        missingLetters[Math.floor(Math.random() * missingLetters.length)];
+
+      letter.value = letter.pattern[1];
+    };
   }
 
   #navigate() {
@@ -51,6 +73,7 @@ export class MiniClue {
     l.classList.add("letter");
     l.pattern = `[${letter.toUpperCase()}${letter.toLowerCase()}]`;
     l.required = true;
+    l.name = `letter${letter}`;
     l.maxLength = 1;
     l.minLength = 1;
     l.setAttribute("aria-label", "letter");
