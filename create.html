@@ -25,7 +25,7 @@
             background: var( --colour-teal);
 
             #title {
-                color: var(--colour-green-aaa);
+                color: var(--colour-dark-green);
                 grid-row: 1;
             }
 
@@ -51,7 +51,7 @@
             }
 
             #clue {
-                background-color: var(--colour-green-aaa);
+                background-color: var(--colour-dark-green);
                 border: none;
                 grid-row: 3;
                 width: 90%;
@@ -60,7 +60,7 @@
             }
 
             #url {
-                color: var(--colour-green-aaa);
+                color: var(--colour-dark-green);
                 grid-row: 4;
                 word-break: break-all;
                 height: 5em;
@@ -71,7 +71,7 @@
                 grid-row: 5;
                 margin: 1em;
 
-                background: var(--colour-green-aaa);
+                background: var(--colour-dark-green);
                 color: white;
                 font-size: medium;
                 border-radius: 1.5em;
@@ -90,7 +90,7 @@
     </form>
     <hr id="clue">
     <textarea id="url" rows="3" readonly></textarea>
-    <button id="copy" onclick="navigator.clipboard.writeText(url.value)">Copy To Clipboard</button>
+    <button class="gtc_button" id="copy" onclick="navigator.clipboard.writeText(url.value)">Copy To Clipboard</button>
     <script>
         document.getElementById('maker').addEventListener('input', (_) => {
             let format = [...document.getElementById('maker').querySelectorAll('textarea')]

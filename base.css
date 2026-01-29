@@ -1,0 +1,21 @@
+:root {
+    --colour-base: #8EDC6F;
+    --colour-green: #43a856ff;
+    --colour-green-aa: #358544;
+    --colour-dark-green: #286433;
+    --colour-green-2: #64bd76ff;
+    --colour-green-3: #85cb91ff;
+    --colour-green-4: #75c585ff;
+    --colour-teal: #9bbcabff;
+    --colour-grey: #9fa6b4ff;
+}
+
+.gtc_button {
+    width: 8em;
+    background: var(--colour-dark-green);
+    color: white;
+    font-size: medium;
+    border-radius: 1.5em;
+    padding: 0.5em;
+    border-width: 0;
+}
