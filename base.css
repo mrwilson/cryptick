@@ -41,3 +41,8 @@ html {
         background: color-mix(in srgb, var(--colour-dark-green), black 30%);
     }
 }
+
+.gtc_header {
+    color: var(--colour-dark-green);
+    text-align: center;
+}

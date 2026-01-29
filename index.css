@@ -1,7 +1,1 @@
 @import "base.css";
-
-#clue {
-    color: var(--colour-dark-green);
-    grid-row: 1;
-    text-align: center;
-}
