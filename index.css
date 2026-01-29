@@ -5,10 +5,3 @@
     grid-row: 1;
     text-align: center;
 }
-
-
-#buttons {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-}

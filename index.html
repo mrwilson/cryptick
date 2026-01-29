@@ -56,13 +56,19 @@
                     font-size: x-large;
                 }
             }
+
+            .gtc_button_list {
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+            }
         </style>
     </head>
     <body>
         <main class="gtc_main gtc_main--index">
             <h1 id="clue"></h1>
             <form class="gtc_answer" id="answer" target="_blank"></form>
-            <div id="buttons">
+            <div class="gtc_button_list">
                 <button class="gtc_button" id="reveal-letter">Reveal letter</button>
                 <button class="gtc_button" id="reveal-all">Reveal word</button>
             </div>
