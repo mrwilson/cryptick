@@ -42,6 +42,10 @@ html {
     }
 }
 
+.gtc_link {
+    text-decoration: none;
+}
+
 .gtc_header {
     color: var(--colour-dark-green);
     text-align: center;

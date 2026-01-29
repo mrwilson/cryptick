@@ -52,7 +52,12 @@
                 background: lightgreen;
             }
 
-            .gtc_answer:not(:has(> .gtc_answer__word)) + #buttons {
+            .gtc_answer:valid + * > button.gtc_button,
+            .gtc_answer:invalid + * > .gtc_link {
+                display: none;
+            }
+
+            .gtc_answer:not(:has(> .gtc_answer__word)) + .gtc_button_list {
                 display: none;
             }
 
@@ -76,6 +81,7 @@
             <div class="gtc_button_list">
                 <button class="gtc_button" id="reveal-letter">Reveal letter</button>
                 <button class="gtc_button" id="reveal-all">Reveal word</button>
+                <a class="gtc_button gtc_link" href="/create.html">Create your own!</a>
             </div>
             <script type="module">
                 import { MiniClue } from "./miniclue/index.js";
