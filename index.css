@@ -1,85 +1,59 @@
 @import "base.css";
 
-html {
-    max-width: min(120ch, 100% - 4rem);
-    margin-inline: auto;
-    color-scheme: light dark;
+#clue {
+    color: var(--colour-dark-green);
+    grid-row: 1;
+    text-align: center;
+}
 
-    body {
-        font-size: 1.25rem;
-        line-height: 1.5;
+#answer {
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: space-around;
+    grid-row: 2;
+
+    .word {
+        padding: 1em;
+    }
+
+    .letter {
+        padding: 0.2em;
+        margin-right: -4px;
+        /*margin-top: 0.5em;*/
+
+        width: 1em;
+        height: 1em;
+        font-size: xx-large;
+        text-align: center;
         font-family: sans-serif;
-        background: var( --colour-teal);
-    }
+        text-transform: uppercase;
+        caret-color: transparent;
+        border: solid black 4px;
 
-    #clue_section {
-        height: 80vh;
-        width: 100%;
-        display: grid;
-        grid-template:
-            "clue" auto
-            "answer" 40%
-            "reveal" 10%
-            "keyboard" env(keyboard-inset-height, 0px);
-        align-content: center;
-        justify-content: center;
-
-        #clue {
-            color: var(--colour-dark-green);
-            grid-row: 1;
-            text-align: center;
-        }
-
-        #answer {
-            display: flex;
-            flex-wrap: wrap;
-
-            align-items: center;
-            justify-content: space-around;
-            grid-row: 2;
-
-            .word {
-                padding: 1em;
-            }
-
-            .letter {
-                padding: 0.2em;
-                margin-right: -4px;
-                /*margin-top: 0.5em;*/
-
-                width: 1em;
-                height: 1em;
-                font-size: xx-large;
-                text-align: center;
-                font-family: sans-serif;
-                text-transform: uppercase;
-                caret-color: transparent;
-                border: solid black 4px;
-
-                &:focus {
-                    outline: none;
-                }
-            }
-
-            &:valid > .word {
-                background: lightgreen;
-            }
-
-            &:not(:has(> .word)) + #buttons {
-                display: none;
-            }
-
-            @media (max-width: 728px) {
-                .letter {
-                    font-size: x-large;
-                }
-            }
-        }
-
-        #buttons {
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
+        &:focus {
+            outline: none;
         }
     }
+
+    &:valid > .word {
+        background: lightgreen;
+    }
+
+    &:not(:has(> .word)) + #buttons {
+        display: none;
+    }
+
+    @media (max-width: 728px) {
+        .letter {
+            font-size: x-large;
+        }
+    }
+}
+
+#buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }

@@ -9,17 +9,22 @@
         <meta property="og:title" content="Guess The Clue"/>
         <meta property="og:site_name" content="Guess The Clue"/>
         <link rel="stylesheet" href="./index.css"/>
+        <style>
+            .gtc_main--index {
+                grid-template:
+                    "clue" auto "answer" 40% "reveal" 10%
+                    "keyboard" env(keyboard-inset-height, 0px);
+            }
+        </style>
     </head>
     <body>
-        <main>
-            <section id="clue_section">
-                <h1 id="clue"></h1>
-                <form id="answer" target="_blank"></form>
-                <div id="buttons">
-                    <button class="gtc_button" id="reveal-letter">Reveal letter</button>
-                    <button class="gtc_button" id="reveal-all">Reveal word</button>
-                </div>
-            </section>
+        <main class="gtc_main gtc_main--index">
+            <h1 id="clue"></h1>
+            <form id="answer" target="_blank"></form>
+            <div id="buttons">
+                <button class="gtc_button" id="reveal-letter">Reveal letter</button>
+                <button class="gtc_button" id="reveal-all">Reveal word</button>
+            </div>
             <script type="module">
                 import { MiniClue } from "./miniclue/index.js";
                 import { ClueDecoder} from "./miniclue/decoder.js";

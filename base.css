@@ -10,6 +10,24 @@
     --colour-grey: #9fa6b4ff;
 }
 
+html {
+    max-width: min(120ch, 100% - 4rem);
+    margin-inline: auto;
+    color-scheme: light;
+    background: var(--colour-teal);
+}
+
+.gtc_main {
+    height: 80vh;
+    width: auto;
+    display: grid;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    font-family: sans-serif;
+    align-content: center;
+    justify-content: center;
+}
+
 .gtc_button {
     padding: 0.5em 1em;
     background: var(--colour-dark-green);
