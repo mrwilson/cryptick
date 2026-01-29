@@ -36,6 +36,8 @@ export class MiniClue {
         missingLetters[Math.floor(Math.random() * missingLetters.length)];
 
       letter.value = letter.pattern[1];
+      letter.classList.readOnly = true;
+      letter.classList.add("gtc_answer__word__letter--revealed")
     };
   }
 
