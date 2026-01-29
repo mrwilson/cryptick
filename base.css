@@ -11,11 +11,15 @@
 }
 
 .gtc_button {
-    width: 8em;
+    padding: 0.5em 1em;
     background: var(--colour-dark-green);
     color: white;
     font-size: medium;
     border-radius: 1.5em;
-    padding: 0.5em;
     border-width: 0;
+    cursor: pointer;
+
+    &:hover {
+        background: color-mix(in srgb, var(--colour-dark-green), black 30%);
+    }
 }
