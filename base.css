@@ -15,17 +15,25 @@ html {
     margin-inline: auto;
     color-scheme: light;
     background: var(--colour-teal);
+    align-items: center;
+    justify-items: center;
 }
 
 .gtc_main {
     height: 80vh;
-    width: auto;
+    width: 40vw;
     display: grid;
     font-size: 1.25rem;
     line-height: 1.5;
     font-family: sans-serif;
     align-content: center;
     justify-content: center;
+}
+
+@media (max-width: 728px) {
+    .gtc_main {
+        width: 100%;
+    }
 }
 
 .gtc_button {
