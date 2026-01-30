@@ -12,55 +12,46 @@
     <style>
         .gtc_main__create {
             grid-template:
-                "title" 15% "maker" 25% "clue" 15%
-                "url" 15% "copy" auto
+                "title" 15%
+                "maker" auto
+                "copy" auto
                 "keyboard" env(keyboard-inset-height, 0px);
 
             #title {
                 grid-row: 1;
             }
 
-            textarea {
-                resize: none;
-                padding: 1em;
-                border: none;
-                border-bottom: solid black 2px;
-
-                &:focus {
-                    outline: none;
-                }
-            }
-
             #maker {
                 display: inline-grid;
                 grid-row: 2;
-                row-gap: 2em;
+                row-gap: 1em;
+                padding: 2em 0;
 
-                textarea[name="answer"] {
+                input[name="answer"] {
                     text-transform: uppercase;
                 }
             }
 
-            #clue {
-                background-color: var(--colour-dark-green);
-                border: none;
+            .gtc_button--copy {
                 grid-row: 3;
-                width: 90%;
-                height: 1px;
-                margin: auto;
             }
 
-            #url {
-                color: var(--colour-dark-green);
-                grid-row: 4;
-                word-break: break-all;
-                height: 5em;
-                border: none;
+            .gtc_input--clue {
+                height: 3em;
             }
 
-            .gtc_button__copy {
-                grid-row: 5;
-                /*margin: 1em;*/
+            .gtc_input--answer {
+                /*padding: 5em;*/
+            }
+
+            label {
+                text-align: left;
+            }
+
+            #maker:invalid + * > .gtc_button {
+                pointer-events: none;
+                background: var(--colour-grey);
+                cursor: not-allowed;
             }
         }
     </style>
@@ -69,20 +60,35 @@
 <main class="gtc_main gtc_main__create">
     <h1 class="gtc_header" id="title">Create your own!</h1>
     <form id="maker">
-        <textarea name="clue" placeholder="My clue, what do you think?" rows="1"></textarea>
-        <textarea name="answer" placeholder="ANSWER" rows="1"></textarea>
+        <label class="gtc_header" for="clue">Clue</label>
+        <textarea class="gtc_input gtc_input--clue" id="clue" name="clue" placeholder="Slam nonsense tales" required minlength="1" rows="4"></textarea>
+        <label class="gtc_header" for="answer">Answer</label>
+        <input class="gtc_input gtc_input--answer" id="answer" name="answer" placeholder="SLATE" required minlength="1" maxlength="15">
+        <label class="gtc_header" for="hint">Hint (Optional)</label>
+        <input class="gtc_input gtc_input--answer" id="hint" name="hint" placeholder="'Nonsense' indicates an anagram of nearby letters">
     </form>
-    <hr id="clue">
-    <textarea id="url" rows="3" readonly></textarea>
-    <button class="gtc_button gtc_button--copy" onclick="navigator.clipboard.writeText(url.value)">Copy To Clipboard</button>
+    <div class="gtc_button_list">
+    <button class="gtc_button gtc_button--copy" id="copy">Copy to clipboard</button>
+    <button class="gtc_button gtc_button--copy" id="open">Open in new tab ↗</button>
+    </div>
     <script>
-        document.getElementById('maker').addEventListener('input', (_) => {
-            let format = [...document.getElementById('maker').querySelectorAll('textarea')]
+        document.getElementById('copy').onclick = (e) => {
+            let format = [...document.getElementById('maker').querySelectorAll('.gtc_input')]
                 .map((e) => e.value)
                 .join("|");
 
-            document.getElementById('url').textContent = `${window.location.origin}/guess/#${btoa(format)}`
-        });
+            navigator.clipboard.writeText(`${window.location.origin}${window.location.pathname.replace("create","index")}#${btoa(format)}`);
+        }
+
+        document.getElementById('open').onclick = (_) => {
+            let format = [...document.getElementById('maker').querySelectorAll('.gtc_input')]
+                .map((e) => e.text)
+                .join("|");
+
+            let url = `${window.location.origin}${window.location.pathname.replace("create","index")}#${btoa(format)}`;
+
+            window.open(url).focus()
+        }
     </script>
 </main>
 </body>

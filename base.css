@@ -50,3 +50,9 @@ html {
     color: var(--colour-dark-green);
     text-align: center;
 }
+
+.gtc_input {
+    padding: 1em;
+    resize: none;
+    font-family: inherit;
+}
