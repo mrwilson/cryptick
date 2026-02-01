@@ -1,5 +1,5 @@
 :root {
-    --colour-base: #8EDC6F;
+    --colour-base: #8edc6f;
     --colour-green: #43a856ff;
     --colour-green-aa: #358544;
     --colour-dark-green: #286433;
@@ -11,7 +11,6 @@
 }
 
 html {
-    max-width: min(120ch, 100% - 4rem);
     margin-inline: auto;
     color-scheme: light;
     background: var(--colour-teal);
@@ -19,25 +18,31 @@ html {
     justify-items: center;
 }
 
+body {
+    margin: 0;
+    font-family:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+        Arial, sans-serif;
+}
+
 .gtc_main {
     height: 80vh;
-    width: 40vw;
+    max-width: 22em;
+    margin: 0 auto;
+    padding: 1em;
     display: grid;
     font-size: 1.25rem;
-    line-height: 1.5;
-    font-family: sans-serif;
+    line-height: 1.25;
     align-content: center;
     justify-content: center;
 }
 
-@media (max-width: 728px) {
-    .gtc_main {
-        width: 100%;
-    }
+#clue {
+    font-size: clamp(1.1rem, 0.8rem + 5vw, 2.2rem);
 }
 
 .gtc_button {
-    padding: 0.4em 0.5em;
+    padding: 0.4em 0.75em;
     background: var(--colour-dark-green);
     color: white;
     font-size: medium;
@@ -69,6 +74,6 @@ html {
 .gtc_button_list {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    width: auto;
+    justify-content: center;
+    gap: 0.5em;
 }

@@ -1,14 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <title>Guess The Clue</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-        <meta name="keywords" content="cryptic, crossword, clues"/>
-        <meta name="description" content="Guess The Clue!"/>
-        <meta property="og:title" content="Guess The Clue"/>
-        <meta property="og:site_name" content="Guess The Clue"/>
-        <link rel="stylesheet" href="./base.css"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta name="keywords" content="cryptic, crossword, clues" />
+        <meta name="description" content="Guess The Clue!" />
+        <meta property="og:title" content="Guess The Clue" />
+        <meta property="og:site_name" content="Guess The Clue" />
+        <link rel="stylesheet" href="./base.css" />
         <style>
             @keyframes grow-shrink {
                 50% {
@@ -17,8 +20,12 @@
             }
 
             @keyframes fade-in {
-                0% { opacity: 0; }
-                100% { opacity: 1; }
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
             }
 
             .gtc_main__index {
@@ -79,6 +86,7 @@
                 opacity: 0;
                 grid-row: 2;
                 height: auto;
+                font-style: italic;
             }
 
             .gtc_header--hint--revealed {
@@ -100,40 +108,50 @@
             <form class="gtc_answer" id="answer" target="_blank"></form>
             <div class="gtc_button_list">
                 <button class="gtc_button" id="show-hint">Show hint</button>
-                <button class="gtc_button" id="reveal-letter">Reveal letter</button>
+                <button class="gtc_button" id="reveal-letter">
+                    Reveal letter
+                </button>
                 <button class="gtc_button" id="reveal-all">Reveal word</button>
-                <a class="gtc_button gtc_link gtc_hidden" href="./create.html">Create your own!</a>
-                <button class="gtc_button gtc_hidden" id="share">Share this clue!</button>
+                <a class="gtc_button gtc_link gtc_hidden" href="./create.html"
+                    >Create your own!</a
+                >
+                <button class="gtc_button gtc_hidden" id="share">
+                    Share this clue!
+                </button>
             </div>
             <script type="module">
                 import { MiniClue } from "./miniclue/index.js";
-                import { ClueDecoder} from "./miniclue/decoder.js";
-                import examples from './miniclue/examples.js';
+                import { ClueDecoder } from "./miniclue/decoder.js";
+                import examples from "./miniclue/examples.js";
 
-                const clue = new ClueDecoder(examples).decode(window.location.hash);
-
-                const miniClue = new MiniClue(
-                    document.getElementById('answer'),
-                    document.getElementById('clue'),
-                    document.getElementById('reveal-letter'),
-                    document.getElementById('reveal-all'),
+                const clue = new ClueDecoder(examples).decode(
+                    window.location.hash,
                 );
 
-                document.getElementById('hint').textContent = clue.hint;
+                const miniClue = new MiniClue(
+                    document.getElementById("answer"),
+                    document.getElementById("clue"),
+                    document.getElementById("reveal-letter"),
+                    document.getElementById("reveal-all"),
+                );
 
-                document.getElementById('show-hint').onclick = (_) => {
-                    document.getElementById('hint').classList.add('gtc_header--hint--revealed')
-                }
+                document.getElementById("hint").textContent = clue.hint;
 
-                document.getElementById('share').onclick = (_) => {
+                document.getElementById("show-hint").onclick = (_) => {
+                    document
+                        .getElementById("hint")
+                        .classList.add("gtc_header--hint--revealed");
+                };
+
+                document.getElementById("share").onclick = (_) => {
                     const message = [
                         "I solved a clue on Guess The Clue!",
-                        document.getElementById('clue').textContent,
-                        window.location
+                        document.getElementById("clue").textContent,
+                        window.location,
                     ].join("\n\n");
 
                     navigator.clipboard.writeText(message);
-                }
+                };
 
                 miniClue.renderClue(clue);
             </script>
