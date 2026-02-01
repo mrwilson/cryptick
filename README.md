@@ -1,5 +1,7 @@
 # guess-the-clue
 
+[![Tests](https://github.com/mrwilson/guess-the-clue/actions/workflows/test.yaml/badge.svg)](https://github.com/mrwilson/guess-the-clue/actions/workflows/test.yaml)
+
 Want to share your crossword clues with your friends to test?
 
 This page (currently hosted at https://wildvale.co.uk/) lets you build a clue test page for sharing.
