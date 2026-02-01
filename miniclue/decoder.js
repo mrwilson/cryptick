@@ -6,21 +6,31 @@ export class ClueDecoder {
   #decodeJson(input) {
     let data = JSON.parse(input);
 
-    return {
+    let clue = {
       clue: data.c,
       answer: data.a,
-      hint: data.h
     };
+
+    if (data.h) {
+      clue.hint = data.h;
+    }
+
+    return clue;
   }
 
   #decodeString(input) {
     let data = input.split("|");
 
-    return {
+    let clue = {
       clue: data[0],
       answer: data[1],
-      hint: data[2]
     };
+
+    if (data.length === 3) {
+      clue.hint = data[2];
+    }
+
+    return clue;
   }
 
   decode(input) {
