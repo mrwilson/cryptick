@@ -10,7 +10,6 @@
         <meta property="og:site_name" content="Guess The Clue"/>
         <link rel="stylesheet" href="./index.css"/>
         <style>
-
             @keyframes grow-shrink {
                 50% {
                     scale: 120%;
@@ -62,8 +61,8 @@
                 background: lightgreen;
             }
 
-            .gtc_answer:valid + * > button.gtc_button,
-            .gtc_answer:invalid + * > .gtc_link {
+            .gtc_answer:valid + * > .gtc_button:not(.gtc_hidden),
+            .gtc_answer:invalid + * > .gtc_hidden {
                 display: none;
             }
 
@@ -102,7 +101,8 @@
                 <button class="gtc_button" id="show-hint">Show hint</button>
                 <button class="gtc_button" id="reveal-letter">Reveal letter</button>
                 <button class="gtc_button" id="reveal-all">Reveal word</button>
-                <a class="gtc_button gtc_link" href="./create.html">Create your own!</a>
+                <a class="gtc_button gtc_link gtc_hidden" href="./create.html">Create your own!</a>
+                <button class="gtc_button gtc_hidden" id="share">Share this clue!</button>
             </div>
             <script type="module">
                 import { MiniClue } from "./miniclue/index.js";
@@ -122,6 +122,16 @@
 
                 document.getElementById('show-hint').onclick = (_) => {
                     document.getElementById('hint').classList.add('gtc_header--hint--revealed')
+                }
+
+                document.getElementById('share').onclick = (_) => {
+                    const message = [
+                        "I solved a clue on Guess The Clue!",
+                        document.getElementById('clue').textContent,
+                        window.location
+                    ].join("\n\n");
+
+                    navigator.clipboard.writeText(message);
                 }
 
                 miniClue.renderClue(clue);
