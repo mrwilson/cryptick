@@ -11,11 +11,8 @@
 }
 
 html {
-    margin-inline: auto;
     color-scheme: light;
     background: var(--colour-teal);
-    align-items: center;
-    justify-items: center;
 }
 
 body {
@@ -34,7 +31,11 @@ body {
     font-size: 1.25rem;
     line-height: 1.25;
     align-content: center;
-    justify-content: center;
+    justify-content: stretch;
+}
+
+.gtc_main > * {
+    min-width: 0;
 }
 
 #clue {

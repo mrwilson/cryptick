@@ -164,15 +164,16 @@
 
                 document.getElementById('share').onclick = (_) => {
                     const message = [
-                        "I solved a clue on Guess The Clue!",
+                        'I solved a clue on Guess The Clue!',
                         document.getElementById('clue').textContent,
-                        window.location
-                    ].join("\n\n");
+                        window.location,
+                    ].join('\n\n');
 
                     navigator.clipboard.writeText(message);
 
-                    document.getElementById('share').textContent = "Copied to clipboard!"
-                }
+                    document.getElementById('share').textContent =
+                        'Copied to clipboard!';
+                };
 
                 miniClue.renderClue(clue);
             </script>
