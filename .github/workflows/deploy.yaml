@@ -1,0 +1,30 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - main
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  DeployBlog:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          role-to-assume: arn:aws:iam::456604962869:role/DeployCryptick
+          aws-region: eu-west-2
+      - name: Deploy blog
+        run: |
+          aws s3 sync . s3://cryptick.wildvale.co.uk/ \
+            --exclude "*" \
+            --include "base.css" \
+            --include "*.html" \
+            --include "miniclue/*.js" \
+            --include "logo.svg" \
+            --delete \
+            --acl public-read \
+            --cache-control max-age=300
