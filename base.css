@@ -80,3 +80,8 @@ body {
     justify-content: center;
     gap: 0.5em;
 }
+
+.gtc_p {
+    text-align: center;
+    padding-bottom: 1em;
+}
