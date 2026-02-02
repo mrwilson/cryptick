@@ -1,106 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <title>Guess The Clue</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="keywords" content="cryptic, crossword, clues"/>
-    <meta name="description" content="Guess The Clue!"/>
-    <meta property="og:title" content="Guess The Clue"/>
-    <meta property="og:site_name" content="Guess The Clue"/>
-    <link rel="stylesheet" href="./base.css"/>
-    <style>
-        .gtc_main__create {
-            grid-template:
-                "title" 15%
-                "maker" auto
-                "copy" auto
-                "keyboard" env(keyboard-inset-height, 0px);
-        }
+    <head>
+        <title>Guess The Clue</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta name="keywords" content="cryptic, crossword, clues" />
+        <meta name="description" content="Guess The Clue!" />
+        <meta property="og:title" content="Guess The Clue" />
+        <meta property="og:site_name" content="Guess The Clue" />
+        <link rel="stylesheet" href="./base.css" />
+        <style>
+            .gtc_main__create {
+                grid-template:
+                    'title' 15%
+                    'maker' auto
+                    'copy' auto
+                    'keyboard' env(keyboard-inset-height, 0px);
+            }
 
-        .gtc_main__create__title {
-            grid-row: 1;
-        }
+            .gtc_main__create__title {
+                grid-row: 1;
+            }
 
-        .gtc__clue_maker {
-            display: inline-grid;
-            grid-row: 2;
-            row-gap: 1em;
-            padding: 2em 0;
-        }
+            .gtc__clue_maker {
+                display: inline-grid;
+                grid-row: 2;
+                row-gap: 1em;
+                padding: 2em 0;
+            }
 
-        .gtc__clue_maker__input {
-            border: none;
-        }
+            .gtc__clue_maker__input {
+                border: none;
+            }
 
-        .gtc__clue_maker__input--answer {
-            text-transform: uppercase;
+            .gtc__clue_maker__input--answer {
+                text-transform: uppercase;
+            }
 
-        }
+            .gtc_input--clue,
+            .gtc_input--hint {
+                height: 4em;
+            }
 
-        .gtc_button--copy {
-            grid-row: 3;
-        }
+            .gtc__clue_maker__label {
+                text-align: left;
+            }
 
-        .gtc_input--clue, .gtc_input--hint {
-            height: 4em;
-        }
+            .gtc__clue_maker:invalid + * > .gtc_button {
+                pointer-events: none;
+                background: var(--colour-grey);
+                cursor: not-allowed;
+            }
+        </style>
+    </head>
+    <body>
+        <main class="gtc_main gtc_main__create">
+            <h1 class="gtc_header gtc_main__create__title" id="title">
+                Create your own!
+            </h1>
+            <form class="gtc__clue_maker">
+                <label class="gtc_header gtc__clue_maker__label" for="clue"
+                    >Clue</label
+                >
+                <textarea
+                    class="gtc_input gtc__clue_maker__input gtc_input--clue"
+                    id="clue"
+                    name="clue"
+                    placeholder="Slam nonsense tales"
+                    required
+                    minlength="1"
+                    rows="4"
+                ></textarea>
+                <label class="gtc_header gtc__clue_maker__label" for="answer"
+                    >Answer</label
+                >
+                <input
+                    class="gtc_input gtc__clue_maker__input gtc__clue_maker__input--answer"
+                    id="answer"
+                    name="answer"
+                    placeholder="SLATE"
+                    required
+                    minlength="1"
+                    maxlength="15"
+                />
+                <label class="gtc_header gtc__clue_maker__label" for="hint"
+                    >Hint (Optional)</label
+                >
+                <textarea
+                    class="gtc_input gtc__clue_maker__input gtc_input--hint"
+                    id="hint"
+                    name="hint"
+                    placeholder="'Nonsense' indicates an anagram of nearby letters"
+                ></textarea>
+            </form>
+            <div class="gtc_button_list">
+                <button class="gtc_button gtc_button--copy" id="copy">
+                    Copy to clipboard
+                </button>
+                <button class="gtc_button gtc_button--copy" id="open">
+                    Open in new tab
+                </button>
+            </div>
+            <script type="module">
+                import { ClueEncoder } from './miniclue/encoder.js';
+                import { MiniClue } from './miniclue/index.js';
 
-        .gtc__clue_maker__label {
-            text-align: left;
-        }
+                function buildClue() {
+                    let encoded = ClueEncoder.encode(
+                        document.getElementById('clue').value,
+                        document.getElementById('answer').value,
+                        document.getElementById('hint').value,
+                    );
 
-        .gtc__clue_maker:invalid + * > .gtc_button {
-            pointer-events: none;
-            background: var(--colour-grey);
-            cursor: not-allowed;
-        }
-    </style>
-</head>
-<body>
-<main class="gtc_main gtc_main__create">
-    <h1 class="gtc_header gtc_main__create__title" id="title">Create your own!</h1>
-    <form class="gtc__clue_maker">
-        <label class="gtc_header gtc__clue_maker__label" for="clue">Clue</label>
-        <textarea class="gtc_input gtc__clue_maker__input gtc_input--clue" id="clue" name="clue" placeholder="Slam nonsense tales" required minlength="1" rows="4"></textarea>
-        <label class="gtc_header gtc__clue_maker__label" for="answer">Answer</label>
-        <input class="gtc_input gtc__clue_maker__input gtc__clue_maker__input--answer" id="answer" name="answer" placeholder="SLATE" required minlength="1" maxlength="15">
-        <label class="gtc_header gtc__clue_maker__label" for="hint">Hint (Optional)</label>
-        <textarea class="gtc_input gtc__clue_maker__input gtc_input--hint" id="hint" name="hint" placeholder="'Nonsense' indicates an anagram of nearby letters"></textarea>
-    </form>
-    <div class="gtc_button_list">
-        <button class="gtc_button gtc_button--copy" id="copy">Copy to clipboard</button>
-        <button class="gtc_button gtc_button--copy" id="open">Open in new tab</button>
-    </div>
-    <script type="module">
-        import {ClueEncoder} from "./miniclue/encoder.js";
-        import {MiniClue} from "./miniclue/index.js";
+                    return `${window.location.origin}${window.location.pathname.replace('create', 'index')}#${encoded}`;
+                }
 
-        function buildClue() {
-            let encoded = ClueEncoder.encode(
-                document.getElementById('clue').value,
-                document.getElementById('answer').value,
-                document.getElementById('hint').value,
-            );
+                document.getElementById('copy').onclick = (_) => {
+                    const message = [
+                        `${document.getElementById('clue').value} (${MiniClue.enumerate(document.getElementById('answer').value)})`,
+                        buildClue(),
+                        'Solve it, and create your own!',
+                    ].join('\n\n');
 
-            return `${window.location.origin}${window.location.pathname.replace("create","index")}#${encoded}`;
-        }
+                    navigator.clipboard.writeText(message);
+                    document.getElementById('copy').textContent = 'Copied!';
+                };
 
-        document.getElementById('copy').onclick = (_) => {
-            const message = [
-                `${document.getElementById('clue').value} (${MiniClue.enumerate(document.getElementById('answer').value)})`,
-                buildClue(),
-                "Solve it, and create your own!"
-            ].join("\n\n");
-
-            navigator.clipboard.writeText(message);
-            document.getElementById('copy').textContent = "Copied!"
-        }
-
-        document.getElementById('open').onclick = (_) => {
-            window.open(buildClue()).focus()
-        }
-    </script>
-</main>
-</body>
+                document.getElementById('open').onclick = (_) => {
+                    window.open(buildClue()).focus();
+                };
+            </script>
+        </main>
+    </body>
 </html>
