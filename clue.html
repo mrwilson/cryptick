@@ -8,14 +8,17 @@
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <meta name="keywords" content="cryptic, crossword, clues" />
-        <meta name="description" content="Create a cryptic crossword clue and share it with people you know." />
+        <meta
+            name="description"
+            content="Create a cryptic crossword clue and share it with people you know."
+        />
         <meta property="og:title" content="Cryptick" />
         <meta property="og:site_name" content="Cryptick" />
         <meta property="og:image" content="./logo.svg" />
         <meta property="og:image:height" content="1200" />
         <meta property="og:image:width" content="1200" />
         <link rel="stylesheet" href="./base.css" />
-        <link rel="icon" href="./logo.svg">
+        <link rel="icon" href="./logo.svg" />
         <style>
             @keyframes grow-shrink {
                 50% {
@@ -32,13 +35,13 @@
                 }
             }
 
-            .gtc_main__index {
+            main {
                 grid-template:
                     'clue' auto 'hint' 10% 'answer' 40% 'reveal' 10%
                     'keyboard' env(keyboard-inset-height, 0px);
             }
 
-            .gtc_answer {
+            .answer {
                 display: flex;
                 flex-wrap: wrap;
                 gap: 1rem;
@@ -47,7 +50,7 @@
                 container-type: inline-size;
             }
 
-            .gtc_answer__word__letter {
+            .answer__word__letter {
                 padding: 0.2em;
                 margin-right: -4px;
                 font-size: clamp(
@@ -64,34 +67,34 @@
                 border: solid black 4px;
             }
 
-            .gtc_answer__word__letter--revealed {
+            .answer__word__letter--revealed {
                 background: var(--colour-grey);
                 cursor: none;
                 animation: grow-shrink 500ms ease-out 0s normal;
             }
 
-            .gtc_answer:valid .gtc_answer__word__letter {
+            .answer:valid .answer__word__letter {
                 background-color: lightgreen;
             }
 
-            .gtc_answer:valid .gtc_answer__word__letter--revealed {
+            .answer:valid .answer__word__letter--revealed {
                 background-color: color-mix(in srgb, lightgreen, black 30%);
             }
 
-            .gtc_answer:valid + * > .button:not(.gtc_hidden),
-            .gtc_answer:invalid + * > .gtc_hidden {
+            .answer:valid + * > .button:not(.hidden),
+            .answer:invalid + * > .hidden {
                 display: none;
             }
 
-            .gtc_answer:not(:has(> .gtc_answer__word)) + .button_list {
+            .answer:not(:has(> .answer__word)) + .button_list {
                 display: none;
             }
 
-            .gtc_header--hint:empty + * + * > .button#show-hint {
+            .header--hint:empty + * + * > .button#show-hint {
                 display: none;
             }
 
-            .gtc_header--hint {
+            .header--hint {
                 opacity: 0;
                 grid-row: 2;
                 height: auto;
@@ -99,7 +102,7 @@
                 white-space: pre-wrap;
             }
 
-            .gtc_header--hint--revealed {
+            .header--hint--revealed {
                 animation: fade-in 2s ease-in-out;
                 animation-fill-mode: forwards;
             }
@@ -109,22 +112,20 @@
         <header>
             <a href="https://cryptick.wildvale.co.uk"><h1>Crypt✔ck</h1></a>
         </header>
-        <main class="gtc_main__index">
+        <main>
             <h1 class="header" id="clue"></h1>
-            <h4 class="header gtc_header--hint" id="hint"></h4>
-            <form class="gtc_answer" id="answer" target="_blank"></form>
+            <h4 class="header header--hint" id="hint"></h4>
+            <form class="answer" id="answer" target="_blank"></form>
             <div class="button_list">
                 <button class="button" id="show-hint">Show hint</button>
-                <button class="button" id="reveal-letter">
-                    Reveal letter
-                </button>
+                <button class="button" id="reveal-letter">Reveal letter</button>
                 <button class="button" id="reveal-all">Reveal word</button>
-                <a class="button link gtc_hidden" href="./create.html"
-                    >Create your own!</a
-                >
-                <button class="button gtc_hidden" id="share">
+                <button class="button hidden" id="share">
                     Share this clue!
                 </button>
+                <a class="button hidden" href="./create.html"
+                    >Create your own!</a
+                >
             </div>
             <script type="module">
                 import { MiniClue } from './miniclue/index.js';
@@ -154,7 +155,7 @@
                 document.getElementById('show-hint').onclick = (_) => {
                     document
                         .getElementById('hint')
-                        .classList.add('gtc_header--hint--revealed');
+                        .classList.add('header--hint--revealed');
                 };
 
                 document.getElementById('share').onclick = (_) => {
@@ -174,7 +175,9 @@
             </script>
         </main>
         <footer>
-            <a href="https://github.com/mrwilson/guess-the-clue">Open source</a> and made with <3 by <a href="https://www.wildvale.co.uk/">Wildvale</a>
+            <a href="https://github.com/mrwilson/guess-the-clue">Open source</a>
+            and made with <3 by
+            <a href="https://www.wildvale.co.uk/">Wildvale</a>
         </footer>
     </body>
 </html>
