@@ -1,11 +1,17 @@
 export class ClueEncoder {
-    static encode(clue, answer, hint) {
-        let clueString = `${clue}|${answer}`;
+    constructor(clue, answer, hint) {
+        this.clue = clue;
+        this.answer = answer;
+        this.hint = hint;
+    }
 
-        if (hint) {
-            clueString = `${clueString}|${hint}`;
+    fragment(baseUrl) {
+        let clueString = `${this.clue.value}|${this.answer.value}`;
+
+        if (this.hint.value) {
+            clueString = `${clueString}|${this.hint.value}`;
         }
 
-        return btoa(clueString);
+        return `${baseUrl}#${btoa(clueString)}`;
     }
 }

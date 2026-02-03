@@ -6,32 +6,29 @@ describe('ClueEncoder', () => {
     const decoder = new ClueDecoder({});
 
     it('can encode clues without hints', () => {
-        assert.deepEqual(
-            decoder.decode(
-                '#' + ClueEncoder.encode('Incredible pupil', 'eye opening'),
-            ),
-            {
-                clue: 'Incredible pupil',
-                answer: 'eye opening',
-            },
+        let encoder = new ClueEncoder(
+            { value: 'Incredible pupil' },
+            { value: 'eye opening' },
+            {},
         );
+
+        assert.deepEqual(decoder.decode(encoder.fragment("")), {
+            clue: 'Incredible pupil',
+            answer: 'eye opening',
+        });
     });
 
     it('can encode clues with hints', () => {
-        assert.deepEqual(
-            decoder.decode(
-                '#' +
-                    ClueEncoder.encode(
-                        'Incredible pupil',
-                        'eye opening',
-                        'this is a hint',
-                    ),
-            ),
-            {
-                clue: 'Incredible pupil',
-                answer: 'eye opening',
-                hint: 'this is a hint',
-            },
+        let encoder = new ClueEncoder(
+            { value: 'Incredible pupil' },
+            { value: 'eye opening' },
+            { value: 'this is a hint' },
         );
+
+        assert.deepEqual(decoder.decode(encoder.fragment("")), {
+            clue: 'Incredible pupil',
+            answer: 'eye opening',
+            hint: 'this is a hint',
+        });
     });
 });

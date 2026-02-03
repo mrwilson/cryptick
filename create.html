@@ -103,20 +103,16 @@
                 import { ClueEncoder } from './miniclue/encoder.js';
                 import { MiniClue } from './miniclue/index.js';
 
-                function buildClue() {
-                    let encoded = ClueEncoder.encode(
-                        document.getElementById('clue').value,
-                        document.getElementById('answer').value,
-                        document.getElementById('hint').value,
-                    );
-
-                    return `${window.location.origin}${window.location.pathname.replace('create', 'clue')}#${encoded}`;
-                }
+                let encoder = new ClueEncoder(
+                    document.getElementById('clue'),
+                    document.getElementById('answer'),
+                    document.getElementById('hint'),
+                );
 
                 document.getElementById('copy').onclick = (_) => {
                     const message = [
                         `${document.getElementById('clue').value} (${MiniClue.enumerate(document.getElementById('answer').value)})`,
-                        buildClue(),
+                        encoder.fragment(window.location.origin+"/clue.html"),
                         'Solve it, and create your own!',
                     ].join('\n\n');
 
@@ -125,7 +121,9 @@
                 };
 
                 document.getElementById('open').onclick = (_) => {
-                    window.open(buildClue()).focus();
+                    window
+                        .open(encoder.fragment(window.location.origin+"/clue.html"))
+                        .focus();
                 };
             </script>
         </main>
