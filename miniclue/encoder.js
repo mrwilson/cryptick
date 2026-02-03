@@ -1,3 +1,5 @@
+import { MiniClue } from './index.js';
+
 export class ClueEncoder {
     constructor(clue, answer, hint) {
         this.clue = clue;
@@ -13,5 +15,13 @@ export class ClueEncoder {
         }
 
         return `${baseUrl}#${btoa(clueString)}`;
+    }
+
+    copyText(baseUrl) {
+        return [
+            `${this.clue.value} (${MiniClue.enumerate(this.answer.value)})`,
+            this.fragment(baseUrl),
+            'Solve it, and create your own!',
+        ].join('\n\n');
     }
 }

@@ -12,7 +12,7 @@ describe('ClueEncoder', () => {
             {},
         );
 
-        assert.deepEqual(decoder.decode(encoder.fragment("")), {
+        assert.deepEqual(decoder.decode(encoder.fragment('')), {
             clue: 'Incredible pupil',
             answer: 'eye opening',
         });
@@ -25,10 +25,27 @@ describe('ClueEncoder', () => {
             { value: 'this is a hint' },
         );
 
-        assert.deepEqual(decoder.decode(encoder.fragment("")), {
+        assert.deepEqual(decoder.decode(encoder.fragment('')), {
             clue: 'Incredible pupil',
             answer: 'eye opening',
             hint: 'this is a hint',
         });
+    });
+
+    it('can create copy text', () => {
+        let encoder = new ClueEncoder(
+            { value: 'Incredible pupil' },
+            { value: 'eye opening' },
+            {},
+        );
+
+        const clue = 'Incredible pupil (3,7)';
+        const url =
+            'https://example.com/#SW5jcmVkaWJsZSBwdXBpbHxleWUgb3BlbmluZw==';
+
+        assert.equal(
+            encoder.copyText('https://example.com/'),
+            `${clue}\n\n${url}\n\nSolve it, and create your own!`,
+        );
     });
 });

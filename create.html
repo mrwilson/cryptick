@@ -101,7 +101,6 @@
             </div>
             <script type="module">
                 import { ClueEncoder } from './miniclue/encoder.js';
-                import { MiniClue } from './miniclue/index.js';
 
                 let encoder = new ClueEncoder(
                     document.getElementById('clue'),
@@ -109,21 +108,21 @@
                     document.getElementById('hint'),
                 );
 
-                document.getElementById('copy').onclick = (_) => {
-                    const message = [
-                        `${document.getElementById('clue').value} (${MiniClue.enumerate(document.getElementById('answer').value)})`,
-                        encoder.fragment(window.location.origin+"/clue.html"),
-                        'Solve it, and create your own!',
-                    ].join('\n\n');
+                document.getElementById('copy').onclick = (e) => {
+                    const copyText = encoder.copyText(
+                        window.location.origin + '/clue.html',
+                    );
 
-                    navigator.clipboard.writeText(message);
-                    document.getElementById('copy').textContent = 'Copied!';
+                    navigator.clipboard.writeText(copyText);
+                    e.target.textContent = 'Copied!';
                 };
 
                 document.getElementById('open').onclick = (_) => {
-                    window
-                        .open(encoder.fragment(window.location.origin+"/clue.html"))
-                        .focus();
+                    const url = encoder.fragment(
+                        window.location.origin + '/clue.html',
+                    );
+
+                    window.open(url).focus();
                 };
             </script>
         </main>
