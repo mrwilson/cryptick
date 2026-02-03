@@ -1,51 +1,54 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <title>Cryptick</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta
+    <head>
+        <title>Cryptick</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="keywords" content="cryptic, crossword, clues" />
-    <meta name="description" content="Create a cryptic crossword clue and share it with people you know." />
-    <meta property="og:title" content="Cryptick" />
-    <meta property="og:site_name" content="Cryptick" />
-    <meta property="og:image" content="./logo.svg" />
-    <meta property="og:image:height" content="1200" />
-    <meta property="og:image:width" content="1200" />
-    <link rel="stylesheet" href="./base.css" />
-    <link rel="icon" href="./logo.svg">
-</head>
-<body>
-    <header>
-        <a href="./"><h1>Crypt✔ck</h1></a>
-    </header>
-    <main>
-    <p class="p">Create a cryptic crossword clue.</p>
-    <p class="p">Share it with people you know.</p>
-    <p class="p">
-        No accounts.
-        No personal data.
-        No cookies.
-    </p>
-    <noscript>
-        <p class="p">
-            <b>Unfortunately, as this site is browser-based, we do require Javascript to be enabled.</b>
-        </p>
-    </noscript>
-    <div class="list">
-        <a class="pill" href="./create.html">
-            Create a clue
-        </a>
-    </div>
+        />
+        <meta name="keywords" content="cryptic, crossword, clues" />
+        <meta
+            name="description"
+            content="Create a cryptic crossword clue and share it with people you know."
+        />
+        <meta property="og:title" content="Cryptick" />
+        <meta property="og:site_name" content="Cryptick" />
+        <meta property="og:image" content="./logo.svg" />
+        <meta property="og:image:height" content="1200" />
+        <meta property="og:image:width" content="1200" />
+        <link rel="stylesheet" href="./base.css" />
+        <link rel="icon" href="./logo.svg" />
+    </head>
+    <body>
+        <header>
+            <a href="./"><h1>Crypt✔ck</h1></a>
+        </header>
+        <main>
+            <p>Create a cryptic crossword clue.</p>
+            <p>Share it with people you know.</p>
+            <p>No accounts. No personal data. No cookies.</p>
+            <noscript>
+                <p>
+                    Unfortunately, as this site is browser-based, we do require
+                    Javascript to be enabled.
+                </p>
+            </noscript>
+            <div class="list">
+                <a class="pill pill--big" href="./create.html"> Create a clue </a>
+            </div>
 
-    <script>
-        window.location.hash && window.location.replace(`./clue.html${window.location.hash}`);
-    </script>
-</main>
-<footer>
-    <a href="https://github.com/mrwilson/guess-the-clue">Open source</a> and made with <3 by <a href="https://www.wildvale.co.uk/">Wildvale</a>
-</footer>
-</body>
+            <script>
+                window.location.hash &&
+                    window.location.replace(
+                        `./clue.html${window.location.hash}`,
+                    );
+            </script>
+        </main>
+        <footer>
+            <a href="https://github.com/mrwilson/guess-the-clue">Open source</a>
+            and made with <3 by
+            <a href="https://www.wildvale.co.uk/">Wildvale</a>
+        </footer>
+    </body>
 </html>
