@@ -22,7 +22,7 @@ body {
         Arial, sans-serif;
 }
 
-.gtc_main {
+.main {
     height: 80vh;
     max-width: 22em;
     margin: 0 auto;
@@ -34,15 +34,15 @@ body {
     justify-content: stretch;
 }
 
-.gtc_main > * {
+.main > * {
     min-width: 0;
 }
 
-#clue.gtc_header {
+#clue.header {
     font-size: clamp(1.1rem, 0.8rem + 5vw, 2.2rem);
 }
 
-.gtc_button {
+.button {
     padding: 0.5em 0.75em;
     background: var(--colour-dark-green);
     color: white;
@@ -58,44 +58,44 @@ body {
     }
 }
 
-.gtc_link {
+.link {
     text-decoration: none;
 }
 
-.gtc_link:visited {
+.link:visited {
     color: inherit;
 }
 
-.gtc_header {
+.header {
     color: var(--colour-dark-green);
     text-align: center;
 }
 
-.gtc_header--large {
+.header--large {
     font-size: 5rem;
 }
 
-.gtc_input {
+.input {
     padding: 1em;
     resize: none;
     font-family: inherit;
     font-size: large;
 }
 
-.gtc_button_list {
+.button_list {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5em;
 }
 
-.gtc_p {
+.p {
     text-align: center;
     padding-bottom: 1em;
     font-size: x-large;
 }
 
-.gtc_body {
+.body {
     grid-template:
             'header' 15%
             'maker' auto
@@ -103,7 +103,7 @@ body {
             'keyboard' env(keyboard-inset-height, 0px);
 }
 
-.gtc_nav {
+.nav {
     grid-row: 1;
     text-align: left;
     border-bottom: solid 2px black;
@@ -111,11 +111,11 @@ body {
     color: var(--colour-dark-green);
 }
 
-.gtc_main {
+.main {
     grid-row: 2;
 }
 
-.gtc_footer {
+.footer {
     grid-row: 3;
     text-align: center;
 }

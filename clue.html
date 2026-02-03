@@ -78,16 +78,16 @@
                 background-color: color-mix(in srgb, lightgreen, black 30%);
             }
 
-            .gtc_answer:valid + * > .gtc_button:not(.gtc_hidden),
+            .gtc_answer:valid + * > .button:not(.gtc_hidden),
             .gtc_answer:invalid + * > .gtc_hidden {
                 display: none;
             }
 
-            .gtc_answer:not(:has(> .gtc_answer__word)) + .gtc_button_list {
+            .gtc_answer:not(:has(> .gtc_answer__word)) + .button_list {
                 display: none;
             }
 
-            .gtc_header--hint:empty + * + * > .gtc_button#show-hint {
+            .gtc_header--hint:empty + * + * > .button#show-hint {
                 display: none;
             }
 
@@ -105,24 +105,24 @@
             }
         </style>
     </head>
-    <body class="gtc_body">
-        <nav class="gtc_nav gtc_header">
-            <a class="gtc_link" href="https://cryptick.wildvale.co.uk"><h1>Crypt✔ck</h1></a>
+    <body class="body">
+        <nav class="nav header">
+            <a class="link" href="https://cryptick.wildvale.co.uk"><h1>Crypt✔ck</h1></a>
         </nav>
-        <main class="gtc_main gtc_main__index">
-            <h1 class="gtc_header" id="clue"></h1>
-            <h4 class="gtc_header gtc_header--hint" id="hint"></h4>
+        <main class="main gtc_main__index">
+            <h1 class="header" id="clue"></h1>
+            <h4 class="header gtc_header--hint" id="hint"></h4>
             <form class="gtc_answer" id="answer" target="_blank"></form>
-            <div class="gtc_button_list">
-                <button class="gtc_button" id="show-hint">Show hint</button>
-                <button class="gtc_button" id="reveal-letter">
+            <div class="button_list">
+                <button class="button" id="show-hint">Show hint</button>
+                <button class="button" id="reveal-letter">
                     Reveal letter
                 </button>
-                <button class="gtc_button" id="reveal-all">Reveal word</button>
-                <a class="gtc_button gtc_link gtc_hidden" href="./create.html"
+                <button class="button" id="reveal-all">Reveal word</button>
+                <a class="button link gtc_hidden" href="./create.html"
                     >Create your own!</a
                 >
-                <button class="gtc_button gtc_hidden" id="share">
+                <button class="button gtc_hidden" id="share">
                     Share this clue!
                 </button>
             </div>
@@ -173,7 +173,7 @@
                 miniClue.renderClue(clue);
             </script>
         </main>
-        <footer class="gtc_footer">
+        <footer class="footer">
             <a href="https://github.com/mrwilson/guess-the-clue">Open source</a> and made with <3 by <a href="https://www.wildvale.co.uk/">Wildvale</a>
         </footer>
     </body>
