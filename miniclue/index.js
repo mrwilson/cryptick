@@ -1,3 +1,5 @@
+import { enumerate } from './utils.js';
+
 export class MiniClue {
     constructor(answer, clue, revealLetter, revealWord) {
         this.answer = answer;
@@ -10,7 +12,7 @@ export class MiniClue {
     renderClue(params) {
         let words = params.answer.split(/[ -]/);
 
-        this.clue.textContent = `${params.clue} (${MiniClue.enumerate(params.answer)})`;
+        this.clue.textContent = `${params.clue} (${enumerate(params.answer)})`;
 
         words
             .map((x) => this.#createWord(x))
@@ -86,21 +88,5 @@ export class MiniClue {
         l.setAttribute('aria-label', 'letter');
         this.letters.push(l);
         return l;
-    }
-
-    static enumerate(answer) {
-        return answer
-            .split(/([ -])/)
-            .map((x) => {
-                switch (x) {
-                    case ' ':
-                        return ',';
-                    case '-':
-                        return '-';
-                    default:
-                        return x.length;
-                }
-            })
-            .join('');
     }
 }

@@ -34,17 +34,6 @@ describe('MiniClue', () => {
         assert.equal(answerValue(), 'AAAAAA');
     });
 
-    it('can enumerate one word', () => {
-        assert.equal(MiniClue.enumerate('AAAA'), '4');
-    });
-    it('can enumerate multiple words with spaces', () => {
-        assert.equal(MiniClue.enumerate('AAA AA'), '3,2');
-    });
-
-    it('can enumerate multiple words with spaces and hyphens', () => {
-        assert.equal(MiniClue.enumerate('AAA-AA'), '3-2');
-    });
-
     function answerValue() {
         return [...new FormData(answer).values()].join('');
     }

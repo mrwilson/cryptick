@@ -1,4 +1,4 @@
-import { MiniClue } from './index.js';
+import { enumerate } from './utils.js';
 
 export class ClueEncoder {
     constructor(clue, answer, hint) {
@@ -19,7 +19,7 @@ export class ClueEncoder {
 
     copyText(baseUrl) {
         return [
-            `${this.clue.value} (${MiniClue.enumerate(this.answer.value)})`,
+            `${this.clue.value} (${enumerate(this.answer.value)})`,
             this.fragment(baseUrl),
             'Solve it, and create your own!',
         ].join('\n\n');
