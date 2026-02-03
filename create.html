@@ -8,48 +8,46 @@
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
         <meta name="keywords" content="cryptic, crossword, clues" />
-        <meta name="description" content="Create a cryptic crossword clue and share it with people you know." />
+        <meta
+            name="description"
+            content="Create a cryptic crossword clue and share it with people you know."
+        />
         <meta property="og:title" content="Cryptick" />
         <meta property="og:site_name" content="Cryptick" />
         <meta property="og:image" content="./logo.svg" />
         <meta property="og:image:height" content="1200" />
         <meta property="og:image:width" content="1200" />
         <link rel="stylesheet" href="./base.css" />
-        <link rel="icon" href="./logo.svg">
+        <link rel="icon" href="./logo.svg" />
         <style>
-            .gtc_main__create {
+            main {
                 grid-template:
                     'maker' auto
                     'copy' 15%
                     'keyboard' env(keyboard-inset-height, 0px);
             }
 
-            .gtc__clue_maker {
+            .clue_maker {
                 display: inline-grid;
                 grid-row: 1;
                 row-gap: 1em;
                 padding: 2em 0;
             }
 
-            .gtc__clue_maker__input {
+            .clue_maker__input {
                 border: none;
                 border-radius: 5px;
             }
 
-            .gtc__clue_maker__input--answer {
+            .clue_maker__input--answer {
                 text-transform: uppercase;
             }
 
-            .gtc_input--clue,
-            .gtc_input--hint {
-                height: 4em;
-            }
-
-            .gtc__clue_maker__label {
+            .clue_maker__label {
                 text-align: left;
             }
 
-            .gtc__clue_maker:invalid + * > .button {
+            .clue_maker:invalid + * > .button {
                 pointer-events: none;
                 background: var(--colour-grey);
                 cursor: not-allowed;
@@ -61,16 +59,14 @@
         </style>
     </head>
     <body>
-    <header>
-        <a href="https://cryptick.wildvale.co.uk"><h1>Crypt✔ck</h1></a>
-    </header>
-        <main class="gtc_main__create">
-            <form class="gtc__clue_maker">
-                <label class="header gtc__clue_maker__label" for="clue"
-                    >Clue</label
-                >
+        <header>
+            <a href="https://cryptick.wildvale.co.uk"><h1>Crypt✔ck</h1></a>
+        </header>
+        <main>
+            <form class="clue_maker">
+                <label class="header clue_maker__label" for="clue">Clue</label>
                 <textarea
-                    class="input gtc__clue_maker__input gtc_input--clue"
+                    class="input clue_maker__input input--clue"
                     id="clue"
                     name="clue"
                     placeholder="Slam nonsense tales"
@@ -78,11 +74,11 @@
                     minlength="1"
                     rows="4"
                 ></textarea>
-                <label class="header gtc__clue_maker__label" for="answer"
+                <label class="header clue_maker__label" for="answer"
                     >Answer</label
                 >
                 <input
-                    class="input gtc__clue_maker__input gtc__clue_maker__input--answer"
+                    class="input clue_maker__input clue_maker__input--answer"
                     id="answer"
                     name="answer"
                     placeholder="SLATE"
@@ -90,23 +86,19 @@
                     minlength="1"
                     maxlength="15"
                 />
-                <label class="header gtc__clue_maker__label" for="hint"
+                <label class="header clue_maker__label" for="hint"
                     >Hint (Optional)</label
                 >
                 <textarea
-                    class="input gtc__clue_maker__input gtc_input--hint"
+                    class="input clue_maker__input"
                     id="hint"
                     name="hint"
                     placeholder="'Nonsense' indicates an anagram of nearby letters"
                 ></textarea>
             </form>
             <div class="button_list">
-                <button class="button gtc_button--copy" id="copy">
-                    Copy to clipboard
-                </button>
-                <button class="button gtc_button--copy" id="open">
-                    Open in new tab
-                </button>
+                <button class="button" id="copy">Copy to clipboard</button>
+                <button class="button" id="open">Open in new tab</button>
             </div>
             <script type="module">
                 import { ClueEncoder } from './miniclue/encoder.js';
@@ -119,7 +111,7 @@
                         document.getElementById('hint').value,
                     );
 
-                    return `./clue.html#${encoded}`;
+                    return `${window.location.origin}${window.location.pathname.replace('create', 'clue')}#${encoded}`;
                 }
 
                 document.getElementById('copy').onclick = (_) => {
@@ -139,7 +131,9 @@
             </script>
         </main>
         <footer>
-            <a href="https://github.com/mrwilson/guess-the-clue">Open source</a> and made with <3 by <a href="https://www.wildvale.co.uk/">Wildvale</a>
+            <a href="https://github.com/mrwilson/guess-the-clue">Open source</a>
+            and made with <3 by
+            <a href="https://www.wildvale.co.uk/">Wildvale</a>
         </footer>
     </body>
 </html>
