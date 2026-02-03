@@ -84,8 +84,18 @@ footer {
     }
 }
 
+.pill--big {
+    font-size: large;
+}
+
 a {
     text-decoration: none;
+}
+
+p {
+    text-align: center;
+    padding-bottom: 1em;
+    font-size: x-large;
 }
 
 .header {
@@ -109,10 +119,4 @@ a {
     align-items: center;
     justify-content: center;
     gap: 0.5em;
-}
-
-.p {
-    text-align: center;
-    padding-bottom: 1em;
-    font-size: x-large;
 }
