@@ -20,9 +20,16 @@ body {
     font-family:
         -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
         Arial, sans-serif;
+    grid-template:
+            'header' 15%
+            'maker' auto
+            'footer' 15%
+            'keyboard' env(keyboard-inset-height, 0px);
 }
 
 .main {
+    grid-row: 2;
+
     height: 80vh;
     max-width: 22em;
     margin: 0 auto;
@@ -58,7 +65,7 @@ body {
     }
 }
 
-.link {
+a {
     text-decoration: none;
 }
 
@@ -95,24 +102,12 @@ body {
     font-size: x-large;
 }
 
-.body {
-    grid-template:
-            'header' 15%
-            'maker' auto
-            'footer' 15%
-            'keyboard' env(keyboard-inset-height, 0px);
-}
-
 .nav {
     grid-row: 1;
     text-align: left;
     border-bottom: solid 2px black;
     padding-left: 2em;
     color: var(--colour-dark-green);
-}
-
-.main {
-    grid-row: 2;
 }
 
 .footer {
