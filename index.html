@@ -12,14 +12,15 @@
     <meta property="og:title" content="Cryptick" />
     <meta property="og:site_name" content="Cryptick" />
     <link rel="stylesheet" href="./base.css" />
-    <link rel="icon" href="logo.svg">
+    <link rel="icon" href="./logo.svg">
 </head>
-<body>
-<main class="gtc_main">
-    <h1 class="gtc_header">
-        Cryptick!
-    </h1>
-    <p class="gtc_p">Create a cryptic crossword clue and share it with people you know.</p>
+<body class="gtc_body">
+    <nav class="gtc_nav gtc_header">
+        <a class="gtc_link" href="https://cryptick.wildvale.co.uk"><h1>Crypt✔ck</h1></a>
+    </nav>
+    <main class="gtc_main">
+    <p class="gtc_p">Create a cryptic crossword clue.</p>
+    <p class="gtc_p">Share it with people you know.</p>
     <p class="gtc_p">
         No accounts.
         No personal data.
@@ -40,7 +41,7 @@
         window.location.hash && window.location.replace(`./clue.html${window.location.hash}`);
     </script>
 </main>
-<footer style="text-align: center">
+<footer class="gtc_footer">
     <a href="https://github.com/mrwilson/guess-the-clue">Open source</a> and made with <3 by <a href="https://www.wildvale.co.uk/">Wildvale</a>
 </footer>
 </body>

@@ -12,7 +12,7 @@
         <meta property="og:title" content="Cryptick" />
         <meta property="og:site_name" content="Cryptick" />
         <link rel="stylesheet" href="./base.css" />
-        <link rel="icon" href="logo.svg">
+        <link rel="icon" href="./logo.svg">
         <style>
             @keyframes grow-shrink {
                 50% {
@@ -93,6 +93,7 @@
                 grid-row: 2;
                 height: auto;
                 font-style: italic;
+                white-space: pre-wrap;
             }
 
             .gtc_header--hint--revealed {
@@ -101,7 +102,10 @@
             }
         </style>
     </head>
-    <body>
+    <body class="gtc_body">
+        <nav class="gtc_nav gtc_header">
+            <a class="gtc_link" href="https://cryptick.wildvale.co.uk"><h1>Crypt✔ck</h1></a>
+        </nav>
         <main class="gtc_main gtc_main__index">
             <h1 class="gtc_header" id="clue"></h1>
             <h4 class="gtc_header gtc_header--hint" id="hint"></h4>
@@ -166,5 +170,8 @@
                 miniClue.renderClue(clue);
             </script>
         </main>
+        <footer class="gtc_footer">
+            <a href="https://github.com/mrwilson/guess-the-clue">Open source</a> and made with <3 by <a href="https://www.wildvale.co.uk/">Wildvale</a>
+        </footer>
     </body>
 </html>

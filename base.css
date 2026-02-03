@@ -62,9 +62,17 @@ body {
     text-decoration: none;
 }
 
+.gtc_link:visited {
+    color: inherit;
+}
+
 .gtc_header {
     color: var(--colour-dark-green);
     text-align: center;
+}
+
+.gtc_header--large {
+    font-size: 5rem;
 }
 
 .gtc_input {
@@ -84,4 +92,30 @@ body {
 .gtc_p {
     text-align: center;
     padding-bottom: 1em;
+    font-size: x-large;
+}
+
+.gtc_body {
+    grid-template:
+            'header' 15%
+            'maker' auto
+            'footer' 15%
+            'keyboard' env(keyboard-inset-height, 0px);
+}
+
+.gtc_nav {
+    grid-row: 1;
+    text-align: left;
+    border-bottom: solid 2px black;
+    padding-left: 2em;
+    color: var(--colour-dark-green);
+}
+
+.gtc_main {
+    grid-row: 2;
+}
+
+.gtc_footer {
+    grid-row: 3;
+    text-align: center;
 }
