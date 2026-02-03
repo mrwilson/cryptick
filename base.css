@@ -22,9 +22,10 @@ body {
         Arial, sans-serif;
     display: grid;
     grid-template:
-        'header' 10%
+        'header' auto
         'main' 85%
-        'footer' 5%;
+        'footer' auto
+        'keyboard' env(keyboard-inset-height, 0px);
 }
 
 body > * {
@@ -35,7 +36,6 @@ header {
     grid-row: 1;
     height: 100%;
     text-align: left;
-    border-bottom: solid 2px black;
     padding-left: 2em;
     color: var(--colour-dark-green);
 
