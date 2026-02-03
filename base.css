@@ -20,6 +20,11 @@ body {
     font-family:
         -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
         Arial, sans-serif;
+    display: grid;
+    grid-template:
+        'header' 10%
+        'main' 85%
+        'footer' 5%;
 }
 
 body > * {
@@ -28,6 +33,7 @@ body > * {
 
 header {
     grid-row: 1;
+    height: 100%;
     text-align: left;
     border-bottom: solid 2px black;
     padding-left: 2em;
