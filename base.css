@@ -62,7 +62,7 @@ footer {
     font-size: clamp(1.1rem, 0.8rem + 5vw, 2.2rem);
 }
 
-.button {
+.pill {
     padding: 0.5em 0.75em;
     background: var(--colour-dark-green);
     color: white;
@@ -98,7 +98,7 @@ a {
     font-size: large;
 }
 
-.button_list {
+.list {
     display: flex;
     align-items: center;
     justify-content: center;

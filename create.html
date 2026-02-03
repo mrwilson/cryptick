@@ -47,13 +47,13 @@
                 text-align: left;
             }
 
-            .clue_maker:invalid + * > .button {
+            .clue_maker:invalid + * > .pill {
                 pointer-events: none;
                 background: var(--colour-grey);
                 cursor: not-allowed;
             }
 
-            .button_list {
+            .list {
                 grid-row: 2;
             }
         </style>
@@ -96,9 +96,9 @@
                     placeholder="'Nonsense' indicates an anagram of nearby letters"
                 ></textarea>
             </form>
-            <div class="button_list">
-                <button class="button" id="copy">Copy to clipboard</button>
-                <button class="button" id="open">Open in new tab</button>
+            <div class="list">
+                <button class="pill" id="copy">Copy to clipboard</button>
+                <button class="pill" id="open">Open in new tab</button>
             </div>
             <script type="module">
                 import { ClueEncoder } from './miniclue/encoder.js';
