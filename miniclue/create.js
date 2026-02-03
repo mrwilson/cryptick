@@ -1,6 +1,6 @@
 import { enumerate } from './utils.js';
 
-export class ClueEncoder {
+export class CreateCryptick {
     constructor(clue, answer, hint) {
         this.clue = clue;
         this.answer = answer;

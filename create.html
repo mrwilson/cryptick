@@ -97,16 +97,16 @@
                 <button class="pill" id="open">Open in new tab</button>
             </div>
             <script type="module">
-                import { ClueEncoder } from './miniclue/encoder.js';
+                import { CreateCryptick } from './miniclue/create.js';
 
-                let encoder = new ClueEncoder(
+                let create = new CreateCryptick(
                     document.getElementById('clue'),
                     document.getElementById('answer'),
                     document.getElementById('hint'),
                 );
 
                 document.getElementById('copy').onclick = (e) => {
-                    const copyText = encoder.copyText(
+                    const copyText = create.copyText(
                         window.location.origin + '/clue.html',
                     );
 
@@ -115,7 +115,7 @@
                 };
 
                 document.getElementById('open').onclick = (_) => {
-                    const url = encoder.fragment(
+                    const url = create.fragment(
                         window.location.origin + '/clue.html',
                     );
 

@@ -1,12 +1,12 @@
 import { assert, describe, it } from 'vitest';
 import { ClueDecoder } from '../miniclue/decoder.js';
-import { ClueEncoder } from '../miniclue/encoder.js';
+import { CreateCryptick } from '../miniclue/create.js';
 
 describe('ClueEncoder', () => {
     const decoder = new ClueDecoder({});
 
     it('can encode clues without hints', () => {
-        let encoder = new ClueEncoder(
+        let encoder = new CreateCryptick(
             { value: 'Incredible pupil' },
             { value: 'eye opening' },
             {},
@@ -19,7 +19,7 @@ describe('ClueEncoder', () => {
     });
 
     it('can encode clues with hints', () => {
-        let encoder = new ClueEncoder(
+        let encoder = new CreateCryptick(
             { value: 'Incredible pupil' },
             { value: 'eye opening' },
             { value: 'this is a hint' },
@@ -33,7 +33,7 @@ describe('ClueEncoder', () => {
     });
 
     it('can create copy text', () => {
-        let encoder = new ClueEncoder(
+        let encoder = new CreateCryptick(
             { value: 'Incredible pupil' },
             { value: 'eye opening' },
             {},
