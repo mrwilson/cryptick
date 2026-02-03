@@ -20,14 +20,25 @@ body {
     font-family:
         -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
         Arial, sans-serif;
-    grid-template:
-            'header' 15%
-            'maker' auto
-            'footer' 15%
-            'keyboard' env(keyboard-inset-height, 0px);
 }
 
-.main {
+body > * {
+    min-width: 0;
+}
+
+header {
+    grid-row: 1;
+    text-align: left;
+    border-bottom: solid 2px black;
+    padding-left: 2em;
+    color: var(--colour-dark-green);
+
+    a:visited {
+        color: inherit;
+    }
+}
+
+main {
     grid-row: 2;
 
     height: 80vh;
@@ -41,8 +52,10 @@ body {
     justify-content: stretch;
 }
 
-.main > * {
-    min-width: 0;
+footer {
+    grid-row: 3;
+    text-align: center;
+    justify-items: center;
 }
 
 #clue.header {
@@ -67,10 +80,6 @@ body {
 
 a {
     text-decoration: none;
-}
-
-.link:visited {
-    color: inherit;
 }
 
 .header {
@@ -100,17 +109,4 @@ a {
     text-align: center;
     padding-bottom: 1em;
     font-size: x-large;
-}
-
-.nav {
-    grid-row: 1;
-    text-align: left;
-    border-bottom: solid 2px black;
-    padding-left: 2em;
-    color: var(--colour-dark-green);
-}
-
-.footer {
-    grid-row: 3;
-    text-align: center;
 }
