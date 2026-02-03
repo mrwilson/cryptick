@@ -1,49 +1,49 @@
 export class ClueDecoder {
-  constructor(examples) {
-    this.examples = examples;
-  }
-
-  #decodeJson(input) {
-    let data = JSON.parse(input);
-
-    let clue = {
-      clue: data.c,
-      answer: data.a,
-    };
-
-    if (data.h) {
-      clue.hint = data.h;
+    constructor(examples) {
+        this.examples = examples;
     }
 
-    return clue;
-  }
+    #decodeJson(input) {
+        let data = JSON.parse(input);
 
-  #decodeString(input) {
-    let data = input.split("|");
+        let clue = {
+            clue: data.c,
+            answer: data.a,
+        };
 
-    let clue = {
-      clue: data[0],
-      answer: data[1],
-    };
+        if (data.h) {
+            clue.hint = data.h;
+        }
 
-    if (data.length === 3) {
-      clue.hint = data[2];
+        return clue;
     }
 
-    return clue;
-  }
+    #decodeString(input) {
+        let data = input.split('|');
 
-  decode(input) {
-    let hash = input.substring(1);
+        let clue = {
+            clue: data[0],
+            answer: data[1],
+        };
 
-    if (hash in this.examples) {
-      return this.examples[hash];
+        if (data.length === 3) {
+            clue.hint = data[2];
+        }
+
+        return clue;
     }
 
-    let data = atob(hash);
+    decode(input) {
+        let hash = input.substring(1);
 
-    return data.startsWith("{")
-      ? this.#decodeJson(data)
-      : this.#decodeString(data);
-  }
+        if (hash in this.examples) {
+            return this.examples[hash];
+        }
+
+        let data = atob(hash);
+
+        return data.startsWith('{')
+            ? this.#decodeJson(data)
+            : this.#decodeString(data);
+    }
 }
