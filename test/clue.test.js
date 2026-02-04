@@ -4,7 +4,14 @@ import { CryptickClue } from '../miniclue/clue.js';
 // @vitest-environment jsdom
 
 describe('MiniClue', () => {
-    let answer, clue, hint, revealLetter, revealWord, showHint, share;
+    let answer,
+        clue,
+        hint,
+        revealLetter,
+        revealWord,
+        showHint,
+        share,
+        cryptickClue;
 
     beforeEach(() => {
         answer = document.createElement('form');
@@ -15,7 +22,7 @@ describe('MiniClue', () => {
         showHint = document.createElement('button');
         share = document.createElement('button');
 
-        new CryptickClue(
+        cryptickClue = new CryptickClue(
             answer,
             clue,
             hint,
@@ -23,9 +30,12 @@ describe('MiniClue', () => {
             revealWord,
             showHint,
             share,
-        ).renderClue({
+        );
+
+        cryptickClue.renderClue({
             clue: 'What time is it?',
             answer: 'aaaaaa',
+            hint: 'this is a hint',
         });
     });
 
@@ -43,6 +53,30 @@ describe('MiniClue', () => {
         assert.equal(answerValue(), '');
         revealWord.click();
         assert.equal(answerValue(), 'AAAAAA');
+    });
+
+    it('can display hint', () => {
+        assert.isFalse(hint.classList.contains('header--hint--revealed'));
+        showHint.click();
+        assert.isTrue(hint.classList.contains('header--hint--revealed'));
+    });
+
+    it('can copy share message to clipboard', () => {
+        let output = '';
+
+        let clipboard = {
+            writeText: function (text) {
+                output = text;
+                return new Promise(() => text);
+            },
+        };
+
+        cryptickClue.shareMessage('https://example.com', clipboard);
+
+        assert.equal(
+            'I solved a clue on Cryptick!\n\nWhat time is it? (6)\n\nhttps://example.com',
+            output,
+        );
     });
 
     function answerValue() {
