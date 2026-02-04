@@ -1,24 +1,24 @@
 {
-  "name": "guess-the-clue",
+  "name": "cryptick",
   "version": "0.0.0",
-  "description": "Guess the cryptic clue!",
+  "description": "Create a cryptic crossword clue and share it with people you know",
   "keywords": [
     "crossword"
   ],
-  "homepage": "https://github.com/mrwilson/guess-the-clue#readme",
+  "homepage": "https://github.com/mrwilson/cryptick#readme",
   "bugs": {
-    "url": "https://github.com/mrwilson/guess-the-clue/issues"
+    "url": "https://github.com/mrwilson/cryptick/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:mrwilson/guess-the-clue.git"
+    "url": "git@github.com:mrwilson/cryptick.git"
   },
   "license": "MIT",
   "author": "Alex Wilson ",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "npx vitest run"
+    "test": "npx vitest run --reporter=tree"
   },
   "devDependencies": {
     "jsdom": "^27.4.0",
