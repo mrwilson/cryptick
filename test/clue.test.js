@@ -56,9 +56,9 @@ describe('MiniClue', () => {
     });
 
     it('can display hint', () => {
-        assert.isFalse(hint.classList.contains('header--hint--revealed'));
+        assert.isFalse(hint.classList.contains('hint--revealed'));
         showHint.click();
-        assert.isTrue(hint.classList.contains('header--hint--revealed'));
+        assert.isTrue(hint.classList.contains('hint--revealed'));
     });
 
     it('can copy share message to clipboard', () => {
