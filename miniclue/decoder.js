@@ -1,3 +1,5 @@
+import { CryptickError } from './errors.js';
+
 export class ClueDecoder {
     constructor(examples) {
         this.examples = examples;
@@ -34,6 +36,10 @@ export class ClueDecoder {
     }
 
     decode(input) {
+        if (!input || input.length < 2 || input[0] !== '#') {
+            throw new CryptickError();
+        }
+
         let hash = input.substring(1);
 
         if (hash in this.examples) {
