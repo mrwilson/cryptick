@@ -24,7 +24,7 @@ jobs:
             --include "base.css" \
             --include "*.html" \
             --include "miniclue/*.js" \
-            --include "logo.svg" \
+            --include "*.svg" \
             --include "manifest.json" \
             --delete \
             --acl public-read \
