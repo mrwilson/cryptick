@@ -1,5 +1,6 @@
 import { assert, describe, it } from 'vitest';
 import { ClueDecoder } from '../miniclue/decoder.js';
+import { CryptickError } from '../miniclue/errors.js';
 
 describe('ClueDecoder', () => {
     const decoder = new ClueDecoder({
@@ -34,5 +35,21 @@ describe('ClueDecoder', () => {
             clue: 'example_clue',
             answer: 'example_answer',
         });
+    });
+
+    it('throws error if input is undefined', () => {
+        assert.throws(() => decoder.decode(), CryptickError);
+    });
+
+    it('throws error if input is empty', () => {
+        assert.throws(() => decoder.decode(''), CryptickError);
+    });
+
+    it('throws error if input has a single character', () => {
+        assert.throws(() => decoder.decode('a'), CryptickError);
+    });
+
+    it('throws error if input has two non-hash characters', () => {
+        assert.throws(() => decoder.decode('ab'), CryptickError);
     });
 });
