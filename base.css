@@ -28,26 +28,26 @@ body > * {
 }
 
 header {
+    display: inline-flex;
+    align-items: center;
     grid-row: 1;
     height: 100%;
     text-align: left;
     padding-left: 2em;
     color: var(--colour-active);
 
-    a, a:visited {
+    a,
+    a:visited {
         color: inherit;
     }
 }
 
 .tick {
-    border: solid var(--colour-active) 2px;
-    background-color: white;
-    display: inline-flex;
-    height: 1em;
-    width: 1em;
-    align-items: center;
-    justify-content: center;
-    color: var(--colour-accent);
+    display: inherit;
+    height: 4em;
+    width: 4em;
+    background: url('/logo.svg');
+    background-size: 4em 4em;
 }
 
 main {
