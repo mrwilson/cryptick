@@ -18,7 +18,8 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "npx vitest run --reporter=tree"
+    "test": "npx vitest run --reporter=tree",
+    "lint": "npx prettier --check *.html *.css manifest.json **/*.js"
   },
   "devDependencies": {
     "jsdom": "^27.4.0",
