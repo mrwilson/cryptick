@@ -30,6 +30,10 @@ export class CryptickClue {
 
         this.clue.textContent = `${params.clue} (${enumerate(params.answer)})`;
 
+        if (params.explanation) {
+            this.explanation.textContent = params.explanation;
+        }
+
         words
             .map((x) => this.#createWord(x))
             .forEach((l) => this.answer.appendChild(l));

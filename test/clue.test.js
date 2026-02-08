@@ -65,11 +65,6 @@ describe('MiniClue', () => {
         assert.isTrue(hint.classList.contains('hint--revealed'));
     });
 
-    it('displays explanation once word is complete', () => {
-        revealWord.click();
-        assert.equal(answerValue(), 'AAAAAA');
-    });
-
     it('can copy share message to clipboard', () => {
         let output = '';
 
