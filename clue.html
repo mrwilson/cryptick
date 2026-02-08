@@ -98,8 +98,20 @@
                 display: none;
             }
 
-            .hint:empty + .answer + .list > .pill#show-hint {
+            .hint:empty + .explanation + .answer + .list > .pill#show-hint {
                 display: none;
+            }
+
+            .explanation {
+                opacity: 0;
+                grid-row: 3;
+                height: auto;
+                font-style: italic;
+                white-space: pre-wrap;
+            }
+
+            .explanation:has(~ .answer:valid) {
+                opacity: 1;
             }
 
             .hint {
@@ -115,7 +127,7 @@
                 animation-fill-mode: forwards;
             }
 
-            .hint--revealed + .answer + .list > .pill#show-hint {
+            .hint--revealed + .explanation + .answer + .list > .pill#show-hint {
                 pointer-events: none;
                 background: var(--colour-inactive);
                 cursor: not-allowed;
@@ -130,7 +142,7 @@
         <main>
             <h1 class="header" id="clue"></h1>
             <h4 class="header hint" id="hint"></h4>
-            <h4 class="header explanation hidden" id="explanation"></h4>
+            <h4 class="header explanation" id="explanation"></h4>
             <form class="answer" id="answer" target="_blank"></form>
             <div class="list">
                 <button class="pill" id="show-hint">Show hint</button>

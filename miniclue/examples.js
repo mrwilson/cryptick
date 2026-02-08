@@ -7,9 +7,11 @@ export default {
         clue: 'Slam nonsense tales',
         answer: 'slate',
         hint: "'Nonsense' indicates an anagram of nearby letters",
+        explanation: 'TALES*',
     },
     sister: {
         clue: "Sister's OnlyFans cameo is a drag",
         answer: 'no fun',
+        explanation: 'NUN cont OF',
     },
 };

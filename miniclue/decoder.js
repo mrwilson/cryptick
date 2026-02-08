@@ -32,7 +32,7 @@ export class ClueDecoder {
             answer: data[1],
         };
 
-        if (data.length === 3 && data[2]) {
+        if (data.length >= 3 && data[2]) {
             clue.hint = data[2];
         }
 
