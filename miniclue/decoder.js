@@ -17,6 +17,10 @@ export class ClueDecoder {
             clue.hint = data.h;
         }
 
+        if (data.e) {
+            clue.explanation = data.e;
+        }
+
         return clue;
     }
 
@@ -28,8 +32,12 @@ export class ClueDecoder {
             answer: data[1],
         };
 
-        if (data.length === 3) {
+        if (data.length === 3 && data[2]) {
             clue.hint = data[2];
+        }
+
+        if (data.length === 4 && data[3]) {
+            clue.explanation = data[3];
         }
 
         return clue;
