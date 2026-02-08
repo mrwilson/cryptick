@@ -41,7 +41,11 @@
 
             main {
                 grid-template:
-                    'clue' auto 'hint' 10% 'answer' 40% 'reveal' 10%
+                    'clue' auto
+                    'hint' 10%
+                    'explanation' 10%
+                    'answer' 40%
+                    'reveal' 10%
                     'keyboard' env(keyboard-inset-height, 0px);
             }
 
@@ -126,6 +130,7 @@
         <main>
             <h1 class="header" id="clue"></h1>
             <h4 class="header hint" id="hint"></h4>
+            <h4 class="header explanation hidden" id="explanation"></h4>
             <form class="answer" id="answer" target="_blank"></form>
             <div class="list">
                 <button class="pill" id="show-hint">Show hint</button>
@@ -147,6 +152,7 @@
                     document.getElementById('answer'),
                     document.getElementById('clue'),
                     document.getElementById('hint'),
+                    document.getElementById('explanation'),
                     document.getElementById('reveal-letter'),
                     document.getElementById('reveal-all'),
                     document.getElementById('show-hint'),

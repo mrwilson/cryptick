@@ -7,6 +7,7 @@ describe('MiniClue', () => {
     let answer,
         clue,
         hint,
+        explanation,
         revealLetter,
         revealWord,
         showHint,
@@ -17,6 +18,7 @@ describe('MiniClue', () => {
         answer = document.createElement('form');
         clue = document.createElement('h1');
         hint = document.createElement('h4');
+        explanation = document.createElement('h4');
         revealLetter = document.createElement('button');
         revealWord = document.createElement('button');
         showHint = document.createElement('button');
@@ -26,6 +28,7 @@ describe('MiniClue', () => {
             answer,
             clue,
             hint,
+            explanation,
             revealLetter,
             revealWord,
             showHint,
@@ -36,6 +39,7 @@ describe('MiniClue', () => {
             clue: 'What time is it?',
             answer: 'aaaaaa',
             hint: 'this is a hint',
+            explanation: 'this is an explanation',
         });
     });
 
@@ -59,6 +63,11 @@ describe('MiniClue', () => {
         assert.isFalse(hint.classList.contains('hint--revealed'));
         showHint.click();
         assert.isTrue(hint.classList.contains('hint--revealed'));
+    });
+
+    it('displays explanation once word is complete', () => {
+        revealWord.click();
+        assert.equal(answerValue(), 'AAAAAA');
     });
 
     it('can copy share message to clipboard', () => {

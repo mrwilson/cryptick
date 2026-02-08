@@ -1,10 +1,20 @@
 import { enumerate } from './utils.js';
 
 export class CryptickClue {
-    constructor(answer, clue, hint, revealLetter, revealWord, showHint, share) {
+    constructor(
+        answer,
+        clue,
+        hint,
+        explanation,
+        revealLetter,
+        revealWord,
+        showHint,
+        share,
+    ) {
         this.answer = answer;
         this.clue = clue;
         this.hint = hint;
+        this.explanation = explanation;
         this.revealLetter = revealLetter;
         this.revealWord = revealWord;
         this.showHint = showHint;
