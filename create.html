@@ -31,7 +31,7 @@
             .clue_maker {
                 display: inline-grid;
                 grid-row: 1;
-                row-gap: 1em;
+                row-gap: 0.5em;
             }
 
             .clue_maker__input {
@@ -73,7 +73,7 @@
                     placeholder="Slam nonsense tales"
                     required
                     minlength="1"
-                    rows="4"
+                    rows="3"
                 ></textarea>
                 <label class="clue_maker__label" for="answer">Answer</label>
                 <input
@@ -93,7 +93,17 @@
                     id="hint"
                     name="hint"
                     placeholder="'Nonsense' indicates an anagram of nearby letters"
-                    rows="3"
+                    rows="2"
+                ></textarea>
+                <label class="clue_maker__label" for="explanation"
+                    >Explanation (Optional)</label
+                >
+                <textarea
+                    class="input clue_maker__input"
+                    id="explanation"
+                    name="explanation"
+                    placeholder="SLATE*"
+                    rows="1"
                 ></textarea>
             </form>
             <div class="list">
@@ -107,9 +117,8 @@
                     document.getElementById('clue'),
                     document.getElementById('answer'),
                     document.getElementById('hint'),
+                    document.getElementById('explanation'),
                 );
-
-                document.getElementById('answer').valid;
 
                 document.getElementById('copy').onclick = (e) => {
                     const copyText = create.copyText(

@@ -1,18 +1,15 @@
 import { enumerate } from './utils.js';
 
 export class CreateCryptick {
-    constructor(clue, answer, hint) {
+    constructor(clue, answer, hint, explanation) {
         this.clue = clue;
         this.answer = answer;
         this.hint = hint;
+        this.explanation = explanation;
     }
 
     fragment(baseUrl) {
-        let clueString = `${this.clue.value}|${this.answer.value}`;
-
-        if (this.hint.value) {
-            clueString = `${clueString}|${this.hint.value}`;
-        }
+        let clueString = `${this.clue.value}|${this.answer.value}|${this.hint.value || ''}|${this.explanation.value || ''}`;
 
         return `${baseUrl}#${btoa(clueString)}`;
     }

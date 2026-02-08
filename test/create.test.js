@@ -10,6 +10,7 @@ describe('ClueEncoder', () => {
             { value: 'Incredible pupil' },
             { value: 'eye opening' },
             {},
+            {},
         );
 
         assert.deepEqual(decoder.decode(encoder.fragment('')), {
@@ -23,6 +24,7 @@ describe('ClueEncoder', () => {
             { value: 'Incredible pupil' },
             { value: 'eye opening' },
             { value: 'this is a hint' },
+            {},
         );
 
         assert.deepEqual(decoder.decode(encoder.fragment('')), {
@@ -32,16 +34,32 @@ describe('ClueEncoder', () => {
         });
     });
 
+    it('can encode clues with explanations', () => {
+        let encoder = new CreateCryptick(
+            { value: 'Incredible pupil' },
+            { value: 'eye opening' },
+            {},
+            { value: 'this is an explanation' },
+        );
+
+        assert.deepEqual(decoder.decode(encoder.fragment('')), {
+            clue: 'Incredible pupil',
+            answer: 'eye opening',
+            explanation: 'this is an explanation',
+        });
+    });
+
     it('can create copy text', () => {
         let encoder = new CreateCryptick(
             { value: 'Incredible pupil' },
             { value: 'eye opening' },
             {},
+            {},
         );
 
         const clue = 'Incredible pupil (3,7)';
         const url =
-            'https://example.com/#SW5jcmVkaWJsZSBwdXBpbHxleWUgb3BlbmluZw==';
+            'https://example.com/#SW5jcmVkaWJsZSBwdXBpbHxleWUgb3BlbmluZ3x8';
 
         assert.equal(
             encoder.copyText('https://example.com/'),
