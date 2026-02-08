@@ -19,12 +19,56 @@ describe('ClueDecoder', () => {
         });
     });
 
+    it('can decode json-based clues from hash fragment with hint', () => {
+        let input =
+            '#eyJjIjoiSW5jcmVkaWJsZSBwdXBpbCIsImEiOiJleWUgb3BlbmluZyIsImgiOiJUaGlzIGlzIGEgZG91YmxlIGRlZmluaXRpb24ifQ==';
+
+        assert.deepEqual(decoder.decode(input), {
+            clue: 'Incredible pupil',
+            answer: 'eye opening',
+            hint: 'This is a double definition',
+        });
+    });
+
+    it('can decode json-based clues from hash fragment with explanation', () => {
+        let input =
+            '#eyJjIjoiSW5jcmVkaWJsZSBwdXBpbCIsImEiOiJleWUgb3BlbmluZyIsImUiOiJJbmNyZWRpYmxlIGlzIGEgc3lub255bSBmb3IgZXllIG9wZW5pbmcsIGFuZCBhIHB1cGlsIGlzIHRoZSBvcGVuaW5nIGluIHRoZSBleWUifQ==';
+        assert.deepEqual(decoder.decode(input), {
+            clue: 'Incredible pupil',
+            answer: 'eye opening',
+            explanation:
+                'Incredible is a synonym for eye opening, and a pupil is the opening in the eye',
+        });
+    });
+
     it('can decode string-based clues from hash fragment', () => {
         let input = '#SW5jcmVkaWJsZSBwdXBpbHxleWUgb3BlbmluZw';
 
         assert.deepEqual(decoder.decode(input), {
             clue: 'Incredible pupil',
             answer: 'eye opening',
+        });
+    });
+
+    it('can decode string-based clues from hash fragment with hint', () => {
+        let input =
+            '#SW5jcmVkaWJsZSBwdXBpbHxleWUgb3BlbmluZ3xUaGlzIGlzIGEgZG91YmxlIGRlZmluaXRpb24';
+
+        assert.deepEqual(decoder.decode(input), {
+            clue: 'Incredible pupil',
+            answer: 'eye opening',
+            hint: 'This is a double definition',
+        });
+    });
+
+    it('can decode json-based clues from hash fragment with explanation', () => {
+        let input =
+            '#SW5jcmVkaWJsZSBwdXBpbHxleWUgb3BlbmluZ3x8SW5jcmVkaWJsZSBpcyBhIHN5bm9ueW0gZm9yIGV5ZSBvcGVuaW5nLCBhbmQgYSBwdXBpbCBpcyB0aGUgb3BlbmluZyBpbiB0aGUgZXll';
+        assert.deepEqual(decoder.decode(input), {
+            clue: 'Incredible pupil',
+            answer: 'eye opening',
+            explanation:
+                'Incredible is a synonym for eye opening, and a pupil is the opening in the eye',
         });
     });
 
