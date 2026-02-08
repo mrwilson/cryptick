@@ -31,7 +31,7 @@ export class CryptickClue {
         this.clue.textContent = `${params.clue} (${enumerate(params.answer)})`;
 
         if (params.explanation) {
-            this.explanation.textContent = params.explanation;
+            this.explanation.textContent = `EXPLANATION: ${params.explanation}`;
         }
 
         words
@@ -62,7 +62,7 @@ export class CryptickClue {
             letter.classList.add('answer__word__letter--revealed');
         };
 
-        this.hint.textContent = params.hint;
+        this.hint.textContent = `HINT: ${params.hint}`;
 
         this.showHint.onclick = (_) => {
             this.hint.classList.add('hint--revealed');
