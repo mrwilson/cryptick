@@ -19,7 +19,6 @@ body {
     grid-template:
         'header' auto
         'main' 85%
-        'footer' auto
         'keyboard' env(keyboard-inset-height, 0px);
 }
 
