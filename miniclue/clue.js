@@ -34,6 +34,10 @@ export class CryptickClue {
             this.explanation.textContent = `EXPLANATION: ${params.explanation}`;
         }
 
+        if (params.hint) {
+            this.hint.textContent = `HINT: ${params.hint}`;
+        }
+
         words
             .map((x) => this.#createWord(x))
             .forEach((l) => this.answer.appendChild(l));
@@ -61,8 +65,6 @@ export class CryptickClue {
             letter.readOnly = true;
             letter.classList.add('answer__word__letter--revealed');
         };
-
-        this.hint.textContent = `HINT: ${params.hint}`;
 
         this.showHint.onclick = (_) => {
             this.hint.classList.add('hint--revealed');

@@ -1,5 +1,6 @@
 import { assert, describe, it, beforeEach } from 'vitest';
 import { CryptickClue } from '../miniclue/clue.js';
+import { FULL_PAYLOAD, NO_EXPLANATION, NO_HINT } from './test-examples.js';
 
 // @vitest-environment jsdom
 
@@ -34,38 +35,46 @@ describe('MiniClue', () => {
             showHint,
             share,
         );
-
-        cryptickClue.renderClue({
-            clue: 'What time is it?',
-            answer: 'aaaaaa',
-            hint: 'this is a hint',
-            explanation: 'this is an explanation',
-        });
     });
 
     it('can render a clue', () => {
+        cryptickClue.renderClue(FULL_PAYLOAD);
         assert.equal(clue.textContent, 'What time is it? (6)');
     });
 
     it('can reveal single letter', () => {
+        cryptickClue.renderClue(FULL_PAYLOAD);
         assert.equal(answerValue(), '');
         revealLetter.click();
         assert.equal(answerValue(), 'A');
     });
 
     it('can reveal whole word', () => {
+        cryptickClue.renderClue(FULL_PAYLOAD);
         assert.equal(answerValue(), '');
         revealWord.click();
         assert.equal(answerValue(), 'AAAAAA');
     });
 
     it('can display hint', () => {
+        cryptickClue.renderClue(FULL_PAYLOAD);
         assert.isFalse(hint.classList.contains('hint--revealed'));
         showHint.click();
         assert.isTrue(hint.classList.contains('hint--revealed'));
     });
 
+    it('does not fill out hint if not present', () => {
+        cryptickClue.renderClue(NO_HINT);
+        assert.isEmpty(hint.textContent);
+    });
+
+    it('does not fill out explanation if not present', () => {
+        cryptickClue.renderClue(NO_EXPLANATION);
+        assert.isEmpty(explanation.textContent);
+    });
+
     it('can copy share message to clipboard', () => {
+        cryptickClue.renderClue(FULL_PAYLOAD);
         let output = '';
 
         let clipboard = {
