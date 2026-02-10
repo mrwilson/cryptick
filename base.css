@@ -30,7 +30,7 @@ header {
     grid-row: 1;
     height: 100%;
     text-align: left;
-    padding-left: 2em;
+    padding: 0em 2em;
     color: var(--colour-active);
 
     a,
@@ -45,6 +45,17 @@ header {
     width: 4em;
     background: url('/logo.svg');
     background-size: 4em 4em;
+}
+
+.about {
+    margin-left: auto;
+    margin-right: 0;
+    width: 1em;
+    height: 1em;
+    border: solid var(--colour-active) 2px;
+    line-height: 1em;
+    border-radius: 50%;
+    font-weight: bold;
 }
 
 main {

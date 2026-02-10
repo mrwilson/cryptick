@@ -21,12 +21,8 @@
         <link rel="stylesheet" href="./base.css" />
         <link rel="icon" href="./logo.svg" />
         <style>
-            svg text {
-                fill: red;
-            }
-
-            .content {
-                text-align: left;
+            ul li {
+                padding: 1em 0em;
             }
         </style>
     </head>
@@ -37,21 +33,17 @@
             <span class="about header"><a href="/about.html">?</a></span>
         </header>
         <main>
-            <h2 class="header">There was a problem!</h2>
-            <p>
-                <img
-                    src="./error.svg"
-                    alt="A green box with a red cross within, indicating a mistake."
-                />
-            </p>
-            <p class="content" id="error">
-                You appear to have encountered an error while using Cryptick,
-                sorry about that!
-            </p>
-            <p class="content" id="description">
-                Please report issues, and steps to reproduce if possible, on
-                <a href="https://github.com/mrwilson/cryptick/issues">GitHub</a>
-            </p>
+            <h2 class="header">The Design Philosophy of Cryptick</h2>
+            <ul>
+                <li>No sessions or cookies</li>
+                <li>No analytics</li>
+                <li>No user accounts</li>
+                <li>No heavy framework; standard HTML, JS, CSS</li>
+                <li>
+                    Source code on
+                    <a href="https://github.com/mrwilson/cryptick">GitHub</a>
+                </li>
+            </ul>
         </main>
     </body>
 </html>
