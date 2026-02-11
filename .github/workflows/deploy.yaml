@@ -24,8 +24,10 @@ jobs:
             --include "base.css" \
             --include "*.html" \
             --include "miniclue/*.js" \
+            --include ".well-known/*.json" \
             --include "*.svg" \
             --include "manifest.json" \
+            --include "robots.txt" \
             --delete \
             --acl public-read \
             --cache-control max-age=3600

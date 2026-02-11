@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /error.html
+Disallow: /clue.html
