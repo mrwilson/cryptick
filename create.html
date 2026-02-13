@@ -108,8 +108,9 @@
                 ></textarea>
             </form>
             <div class="list">
-                <button class="pill" id="copy">Copy to clipboard</button>
-                <button class="pill" id="open">Open in new tab</button>
+                <button class="pill" id="copy">Copy</button>
+                <button class="pill" id="share">Share</button>
+                <button class="pill" id="open">Open</button>
             </div>
             <script type="module">
                 import { CreateCryptick } from './miniclue/create.js';
@@ -128,6 +129,14 @@
 
                     navigator.clipboard.writeText(copyText);
                     e.target.textContent = 'Copied!';
+                };
+
+                document.getElementById('share').onclick = async (_) => {
+                    const shareData = create.shareData(
+                        window.location.origin + '/clue.html',
+                    );
+
+                    await navigator.share(shareData);
                 };
 
                 document.getElementById('open').onclick = (_) => {

@@ -66,4 +66,19 @@ describe('ClueEncoder', () => {
             `${clue}\n\n${url}\n\nSolve it, and create your own!`,
         );
     });
+
+    it('can create share data', () => {
+        let encoder = new CreateCryptick(
+            { value: 'Incredible pupil' },
+            { value: 'eye opening' },
+            {},
+            {},
+        );
+
+        assert.deepEqual(encoder.shareData('https://example.com/'), {
+            title: 'Cryptick',
+            text: 'Incredible pupil (3,7)\n\n',
+            url: 'https://example.com/#SW5jcmVkaWJsZSBwdXBpbHxleWUgb3BlbmluZ3x8',
+        });
+    });
 });

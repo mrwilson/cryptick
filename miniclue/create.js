@@ -21,4 +21,12 @@ export class CreateCryptick {
             'Solve it, and create your own!',
         ].join('\n\n');
     }
+
+    shareData(baseUrl) {
+        return {
+            title: 'Cryptick',
+            text: `${this.clue.value} (${enumerate(this.answer.value)})\n\n`,
+            url: this.fragment(baseUrl),
+        };
+    }
 }
