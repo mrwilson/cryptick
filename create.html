@@ -122,30 +122,36 @@
                     document.getElementById('explanation'),
                 );
 
-                document.getElementById('copy').onclick = (e) => {
-                    const copyText = create.copyText(
-                        window.location.origin + '/clue.html',
-                    );
+                document
+                    .getElementById('copy')
+                    .addEventListener('click', (e) => {
+                        const copyText = create.copyText(
+                            window.location.origin + '/clue.html',
+                        );
 
-                    navigator.clipboard.writeText(copyText);
-                    e.target.textContent = 'Copied!';
-                };
+                        navigator.clipboard.writeText(copyText);
+                        e.target.textContent = 'Copied!';
+                    });
 
-                document.getElementById('share').onclick = async (_) => {
-                    const shareData = create.shareData(
-                        window.location.origin + '/clue.html',
-                    );
+                document
+                    .getElementById('share')
+                    .addEventListener('click', async () => {
+                        const shareData = create.shareData(
+                            window.location.origin + '/clue.html',
+                        );
 
-                    await navigator.share(shareData);
-                };
+                        await navigator.share(shareData);
+                    });
 
-                document.getElementById('open').onclick = (_) => {
-                    const url = create.fragment(
-                        window.location.origin + '/clue.html',
-                    );
+                document
+                    .getElementById('open')
+                    .addEventListener('click', () => {
+                        const url = create.fragment(
+                            window.location.origin + '/clue.html',
+                        );
 
-                    window.open(url).focus();
-                };
+                        window.open(url).focus();
+                    });
             </script>
         </main>
     </body>
