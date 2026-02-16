@@ -21,6 +21,7 @@
         <link rel="icon" href="./logo.svg" />
         <script type="module">
             import ErrorHandler from './miniclue/errors.js';
+
             new ErrorHandler().bind(window);
         </script>
         <style>
@@ -146,11 +147,7 @@
                 document
                     .getElementById('open')
                     .addEventListener('click', () => {
-                        const url = create.fragment(
-                            window.location.origin + '/clue.html',
-                        );
-
-                        window.open(url).focus();
+                        window.open(create.fragment('/clue.html')).focus();
                     });
             </script>
         </main>
