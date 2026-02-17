@@ -20,7 +20,8 @@
     "scripts": {
         "test": "npx vitest run --reporter=tree",
         "lint": "npx prettier --check src/",
-        "serve": "npx http-server -c-1 src/"
+        "serve": "npx http-server -c-1 src/",
+        "build": "node metalsmith.js"
     },
     "devDependencies": {
         "http-server": "^14.1.1",
