@@ -1,6 +1,6 @@
 import { assert, describe, it } from 'vitest';
-import { ClueDecoder } from '../miniclue/decoder.js';
-import { CreateCryptick } from '../miniclue/create.js';
+import { ClueDecoder } from '../src/miniclue/decoder.js';
+import { CreateCryptick } from '../src/miniclue/create.js';
 
 describe('ClueEncoder', () => {
     const decoder = new ClueDecoder({});

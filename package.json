@@ -19,8 +19,8 @@
     "main": "index.js",
     "scripts": {
         "test": "npx vitest run --reporter=tree",
-        "lint": "npx prettier --check *.html *.css manifest.json **/*.js",
-        "serve": "npx http-server -c-1"
+        "lint": "npx prettier --check src/",
+        "serve": "npx http-server -c-1 src/"
     },
     "devDependencies": {
         "http-server": "^14.1.1",
