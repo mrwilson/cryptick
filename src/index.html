@@ -1,58 +1,17 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <title>Cryptick</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        <meta name="keywords" content="cryptic, crossword, clues" />
-        <meta
-            name="description"
-            content="Create a cryptic crossword clue and share it with people you know."
-        />
-        <meta property="og:title" content="Cryptick" />
-        <meta property="og:site_name" content="Cryptick" />
-        <meta property="og:image" content="./logo.svg" />
-        <meta property="og:image:height" content="1200" />
-        <meta property="og:image:width" content="1200" />
-        <link rel="manifest" href="./manifest.json" />
-        <link rel="stylesheet" href="./base.css" />
-        <link rel="icon" href="./logo.svg" />
-        <script type="module">
-            import ErrorHandler from './miniclue/errors.js';
-            new ErrorHandler().bind(window);
-        </script>
-    </head>
-    <body>
-        <header>
-            <a href="./"><h1>Cryptick</h1></a>
-            <span class="tick"></span>
-            <span class="about header"><a href="/about.html">?</a></span>
-        </header>
-        <main>
-            <p>Create a cryptic crossword clue.</p>
-            <p>Share it with people you know.</p>
-            <p>No accounts. No personal data. No cookies.</p>
-            <noscript>
-                <p>
-                    Unfortunately, as this site is browser-based, we do require
-                    Javascript to be enabled.
-                </p>
-            </noscript>
-            <div class="list">
-                <a class="pill pill--big" href="./create.html">
-                    Create a clue
-                </a>
-            </div>
+<p>Create a cryptic crossword clue.</p>
+<p>Share it with people you know.</p>
+<p>No accounts. No personal data. No cookies.</p>
+<noscript>
+    <p>
+        Unfortunately, as this site is browser-based, we do require Javascript
+        to be enabled.
+    </p>
+</noscript>
+<div class="list">
+    <a class="pill pill--big" href="./create.html"> Create a clue </a>
+</div>
 
-            <script>
-                window.location.hash &&
-                    window.location.replace(
-                        `./clue.html${window.location.hash}`,
-                    );
-            </script>
-        </main>
-    </body>
-</html>
+<script>
+    window.location.hash &&
+        window.location.replace(`./clue.html${window.location.hash}`);
+</script>
