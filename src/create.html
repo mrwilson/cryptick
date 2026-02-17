@@ -1,155 +1,108 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <title>Create a cryptic clue</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        <meta name="keywords" content="cryptic, crossword, clues" />
-        <meta
-            name="description"
-            content="Create a cryptic crossword clue and share it with people you know."
-        />
-        <meta property="og:title" content="Cryptick" />
-        <meta property="og:site_name" content="Cryptick" />
-        <meta property="og:image" content="./logo.svg" />
-        <meta property="og:image:height" content="1200" />
-        <meta property="og:image:width" content="1200" />
-        <link rel="stylesheet" href="./base.css" />
-        <link rel="icon" href="./logo.svg" />
-        <script type="module">
-            import ErrorHandler from './miniclue/errors.js';
+<style>
+    main {
+        grid-template: 'maker' auto 'copy' 15%;
+    }
 
-            new ErrorHandler().bind(window);
-        </script>
-        <style>
-            main {
-                grid-template: 'maker' auto 'copy' 15%;
-            }
+    .clue_maker {
+        display: inline-grid;
+        grid-row: 1;
+        row-gap: 0.5em;
+    }
 
-            .clue_maker {
-                display: inline-grid;
-                grid-row: 1;
-                row-gap: 0.5em;
-            }
+    .clue_maker__input {
+        border: none;
+        border-radius: 5px;
+    }
 
-            .clue_maker__input {
-                border: none;
-                border-radius: 5px;
-            }
+    .clue_maker__input--answer {
+        text-transform: uppercase;
+    }
 
-            .clue_maker__input--answer {
-                text-transform: uppercase;
-            }
+    .clue_maker__label {
+        text-align: left;
+        color: var(--colour-active);
+    }
 
-            .clue_maker__label {
-                text-align: left;
-                color: var(--colour-active);
-            }
+    .clue_maker:invalid + .list > .pill {
+        pointer-events: none;
+        background: var(--colour-inactive);
+    }
 
-            .clue_maker:invalid + .list > .pill {
-                pointer-events: none;
-                background: var(--colour-inactive);
-            }
+    .list {
+        grid-row: 2;
+    }
+</style>
+<form class="clue_maker" autocomplete="off">
+    <label class="clue_maker__label" for="clue">Clue</label>
+    <textarea
+        class="input clue_maker__input input--clue"
+        id="clue"
+        name="clue"
+        placeholder="Slam nonsense tales"
+        required
+        minlength="1"
+        rows="3"
+    ></textarea>
+    <label class="clue_maker__label" for="answer">Answer</label>
+    <input
+        class="input clue_maker__input clue_maker__input--answer"
+        id="answer"
+        name="answer"
+        placeholder="SLATE"
+        required
+        minlength="1"
+        maxlength="20"
+    />
+    <label class="clue_maker__label" for="hint">Hint (Optional)</label>
+    <textarea
+        class="input clue_maker__input"
+        id="hint"
+        name="hint"
+        placeholder="'Nonsense' indicates an anagram of nearby letters"
+        rows="2"
+    ></textarea>
+    <label class="clue_maker__label" for="explanation"
+        >Explanation (Optional)</label
+    >
+    <textarea
+        class="input clue_maker__input"
+        id="explanation"
+        name="explanation"
+        placeholder="SLATE*"
+        rows="1"
+    ></textarea>
+</form>
+<div class="list">
+    <button class="pill" id="copy">Copy</button>
+    <button class="pill" id="share">Share</button>
+    <button class="pill" id="open">Open</button>
+</div>
+<script type="module">
+    import { CreateCryptick } from './miniclue/create.js';
 
-            .list {
-                grid-row: 2;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <a href="./"><h1>Cryptick</h1></a>
-            <span class="tick"></span>
-            <span class="about header"><a href="/about.html">?</a></span>
-        </header>
-        <main>
-            <form class="clue_maker" autocomplete="off">
-                <label class="clue_maker__label" for="clue">Clue</label>
-                <textarea
-                    class="input clue_maker__input input--clue"
-                    id="clue"
-                    name="clue"
-                    placeholder="Slam nonsense tales"
-                    required
-                    minlength="1"
-                    rows="3"
-                ></textarea>
-                <label class="clue_maker__label" for="answer">Answer</label>
-                <input
-                    class="input clue_maker__input clue_maker__input--answer"
-                    id="answer"
-                    name="answer"
-                    placeholder="SLATE"
-                    required
-                    minlength="1"
-                    maxlength="20"
-                />
-                <label class="clue_maker__label" for="hint"
-                    >Hint (Optional)</label
-                >
-                <textarea
-                    class="input clue_maker__input"
-                    id="hint"
-                    name="hint"
-                    placeholder="'Nonsense' indicates an anagram of nearby letters"
-                    rows="2"
-                ></textarea>
-                <label class="clue_maker__label" for="explanation"
-                    >Explanation (Optional)</label
-                >
-                <textarea
-                    class="input clue_maker__input"
-                    id="explanation"
-                    name="explanation"
-                    placeholder="SLATE*"
-                    rows="1"
-                ></textarea>
-            </form>
-            <div class="list">
-                <button class="pill" id="copy">Copy</button>
-                <button class="pill" id="share">Share</button>
-                <button class="pill" id="open">Open</button>
-            </div>
-            <script type="module">
-                import { CreateCryptick } from './miniclue/create.js';
+    let create = new CreateCryptick(
+        document.getElementById('clue'),
+        document.getElementById('answer'),
+        document.getElementById('hint'),
+        document.getElementById('explanation'),
+    );
 
-                let create = new CreateCryptick(
-                    document.getElementById('clue'),
-                    document.getElementById('answer'),
-                    document.getElementById('hint'),
-                    document.getElementById('explanation'),
-                );
+    document.getElementById('copy').addEventListener('click', (e) => {
+        const copyText = create.copyText(window.location.origin + '/clue.html');
 
-                document
-                    .getElementById('copy')
-                    .addEventListener('click', (e) => {
-                        const copyText = create.copyText(
-                            window.location.origin + '/clue.html',
-                        );
+        navigator.clipboard.writeText(copyText);
+        e.target.textContent = 'Copied!';
+    });
 
-                        navigator.clipboard.writeText(copyText);
-                        e.target.textContent = 'Copied!';
-                    });
+    document.getElementById('share').addEventListener('click', async () => {
+        const shareData = create.shareData(
+            window.location.origin + '/clue.html',
+        );
 
-                document
-                    .getElementById('share')
-                    .addEventListener('click', async () => {
-                        const shareData = create.shareData(
-                            window.location.origin + '/clue.html',
-                        );
+        await navigator.share(shareData);
+    });
 
-                        await navigator.share(shareData);
-                    });
-
-                document
-                    .getElementById('open')
-                    .addEventListener('click', () => {
-                        window.open(create.fragment('/clue.html')).focus();
-                    });
-            </script>
-        </main>
-    </body>
-</html>
+    document.getElementById('open').addEventListener('click', () => {
+        window.open(create.fragment('/clue.html')).focus();
+    });
+</script>

@@ -10,7 +10,7 @@ Metalsmith(dirname(fileURLToPath(import.meta.url)))
     .use(
         layouts({
             transform: 'handlebars',
-            pattern: 'about.html',
+            pattern: '*.html',
             default: 'base.html',
             extName: false,
         }),

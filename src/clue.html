@@ -1,182 +1,140 @@
-<!doctype html>
-<html lang="en">
-    <head>
-        <title>Solve this cryptic clue!</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        <meta name="keywords" content="cryptic, crossword, clues" />
-        <meta
-            name="description"
-            content="Create a cryptic crossword clue and share it with people you know."
-        />
-        <meta property="og:title" content="Cryptick" />
-        <meta property="og:site_name" content="Cryptick" />
-        <meta property="og:image" content="./logo.svg" />
-        <meta property="og:image:height" content="1200" />
-        <meta property="og:image:width" content="1200" />
-        <link rel="stylesheet" href="./base.css" />
-        <link rel="icon" href="./logo.svg" />
-        <script type="module">
-            import ErrorHandler from './miniclue/errors.js';
-            new ErrorHandler().bind(window);
-        </script>
-        <style>
-            @keyframes grow-shrink {
-                50% {
-                    scale: 120%;
-                }
-            }
+<style>
+    @keyframes grow-shrink {
+        50% {
+            scale: 120%;
+        }
+    }
 
-            @keyframes fade-in {
-                0% {
-                    opacity: 0;
-                }
-                100% {
-                    opacity: 1;
-                }
-            }
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
 
-            main {
-                grid-template:
-                    'clue' auto
-                    'hint' 10%
-                    'explanation' 10%
-                    'answer' 40%
-                    'reveal' 10%
-                    'keyboard' env(keyboard-inset-height, 0px);
-            }
+    main {
+        grid-template:
+            'clue' auto
+            'hint' 10%
+            'explanation' 10%
+            'answer' 40%
+            'reveal' 10%
+            'keyboard' env(keyboard-inset-height, 0px);
+    }
 
-            .answer {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1rem;
-                align-content: center;
-                justify-content: center;
-                container-type: inline-size;
-            }
+    .answer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-content: center;
+        justify-content: center;
+        container-type: inline-size;
+    }
 
-            .answer__word__letter {
-                padding: 0.2em;
-                margin-right: -4px;
-                font-size: clamp(
-                    0.7rem,
-                    calc(60cqw / var(--max-word-len)),
-                    1.6rem
-                );
-                width: 1em;
-                aspect-ratio: 1;
-                text-align: center;
-                font-family: sans-serif;
-                text-transform: uppercase;
-                caret-color: transparent;
-                border: solid black 4px;
-            }
+    .answer__word__letter {
+        padding: 0.2em;
+        margin-right: -4px;
+        font-size: clamp(0.7rem, calc(60cqw / var(--max-word-len)), 1.6rem);
+        width: 1em;
+        aspect-ratio: 1;
+        text-align: center;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        caret-color: transparent;
+        border: solid black 4px;
+    }
 
-            .answer__word__letter--revealed {
-                background: var(--colour-inactive);
-                cursor: none;
-                animation: grow-shrink 500ms ease-out 0s normal;
-            }
+    .answer__word__letter--revealed {
+        background: var(--colour-inactive);
+        cursor: none;
+        animation: grow-shrink 500ms ease-out 0s normal;
+    }
 
-            .answer:valid .answer__word__letter {
-                background-color: lightgreen;
-            }
+    .answer:valid .answer__word__letter {
+        background-color: lightgreen;
+    }
 
-            .answer:valid .answer__word__letter--revealed {
-                background-color: color-mix(in srgb, lightgreen, black 30%);
-            }
+    .answer:valid .answer__word__letter--revealed {
+        background-color: color-mix(in srgb, lightgreen, black 30%);
+    }
 
-            .answer:valid + .list > .pill:not(.hidden),
-            .answer:invalid + .list > .hidden {
-                display: none;
-            }
+    .answer:valid + .list > .pill:not(.hidden),
+    .answer:invalid + .list > .hidden {
+        display: none;
+    }
 
-            .answer:not(:has(> .answer__word)) + .list {
-                display: none;
-            }
+    .answer:not(:has(> .answer__word)) + .list {
+        display: none;
+    }
 
-            .hint:empty + .explanation + .answer + .list > .pill#show-hint {
-                display: none;
-            }
+    .hint:empty + .explanation + .answer + .list > .pill#show-hint {
+        display: none;
+    }
 
-            .explanation {
-                opacity: 0;
-                grid-row: 3;
-                height: auto;
-                font-style: italic;
-                white-space: pre-wrap;
-            }
+    .explanation {
+        opacity: 0;
+        grid-row: 3;
+        height: auto;
+        font-style: italic;
+        white-space: pre-wrap;
+    }
 
-            .explanation:has(~ .answer:valid) {
-                opacity: 1;
-            }
+    .explanation:has(~ .answer:valid) {
+        opacity: 1;
+    }
 
-            .hint {
-                opacity: 0;
-                grid-row: 2;
-                height: auto;
-                font-style: italic;
-                white-space: pre-wrap;
-            }
+    .hint {
+        opacity: 0;
+        grid-row: 2;
+        height: auto;
+        font-style: italic;
+        white-space: pre-wrap;
+    }
 
-            .hint--revealed {
-                animation: fade-in 2s ease-in-out;
-                animation-fill-mode: forwards;
-            }
+    .hint--revealed {
+        animation: fade-in 2s ease-in-out;
+        animation-fill-mode: forwards;
+    }
 
-            .hint--revealed + .explanation + .answer + .list > .pill#show-hint {
-                pointer-events: none;
-                background: var(--colour-inactive);
-                cursor: not-allowed;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            <a href="./"><h1>Cryptick</h1></a>
-            <span class="tick"></span>
-            <span class="about header"><a href="/about.html">?</a></span>
-        </header>
-        <main>
-            <h1 class="header" id="clue"></h1>
-            <h4 class="header hint" id="hint"></h4>
-            <h4 class="header explanation" id="explanation"></h4>
-            <form class="answer" id="answer" target="_blank"></form>
-            <div class="list">
-                <button class="pill" id="show-hint">Show hint</button>
-                <button class="pill" id="reveal-letter">Show letter</button>
-                <button class="pill" id="reveal-all">Show word</button>
-                <button class="pill hidden" id="share">Share this clue!</button>
-                <a class="pill hidden" href="./create.html">Create your own!</a>
-            </div>
-            <script type="module">
-                import { CryptickClue } from './miniclue/clue.js';
-                import { ClueDecoder } from './miniclue/decoder.js';
-                import examples from './miniclue/examples.js';
+    .hint--revealed + .explanation + .answer + .list > .pill#show-hint {
+        pointer-events: none;
+        background: var(--colour-inactive);
+        cursor: not-allowed;
+    }
+</style>
+<h1 class="header" id="clue"></h1>
+<h4 class="header hint" id="hint"></h4>
+<h4 class="header explanation" id="explanation"></h4>
+<form class="answer" id="answer" target="_blank"></form>
+<div class="list">
+    <button class="pill" id="show-hint">Show hint</button>
+    <button class="pill" id="reveal-letter">Show letter</button>
+    <button class="pill" id="reveal-all">Show word</button>
+    <button class="pill hidden" id="share">Share this clue!</button>
+    <a class="pill hidden" href="./create.html">Create your own!</a>
+</div>
+<script type="module">
+    import { CryptickClue } from './miniclue/clue.js';
+    import { ClueDecoder } from './miniclue/decoder.js';
+    import examples from './miniclue/examples.js';
 
-                const clue = new ClueDecoder(examples).decode(
-                    window.location.hash,
-                );
+    const clue = new ClueDecoder(examples).decode(window.location.hash);
 
-                const miniClue = new CryptickClue(
-                    document.getElementById('answer'),
-                    document.getElementById('clue'),
-                    document.getElementById('hint'),
-                    document.getElementById('explanation'),
-                    document.getElementById('reveal-letter'),
-                    document.getElementById('reveal-all'),
-                    document.getElementById('show-hint'),
-                    document.getElementById('share'),
-                );
+    const miniClue = new CryptickClue(
+        document.getElementById('answer'),
+        document.getElementById('clue'),
+        document.getElementById('hint'),
+        document.getElementById('explanation'),
+        document.getElementById('reveal-letter'),
+        document.getElementById('reveal-all'),
+        document.getElementById('show-hint'),
+        document.getElementById('share'),
+    );
 
-                document.getElementById('share').onclick = (_) =>
-                    miniClue.shareMessage(window.location, navigator.clipboard);
+    document.getElementById('share').onclick = (_) =>
+        miniClue.shareMessage(window.location, navigator.clipboard);
 
-                miniClue.renderClue(clue);
-            </script>
-        </main>
-    </body>
-</html>
+    miniClue.renderClue(clue);
+</script>
