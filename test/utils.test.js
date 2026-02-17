@@ -1,5 +1,5 @@
 import { assert, describe, it } from 'vitest';
-import { enumerate } from '../miniclue/utils.js';
+import { enumerate } from '../src/miniclue/utils.js';
 
 describe('Utils', () => {
     it('can enumerate one word', () => {

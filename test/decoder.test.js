@@ -1,6 +1,6 @@
 import { assert, describe, it } from 'vitest';
-import { ClueDecoder } from '../miniclue/decoder.js';
-import { CryptickError } from '../miniclue/errors.js';
+import { ClueDecoder } from '../src/miniclue/decoder.js';
+import { CryptickError } from '../src/miniclue/errors.js';
 
 describe('ClueDecoder', () => {
     const decoder = new ClueDecoder({

@@ -1,5 +1,5 @@
 import { assert, describe, it, beforeEach } from 'vitest';
-import { CryptickClue } from '../miniclue/clue.js';
+import { CryptickClue } from '../src/miniclue/clue.js';
 import { FULL_PAYLOAD, NO_EXPLANATION, NO_HINT } from './test-examples.js';
 
 // @vitest-environment jsdom

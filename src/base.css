@@ -43,7 +43,7 @@ header {
     display: inherit;
     height: 4em;
     width: 4em;
-    background: url('/logo.svg');
+    background: url('./logo.svg');
     background-size: 4em 4em;
 }
 
