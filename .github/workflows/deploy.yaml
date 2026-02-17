@@ -12,6 +12,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - run: npm ci
+      - run: npm test
+      - run: npm run lint
+      - run: npm run build
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v2
         with:
@@ -19,15 +27,7 @@ jobs:
           aws-region: eu-west-2
       - name: Deploy blog
         run: |
-          aws s3 sync . s3://cryptick.wildvale.co.uk/ \
-            --exclude "*" \
-            --include "base.css" \
-            --include "*.html" \
-            --include "miniclue/*.js" \
-            --include ".well-known/*.json" \
-            --include "*.svg" \
-            --include "manifest.json" \
-            --include "robots.txt" \
+          aws s3 sync build/ s3://cryptick.wildvale.co.uk/ \
             --delete \
             --acl public-read \
             --cache-control max-age=3600
