@@ -94,8 +94,10 @@ footer {
     line-height: 1.1;
     max-width: 40%;
     flex: 1;
+}
 
-    &:hover {
+@supports not (-webkit-text-size-adjust: none) {
+    .pill:hover {
         background: var(--colour-active);
     }
 }
