@@ -9,13 +9,13 @@
             "purpose": "any maskable"
         }
     ],
-    "start_url": "/",
+    "start_url": "/?utm_source=pwa",
     "shortcuts": [
         {
             "name": "Create a clue",
             "short_name": "Create",
             "description": "Create a clue with Cryptick and share it with people you know",
-            "url": "./create.html"
+            "url": "./create.html?utm_source=pwa"
         }
     ],
     "display": "standalone",
