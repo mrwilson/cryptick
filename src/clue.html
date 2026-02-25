@@ -125,6 +125,7 @@
     import { CryptickClue } from './miniclue/clue.js';
     import { ClueDecoder } from './miniclue/decoder.js';
     import examples from './miniclue/examples.js';
+    import { History } from './miniclue/history.js';
 
     const clue = new ClueDecoder(examples).decode(window.location.hash);
 
@@ -143,4 +144,6 @@
         miniClue.shareMessage(window.location, navigator.clipboard);
 
     miniClue.renderClue(clue);
+
+    new History(localStorage).add(window.location.hash);
 </script>

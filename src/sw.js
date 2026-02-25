@@ -14,6 +14,7 @@ const files = [
     '/miniclue/utils.js',
     '/miniclue/clue.js',
     '/miniclue/examples.js',
+    '/miniclue/history.js',
 
     '/robots.txt',
     '/manifest.json',
