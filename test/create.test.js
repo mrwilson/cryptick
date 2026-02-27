@@ -81,4 +81,19 @@ describe('ClueEncoder', () => {
             url: 'https://example.com/#SW5jcmVkaWJsZSBwdXBpbHxleWUgb3BlbmluZ3x8',
         });
     });
+
+    it('can support emoji in clues', () => {
+        let encoder = new CreateCryptick(
+            { value: '🔥+❄️=💧' },
+            { value: 'example' },
+            {},
+            {},
+        );
+
+        assert.deepEqual(encoder.shareData('https://example.com/'), {
+            title: 'Cryptick',
+            text: '🔥+❄️=💧 (7)\n\n',
+            url: 'https://example.com/#8J+UpSvinYTvuI898J+Sp3xleGFtcGxlfHw=',
+        });
+    });
 });

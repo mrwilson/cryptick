@@ -72,6 +72,50 @@ describe('ClueDecoder', () => {
         });
     });
 
+    it('can decode clues with emoji', () => {
+        let input =
+            '#4p2E77iPK/CflKU98J+Sp3xleGFtcGxlfFRoaXMgaXMgYW4gZXhhbXBsZSBlbW9qaSBjbHVlfFRoaXMgaXMgYW4gZXhhbXBsZSBlbW9qaSBjbHVl';
+        assert.deepEqual(decoder.decode(input), {
+            clue: '❄️+🔥=💧',
+            answer: 'example',
+            hint: 'This is an example emoji clue',
+            explanation: 'This is an example emoji clue',
+        });
+    });
+
+    it('can decode clues with emoji', () => {
+        let input =
+            '#4p2E77iPK/CflKU98J+Sp3xleGFtcGxlfFRoaXMgaXMgYW4gZXhhbXBsZSBlbW9qaSBoaW50fFRoaXMgaXMgYW4gZXhhbXBsZSBlbW9qaSBleHBsYW5hdGlvbg==';
+        assert.deepEqual(decoder.decode(input), {
+            clue: '❄️+🔥=💧',
+            answer: 'example',
+            hint: 'This is an example emoji hint',
+            explanation: 'This is an example emoji explanation',
+        });
+    });
+
+    it('can decode hints with emoji', () => {
+        let input =
+            '#ZXhhbXBsZXxleGFtcGxlfFRoaXMgaXMgYW4gZXhhbXBsZSBlbW9qaSBoaW50IPCflKV8VGhpcyBpcyBhbiBleGFtcGxlIGVtb2ppIGV4cGxhbmF0aW9uIA==';
+        assert.deepEqual(decoder.decode(input), {
+            clue: 'example',
+            answer: 'example',
+            hint: 'This is an example emoji hint 🔥',
+            explanation: 'This is an example emoji explanation ',
+        });
+    });
+
+    it('can decode explanations with emoji', () => {
+        let input =
+            '#ZXhhbXBsZXxleGFtcGxlfFRoaXMgaXMgYW4gZXhhbXBsZSBlbW9qaSBoaW50fFRoaXMgaXMgYW4gZXhhbXBsZSBlbW9qaSBleHBsYW5hdGlvbiDwn5Sl';
+        assert.deepEqual(decoder.decode(input), {
+            clue: 'example',
+            answer: 'example',
+            hint: 'This is an example emoji hint',
+            explanation: 'This is an example emoji explanation 🔥',
+        });
+    });
+
     it('can use provided examples by default', () => {
         let input = '#example';
 

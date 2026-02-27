@@ -11,7 +11,10 @@ export class CreateCryptick {
     fragment(baseUrl) {
         let clueString = `${this.clue.value}|${this.answer.value}|${this.hint.value || ''}|${this.explanation.value || ''}`;
 
-        return `${baseUrl}#${btoa(clueString)}`;
+        const encoder = new TextEncoder();
+
+        let encoded = new Uint8Array(encoder.encode(clueString)).toBase64();
+        return `${baseUrl}#${encoded}`;
     }
 
     copyText(baseUrl) {

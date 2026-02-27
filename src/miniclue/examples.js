@@ -14,4 +14,10 @@ export default {
         answer: 'no fun',
         explanation: 'NUN cont OF',
     },
+    emoji: {
+        clue: '🇩🇪🇫🇷🩸️👉🚜🏛️',
+        answer: 'defra',
+        hint: 'Definition is 🚜🏛',
+        explanation: 'DE + FR + A',
+    },
 };

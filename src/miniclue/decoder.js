@@ -54,7 +54,13 @@ export class ClueDecoder {
             return this.examples[hash];
         }
 
-        let data = atob(hash);
+        let data = '';
+
+        try {
+            data = new TextDecoder().decode(Uint8Array.fromBase64(hash));
+        } catch (e) {
+            data = atob(hash);
+        }
 
         return data.startsWith('{')
             ? this.#decodeJson(data)
