@@ -1,0 +1,54 @@
+<style>
+    ul {
+        padding: 2em;
+        list-style: none;
+    }
+
+    li {
+        padding: 1em 0;
+    }
+
+    .history a {
+        color: var(--colour-active);
+    }
+
+    .history:has(> .clues:empty) {
+        display: none;
+    }
+
+    .history:has(> .clues:not(:empty)) + .splash {
+        display: none;
+    }
+</style>
+
+<section class="history">
+    <h2 class="header">Recently viewed clues</h2>
+    <ul class="clues" id="clues"></ul>
+</section>
+
+<section class="splash">
+    <h2 class="header">You've not viewed any clues yet!</h2>
+</section>
+
+<script type="module">
+    const list = document.getElementById('clues');
+
+    import { ClueDecoder } from './miniclue/decoder.js';
+    import examples from './miniclue/examples.js';
+    import { enumerate } from './miniclue/utils.js';
+    import { History } from './miniclue/history.js';
+
+    const decoder = new ClueDecoder(examples);
+
+    for (const clue of new History(localStorage).get()) {
+        let l = document.createElement('li');
+        let link = document.createElement('a');
+        let c = decoder.decode(clue);
+        link.href = `./clue.html${clue}`;
+        link.classList.add('plausible-event-name=Go+To+Recent+Clue');
+        link.textContent = `${c.clue} (${enumerate(c.answer)})`;
+        l.appendChild(link);
+
+        list.appendChild(l);
+    }
+</script>

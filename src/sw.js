@@ -3,6 +3,7 @@ const files = [
     '/create.html',
     '/clue.html',
     '/error.html',
+    '/recent.html',
     '/base.css',
 
     '/error.svg',
