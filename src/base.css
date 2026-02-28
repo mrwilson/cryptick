@@ -60,7 +60,7 @@ header {
 
 main {
     grid-row: 2;
-    height: 80vh;
+    height: calc(80dvh - 2em);
     width: 85vw;
     max-width: 22em;
     margin: 0 auto;
