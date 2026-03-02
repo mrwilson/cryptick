@@ -1,0 +1,50 @@
+<style>
+    main {
+        grid-template:
+            'clue' auto
+            'author' 20%
+            'solve' 20%;
+    }
+
+    .cotd {
+        grid-row: 1;
+    }
+    .author {
+        grid-row: 2;
+    }
+    .author a {
+        text-decoration: underline;
+    }
+    .solve {
+        grid-row: 3;
+    }
+</style>
+
+<h2 class="cotd header header--medium" id="cotd"></h2>
+<span class="author list"> By: <a class="header" id="author"></a> </span>
+<div class="solve list">
+    <a class="pill pill--big plausible-event-name=Solve+COTD" id="solve"
+        >Solve this clue</a
+    >
+    <a
+        class="pill pill--big plausible-event-name=Create clue"
+        href="./create.html"
+        >Create your own</a
+    >
+</div>
+
+<script type="module">
+    import cotd from './cotd.json' with { type: 'json' };
+
+    const today = cotd[new Date().toISOString().slice(0, 10)];
+
+    const clue = document.getElementById('cotd');
+    clue.textContent = today.clue;
+
+    const author = document.getElementById('author');
+    author.textContent = `${today.author.name}`;
+    author.href = today.author.link;
+
+    const solve = document.getElementById('solve');
+    solve.href = `./clue.html#${today.hash}`;
+</script>

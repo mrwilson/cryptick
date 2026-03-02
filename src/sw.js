@@ -4,6 +4,7 @@ const files = [
     '/clue.html',
     '/error.html',
     '/recent.html',
+    '/cotd.html',
     '/base.css',
 
     '/error.svg',
@@ -19,6 +20,7 @@ const files = [
 
     '/robots.txt',
     '/manifest.json',
+    '/cotd.json',
     '/.well-known/assetlinks.json',
 ];
 
