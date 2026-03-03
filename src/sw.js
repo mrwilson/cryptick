@@ -45,15 +45,15 @@ self.addEventListener('fetch', (event) => {
     }
 
     event.respondWith(
-        (async () => {
-            const fromCache = await caches.match(request);
-            if (fromCache) {
-                return fromCache;
-            }
-            const response = await fetch(request);
-            const cache = await caches.open('cryptick');
-            await cache.put(request, response.clone());
-            return response;
-        })(),
+        caches.open('cryptick').then((cache) => {
+            return fetch(event.request.url)
+                .then((fetchedResponse) => {
+                    cache.put(event.request, fetchedResponse.clone());
+                    return fetchedResponse;
+                })
+                .catch(() => {
+                    return cache.match(event.request.url);
+                });
+        }),
     );
 });
