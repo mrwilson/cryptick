@@ -1,24 +1,64 @@
-<p>Create a cryptic crossword clue.</p>
-<p>Share it with people you know.</p>
-<p>No accounts. No personal data. No cookies.</p>
+<style>
+    .cotd {
+        padding: 1em;
+        display: inline-grid;
+        border: solid 2px var(--colour-active);
+        background: color-mix(in srgb, var(--colour-bg), white 30%);
+        border-radius: 1.5em;
+        height: 35vh;
+        align-content: space-between;
+    }
+
+    .buttons {
+        padding-top: 8em;
+        align-content: center;
+    }
+
+    .masthead {
+        font-size: large;
+        margin: 0;
+    }
+</style>
+<section class="cotd">
+    <h2 class="header masthead">Clue of the Day</h2>
+    <a class="plausible-event-name=Solve+COTD" id="solve">
+        <h2 class="header header--medium" id="cotd"></h2>
+    </a>
+    <span class="list">By: <a class="header" id="author"></a></span>
+</section>
+
 <noscript>
     <p>
         Unfortunately, as this site is browser-based, we do require Javascript
         to be enabled.
     </p>
 </noscript>
-<div class="list">
+<div class="buttons list">
     <a class="pill pill--big" href="./create.html">Create a clue</a>
     <a
         class="pill pill--big plausible-event-name=See+recent+clues"
         href="./recent.html"
-        >See recent clues</a
+        >Recent clues</a
     >
 </div>
 
-<script>
+<script type="module">
     window.location.hash &&
         window.location.replace(`./clue.html${window.location.hash}`);
 
     'serviceWorker' in navigator && navigator.serviceWorker.register('/sw.js');
+
+    import cotd from './cotd.json' with { type: 'json' };
+
+    const today = cotd[new Date().toISOString().slice(0, 10)];
+
+    const clue = document.getElementById('cotd');
+    clue.textContent = today.clue;
+
+    const author = document.getElementById('author');
+    author.textContent = `${today.author.name}`;
+    author.href = today.author.link;
+
+    const solve = document.getElementById('solve');
+    solve.href = `./clue.html?utm_source=COTD#${today.hash}`;
 </script>
