@@ -17,10 +17,13 @@
         <meta property="og:image" content="./logo.svg" />
         <meta property="og:image:height" content="1200" />
         <meta property="og:image:width" content="1200" />
-        <meta property="release:repository" content="https://github.com/mrwilson/cryptick"/>
-        <meta property="release:filename" content="{{ original_filename }}">
-        <meta property="release:commit" content="{{ commitHash }}"/>
-        <meta property="release:timestamp" content="{{ builtAt }}"/>
+        <meta
+            property="release:repository"
+            content="https://github.com/mrwilson/cryptick"
+        />
+        <meta property="release:filename" content="{{ original_filename }}" />
+        <meta property="release:commit" content="{{ commitHash }}" />
+        <meta property="release:timestamp" content="{{ builtAt }}" />
         <link rel="manifest" href="./manifest.json" />
         <link rel="stylesheet" href="./base.css" />
         <link rel="icon" href="./logo.svg" />
@@ -28,12 +31,27 @@
             import ErrorHandler from './miniclue/errors.js';
             new ErrorHandler().bind(window);
         </script>
-        <script async src="https://plausible.io/js/pa-nSHTBj0a2hbn-FVrrHdwg.js"></script>
+        <script
+            async
+            src="https://plausible.io/js/pa-nSHTBj0a2hbn-FVrrHdwg.js"
+        ></script>
         <script>
-            window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-            plausible.init()
+            ((window.plausible =
+                window.plausible ||
+                function () {
+                    (plausible.q = plausible.q || []).push(arguments);
+                }),
+                (plausible.init =
+                    plausible.init ||
+                    function (i) {
+                        plausible.o = i || {};
+                    }));
+            plausible.init({
+                customProperties: {
+                    commit: '{{ commitHash_Short }}',
+                },
+            });
         </script>
-
     </head>
     <body>
         <header>
@@ -41,8 +59,6 @@
             <span class="tick"></span>
             <span class="about header"><a href="/about.html">?</a></span>
         </header>
-        <main>
-            {{{ contents }}}
-        </main>
+        <main>{{{ contents }}}</main>
     </body>
 </html>
