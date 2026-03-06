@@ -1,4 +1,5 @@
 import { CryptickError } from './errors.js';
+import { enumerate } from './utils.js';
 
 export class ClueDecoder {
     constructor(examples) {
@@ -21,6 +22,8 @@ export class ClueDecoder {
             clue.explanation = data.e;
         }
 
+        clue.enumeration = enumerate(clue.answer);
+
         return clue;
     }
 
@@ -40,6 +43,8 @@ export class ClueDecoder {
             clue.explanation = data[3];
         }
 
+        clue.enumeration = enumerate(clue.answer);
+
         return clue;
     }
 
@@ -51,7 +56,9 @@ export class ClueDecoder {
         let hash = input.substring(1);
 
         if (hash in this.examples) {
-            return this.examples[hash];
+            let clue = this.examples[hash];
+            clue.enumeration = enumerate(clue.answer);
+            return clue;
         }
 
         let data = '';

@@ -16,6 +16,7 @@ describe('ClueEncoder', () => {
         assert.deepEqual(decoder.decode(encoder.fragment('')), {
             clue: 'Incredible pupil',
             answer: 'eye opening',
+            enumeration: '3,7',
         });
     });
 
@@ -31,6 +32,7 @@ describe('ClueEncoder', () => {
             clue: 'Incredible pupil',
             answer: 'eye opening',
             hint: 'this is a hint',
+            enumeration: '3,7',
         });
     });
 
@@ -46,6 +48,7 @@ describe('ClueEncoder', () => {
             clue: 'Incredible pupil',
             answer: 'eye opening',
             explanation: 'this is an explanation',
+            enumeration: '3,7',
         });
     });
 

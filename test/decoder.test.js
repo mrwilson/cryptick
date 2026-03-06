@@ -16,6 +16,7 @@ describe('ClueDecoder', () => {
         assert.deepEqual(decoder.decode(input), {
             clue: 'Incredible pupil',
             answer: 'eye opening',
+            enumeration: '3,7',
         });
     });
 
@@ -27,6 +28,7 @@ describe('ClueDecoder', () => {
             clue: 'Incredible pupil',
             answer: 'eye opening',
             hint: 'This is a double definition',
+            enumeration: '3,7',
         });
     });
 
@@ -38,6 +40,7 @@ describe('ClueDecoder', () => {
             answer: 'eye opening',
             explanation:
                 'Incredible is a synonym for eye opening, and a pupil is the opening in the eye',
+            enumeration: '3,7',
         });
     });
 
@@ -47,6 +50,7 @@ describe('ClueDecoder', () => {
         assert.deepEqual(decoder.decode(input), {
             clue: 'Incredible pupil',
             answer: 'eye opening',
+            enumeration: '3,7',
         });
     });
 
@@ -58,6 +62,7 @@ describe('ClueDecoder', () => {
             clue: 'Incredible pupil',
             answer: 'eye opening',
             hint: 'This is a double definition',
+            enumeration: '3,7',
         });
     });
 
@@ -69,6 +74,7 @@ describe('ClueDecoder', () => {
             answer: 'eye opening',
             explanation:
                 'Incredible is a synonym for eye opening, and a pupil is the opening in the eye',
+            enumeration: '3,7',
         });
     });
 
@@ -80,6 +86,7 @@ describe('ClueDecoder', () => {
             answer: 'example',
             hint: 'This is an example emoji clue',
             explanation: 'This is an example emoji clue',
+            enumeration: '7',
         });
     });
 
@@ -91,6 +98,7 @@ describe('ClueDecoder', () => {
             answer: 'example',
             hint: 'This is an example emoji hint',
             explanation: 'This is an example emoji explanation',
+            enumeration: '7',
         });
     });
 
@@ -102,6 +110,7 @@ describe('ClueDecoder', () => {
             answer: 'example',
             hint: 'This is an example emoji hint 🔥',
             explanation: 'This is an example emoji explanation ',
+            enumeration: '7',
         });
     });
 
@@ -113,6 +122,7 @@ describe('ClueDecoder', () => {
             answer: 'example',
             hint: 'This is an example emoji hint',
             explanation: 'This is an example emoji explanation 🔥',
+            enumeration: '7',
         });
     });
 
@@ -122,6 +132,7 @@ describe('ClueDecoder', () => {
         assert.deepEqual(decoder.decode(input), {
             clue: 'example_clue',
             answer: 'example_answer',
+            enumeration: '14',
         });
     });
 
