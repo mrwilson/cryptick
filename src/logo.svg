@@ -1,5 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="300" width="300">
-    <circle style="fill: #9bbcab" class="d" cx="150" cy="150" r="150"/>
-    <rect style="stroke-width: 15; stroke: #286433; fill: white" class="l" x="75" y="75" width="150" height="150"/>
-    <text style="font-family: Verdana; font-size: 130px; fill: #358544" x="95" y="200">✔</text>
+    <circle class="d" cx="150" cy="150" r="150"/>
+    <rect class="l" x="75" y="75" width="150" height="150"/>
+    <text x="150" y="150" dominant-baseline="central" text-anchor="middle">✔</text>
+    <style>
+        :root { --light: #9bbcabff; --medium: #358544; --dark: #286433; }
+        circle { fill: var(--light); }
+        rect { stroke-width: 15; stroke: var(--dark); fill: white; }
+        text { font-family: Verdana; font-size: 130px; fill: var(--medium); }
+    </style>
 </svg>
