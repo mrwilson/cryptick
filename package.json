@@ -24,6 +24,7 @@
         "build": "node metalsmith.js"
     },
     "devDependencies": {
+        "@metalsmith/in-place": "^5.0.0",
         "@metalsmith/layouts": "^3.0.0",
         "http-server": "^14.1.1",
         "jsdom": "^28.1.0",

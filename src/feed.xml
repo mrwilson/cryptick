@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Cryptick Clue of the Day</title>
+        <description>RSS feed of my cryptic crossword clues, posted daily</description>
+        <link>https://cryptick.wildvale.co.uk/</link>
+        <image>
+            <url>https://cryptick.wildvale.co.uk/logo.png</url>
+            <title>Cryptick Clue of the Day</title>
+            <description>A white checkbox with a green tick, surrounded by a circle of pale green</description>
+            <link>https://cryptick.wildvale.co.uk/</link>
+        </image>
+        <atom:link href="https://cryptick.wildvale.co.uk/feed.xml" rel="self" type="application/rss+xml" />
+        <lastBuildDate>{{ builtAt }}</lastBuildDate>
+        <pubDate>{{ builtAt }}</pubDate>
+
+        {{#each clues}}
+        <item>
+            <title>{{ clue }}</title>
+            <description><![CDATA[By <a href="{{ author_link }}">{{ author_name }}</a>]]></description>
+            <pubDate>{{ date }}</pubDate>
+            <link>https://cryptick.wildvale.co.uk{{ link }}</link>
+        </item>
+        {{/each}}
+
+    </channel>
+</rss>
