@@ -3,8 +3,14 @@ import { fileURLToPath } from 'node:url';
 import { execSync as exec } from 'node:child_process';
 import Metalsmith from 'metalsmith';
 import layouts from '@metalsmith/layouts';
+import cotd from './cotd.json' with { type: 'json' };
+import { ClueDecoder } from './src/miniclue/decoder.js';
 
 const commitHash = exec('git rev-parse HEAD', { encoding: 'utf-8' }).trim();
+
+const clueOfTheDay = cotd[new Date().toISOString().slice(0, 10)];
+
+const clue = new ClueDecoder({}).decode(`#${clueOfTheDay.hash}`);
 
 Metalsmith(dirname(fileURLToPath(import.meta.url)))
     .clean(true)
@@ -14,6 +20,14 @@ Metalsmith(dirname(fileURLToPath(import.meta.url)))
         commitHash: commitHash,
         commitHash_Short: commitHash.substring(0, 8),
         builtAt: new Date().toISOString(),
+        cotd: {
+            author: {
+                name: clueOfTheDay.author.name,
+                link: clueOfTheDay.author.link,
+            },
+            clue: `${clue.clue} (${clue.enumeration})`,
+            link: `./clue.html#${clueOfTheDay.hash}`,
+        },
     })
     .use(function original_filename(files) {
         Object.keys(files).forEach((file) => {
@@ -24,6 +38,7 @@ Metalsmith(dirname(fileURLToPath(import.meta.url)))
         layouts({
             transform: 'handlebars',
             pattern: '*.html',
+            directory: 'layouts',
             default: 'base.html',
             extName: false,
         }),

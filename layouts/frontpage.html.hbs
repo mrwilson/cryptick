@@ -1,0 +1,108 @@
+<html lang='en'>
+    <head>
+        <title>Cryptick</title>
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+        <meta
+            name='viewport'
+            content='width=device-width, initial-scale=1, shrink-to-fit=no'
+        />
+        <meta name='keywords' content='cryptic, crossword, clues' />
+        <meta name='description' content='{{cotd.clue}}' />
+        <meta property='og:title' content='Cryptick' />
+        <meta property='og:site_name' content='Cryptick' />
+        <meta property='og:image' content='./logo.svg' />
+        <meta property='og:image:height' content='1200' />
+        <meta property='og:image:width' content='1200' />
+        <meta
+            property='release:repository'
+            content='https://github.com/mrwilson/cryptick'
+        />
+        <meta property='release:filename' content='{{original_filename}}' />
+        <meta property='release:commit' content='{{commitHash}}' />
+        <meta property='release:timestamp' content='{{builtAt}}' />
+        <link rel='manifest' href='./manifest.json' />
+        <link rel='stylesheet' href='./base.css' />
+        <link rel='icon' href='./logo.svg' />
+        <script type='module'>
+            import ErrorHandler from './miniclue/errors.js'; new
+            ErrorHandler().bind(window);
+        </script>
+        <script
+            async
+            src='https://plausible.io/js/pa-nSHTBj0a2hbn-FVrrHdwg.js'
+        ></script>
+        <script>
+            ((window.plausible = window.plausible || function () { (plausible.q
+            = plausible.q || []).push(arguments); }), (plausible.init =
+            plausible.init || function (i) { plausible.o = i || {}; }));
+            plausible.init({ customProperties: { commit: '{{commitHash_Short}}',
+            }, });
+        </script>
+    </head>
+    <body>
+        <header>
+            <a href='./'><h1>Cryptick</h1></a>
+            <span class='tick'></span>
+            <span class='about header'><a href='/about.html'>?</a></span>
+        </header>
+        <main>
+            <style>
+                .cotd {
+                    padding: 1em;
+                    display: inline-grid;
+                    border: solid 2px var(--colour-active);
+                    background: color-mix(in srgb, var(--colour-bg), white 30%);
+                    border-radius: 1.5em;
+                    height: 35vh;
+                    align-content: space-between;
+                }
+
+                .buttons {
+                    padding-top: 8em;
+                    align-content: center;
+                }
+
+                .masthead {
+                    font-size: large;
+                    margin: 0;
+                }
+            </style>
+            <section class='cotd'>
+                <h2 class='header masthead'>Clue of the Day</h2>
+                <a
+                    class='plausible-event-name=Solve+COTD'
+                    id='solve'
+                    href='{{cotd.link}}'
+                >
+                    <h2
+                        class='header header--medium'
+                        id='cotd'
+                    >{{cotd.clue}}</h2>
+                </a>
+                <span class='list'>By:
+                    <a
+                        class='header'
+                        id='author'
+                        href='{{cotd.author.link}}'
+                    >{{cotd.author.name}}</a></span>
+            </section>
+
+            <noscript>
+                <p>
+                    Unfortunately, as this site is browser-based, we do require
+                    Javascript to be enabled.
+                </p>
+            </noscript>
+            <div class='buttons list'>
+                <a class='pill pill--big' href='./create.html'>Create a clue</a>
+                <a
+                    class='pill pill--big plausible-event-name=See+recent+clues'
+                    href='./recent.html'
+                >Recent clues</a>
+            </div>
+
+            {{{contents}}}
+
+        </main>
+    </body>
+</html>

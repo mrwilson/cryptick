@@ -20,7 +20,6 @@ const files = [
 
     '/robots.txt',
     '/manifest.json',
-    '/cotd.json',
     '/.well-known/assetlinks.json',
 ];
 
