@@ -19,7 +19,7 @@
     "main": "index.js",
     "scripts": {
         "test": "npx vitest run --reporter=tree",
-        "lint": "npx prettier --check src/",
+        "lint": "npx prettier --check src/ test/ layouts/ lib/ metalsmith.js",
         "serve": "npx http-server -c-1 build/",
         "build": "node metalsmith.js"
     },
