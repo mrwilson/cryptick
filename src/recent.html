@@ -45,7 +45,7 @@
         let link = document.createElement('a');
         let c = decoder.decode(clue);
         link.href = `./clue.html${clue}`;
-        link.classList.add('plausible-event-name=Go+To+Recent+Clue');
+        link.classList.add('plausible-event-name=Recent::Go+To+Clue');
         link.textContent = `${c.clue} (${enumerate(c.answer)})`;
         l.appendChild(link);
 
