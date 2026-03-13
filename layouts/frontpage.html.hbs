@@ -55,6 +55,24 @@
         </header>
         <main>
             <style>
+                .splash p {
+                    font-size: medium;
+                    color: var(--colour-active);
+                    padding: 0;
+                }
+
+                .splash a {
+                    text-decoration: underline;
+                    color: var(--colour-active);
+                }
+
+                .rss {
+                    height: 1em;
+                    width: 1em;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-label='RSS' role='img' viewBox='0 0 512 512'%3E%3Cpath d='m0 0H512V512H0' fill='%23f80'/%3E%3Cpath fill='%23fff' d='m109 271A132 133 0 01241 403h60A192 193 0 00109 211v-54A246 247 0 01355 403h60A306 307 0 00109 97m35 235a35 35 0 102 0'/%3E%3C/svg%3E");
+                    vertical-align: middle;
+                }
+
                 .cotd {
                     padding: 1em;
                     display: inline-grid;
@@ -75,9 +93,7 @@
                     margin: 0;
                 }
             </style>
-            <section class='splash'>
 
-            </section>
             <section class='cotd'>
                 <h2 class='header masthead'>Clue of the Day</h2>
                 <a
@@ -96,6 +112,14 @@
                         id='author'
                         href='{{cotd.author_link}}'
                     >{{cotd.author_name}}</a></span>
+            </section>
+            <section class='splash'>
+                <p>
+                    <a
+                        class='link plausible-event-name=Home::COTD::Subscribe'
+                        href='/feed.xml'
+                    >Subscribe<img class='rss' /></a>
+                    for a new cryptic clue every day!</p>
             </section>
 
             <noscript>
