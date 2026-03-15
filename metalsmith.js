@@ -25,8 +25,8 @@ Metalsmith(dirname(fileURLToPath(import.meta.url)))
     .use(
         inPlace({
             transform: 'handlebars',
-            pattern: '*.xml',
-            extname: '*.xml',
+            pattern: '*.(html|xml)',
+            extname: '*.(html|xml)',
         }),
     )
     .use(
