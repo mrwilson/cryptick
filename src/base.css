@@ -143,3 +143,60 @@ p {
     justify-content: center;
     gap: 0.5em;
 }
+
+nav {
+    margin-right: 0;
+    margin-left: auto;
+}
+
+nav a {
+    padding: 0 1em;
+}
+
+footer {
+    display: none;
+}
+
+.navigation-link {
+    align-items: center;
+    display: inline-flex;
+    font-weight: bold;
+
+    svg {
+        fill: var(--colour-active);
+    }
+}
+
+@media (max-width: 750px) {
+    nav {
+        display: none;
+    }
+
+    footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 8vh;
+        justify-content: space-around;
+        background-color: var(--colour-active);
+        display: inline-flex;
+    }
+
+    .navigation-link {
+        width: min-content;
+        display: block;
+        align-content: center;
+        color: var(--colour-bg);
+        font-weight: bold;
+
+        svg {
+            fill: var(--colour-bg);
+        }
+    }
+}
+
+@media (max-height: 600px) {
+    footer {
+        display: none;
+    }
+}
