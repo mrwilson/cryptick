@@ -27,24 +27,30 @@ body > * {
 header {
     display: inline-flex;
     align-items: center;
-    grid-row: 1;
-    height: 100%;
+    height: 8vh;
     text-align: left;
-    padding: 0em 2em;
+    margin: 0 1em;
     color: var(--colour-active);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
 
     a,
     a:visited {
         color: inherit;
     }
+
+    h1 {
+        font-size: 3vh;
+    }
 }
 
 .tick {
-    display: inherit;
-    height: 4em;
-    width: 4em;
+    height: 5vh;
+    width: 5vh;
     background: url('./logo.svg');
-    background-size: 4em 4em;
+    background-size: 5vh 5vh;
 }
 
 .about {
@@ -61,8 +67,7 @@ header {
 main {
     grid-row: 2;
     height: calc(80dvh - 2em);
-    width: 85vw;
-    max-width: 22em;
+    width: min(85vw, 22em);
     margin: 0 auto;
     padding: 1em;
     display: grid;
