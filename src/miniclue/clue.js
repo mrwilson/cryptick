@@ -1,4 +1,4 @@
-import { enumerate } from './utils.js';
+import { enumerate, PRNG } from './utils.js';
 
 export class CryptickClue {
     constructor(
@@ -50,6 +50,8 @@ export class CryptickClue {
             );
         };
 
+        const random = new PRNG(params.clue);
+
         this.revealLetter.onclick = (_) => {
             let missingLetters = this.letters.filter(
                 (letter) =>
@@ -57,9 +59,7 @@ export class CryptickClue {
             );
 
             let letter =
-                missingLetters[
-                    Math.floor(Math.random() * missingLetters.length)
-                ];
+                missingLetters[Math.floor(random() * missingLetters.length)];
 
             letter.value = letter.pattern[1];
             letter.readOnly = true;
