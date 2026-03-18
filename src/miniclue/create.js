@@ -21,7 +21,7 @@ export class CreateCryptick {
         return [
             `${this.clue.value} (${enumerate(this.answer.value)})`,
             this.fragment(baseUrl),
-            'Solve it, and create your own!',
+            'Solve it, and create your own cryptic clue!',
         ].join('\n\n');
     }
 

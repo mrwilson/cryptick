@@ -66,7 +66,7 @@ describe('ClueEncoder', () => {
 
         assert.equal(
             encoder.copyText('https://example.com/'),
-            `${clue}\n\n${url}\n\nSolve it, and create your own!`,
+            `${clue}\n\n${url}\n\nSolve it, and create your own cryptic clue!`,
         );
     });
 
