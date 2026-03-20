@@ -78,7 +78,6 @@ main {
     display: grid;
     font-size: 1.25rem;
     line-height: 1.25;
-    align-content: center;
     justify-content: stretch;
 }
 

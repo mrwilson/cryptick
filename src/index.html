@@ -34,11 +34,17 @@
     .masthead {
         font-size: large;
         margin: 0;
+        font-weight: normal;
+    }
+
+    .author {
+        text-decoration: underline;
+        color: var(--colour-active);
     }
 </style>
 
 <section class="cotd">
-    <h2 class="header masthead">Clue of the Day</h2>
+    <h2 class="header masthead">Clue of the Day | {{ cotd.friendlyDate }}</h2>
     <a
         class="plausible-event-name=Home::COTD::Solve"
         id="solve"
@@ -46,22 +52,20 @@
     >
         <h2 class="header header--medium" id="cotd">{{cotd.clue}}</h2>
     </a>
-    <span class="list"
-        >By:
-        <a class="header" id="author" href="{{cotd.author_link}}"
-            >{{cotd.author_name}}</a
-        ></span
-    >
+    <h2 class="header masthead">
+        Author:
+        <a class="author" href="{{cotd.author_link}}">{{cotd.author_name}}</a>
+    </h2>
 </section>
 <section class="splash">
-    <p>
+    <h1 class="header masthead">
         <a
             class="link plausible-event-name=Home::COTD::Subscribe"
             href="/feed.xml"
             >Subscribe<img class="rss"
         /></a>
         for a new cryptic clue every day!
-    </p>
+    </h1>
 </section>
 
 <noscript>
