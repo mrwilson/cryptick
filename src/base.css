@@ -3,6 +3,11 @@
     --colour-active: #286433;
     --colour-bg: #9bbcabff;
     --colour-inactive: #9fa6b4ff;
+    --colour-inactive-shadow: color-mix(
+        in srgb,
+        var(--colour-inactive),
+        black 10%
+    );
 }
 
 html {
@@ -99,6 +104,7 @@ footer {
     line-height: 1.1;
     max-width: 40%;
     flex: 1;
+    box-shadow: 2px 2px 2px 0 var(--colour-active);
 }
 
 @supports not (-webkit-text-size-adjust: none) {
@@ -160,7 +166,6 @@ footer {
 .navigation-link {
     align-items: center;
     display: inline-flex;
-    font-weight: bold;
 
     svg {
         fill: var(--colour-active);

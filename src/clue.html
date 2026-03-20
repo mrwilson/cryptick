@@ -44,6 +44,8 @@
         text-transform: uppercase;
         caret-color: transparent;
         border: solid black 4px;
+        box-shadow: 3px 3px 2px 0
+            color-mix(in srgb, var(--colour-inactive), black 10%);
     }
 
     .answer__word__letter--revealed {
@@ -101,6 +103,7 @@
     .hint--revealed + .explanation + .answer + .list > .pill#show-hint {
         pointer-events: none;
         background: var(--colour-inactive);
+        box-shadow: 2px 2px 2px 0 var(--colour-inactive-shadow);
         cursor: not-allowed;
     }
 </style>
