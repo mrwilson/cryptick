@@ -19,11 +19,11 @@ body {
     margin: 0;
     font-family: system-ui, Roboto, 'Helvetica Neue', Arial, sans-serif;
     display: grid;
-    height: 100vh;
+    height: 100svh;
     grid-template:
-        'header' 8vh
+        'header' 8svh
         'main' auto
-        'footer' 8vh;
+        'footer' 8svh;
 }
 
 body > * {
@@ -68,7 +68,6 @@ header {
 
 main {
     grid-row: 2;
-    height: calc(80dvh - 2em);
     width: min(85vw, 22em);
     margin: 0 auto;
     padding: 1em;
