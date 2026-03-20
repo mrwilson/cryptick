@@ -27,7 +27,7 @@
         "@metalsmith/in-place": "^5.0.0",
         "@metalsmith/layouts": "^3.0.0",
         "http-server": "^14.1.1",
-        "jsdom": "^28.1.0",
+        "jsdom": "^29.0.1",
         "jstransformer-handlebars": "^1.2.0",
         "metalsmith": "^2.7.0",
         "prettier": "^3.8.1",
