@@ -23,7 +23,7 @@ jobs:
       - run: npm run lint
       - run: npm run build
       - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
+        uses: aws-actions/configure-aws-credentials@v6
         with:
           role-to-assume: arn:aws:iam::456604962869:role/DeployCryptick
           aws-region: eu-west-2
