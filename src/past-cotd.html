@@ -1,0 +1,40 @@
+<style>
+    main {
+        padding: 0;
+    }
+
+    .cotd__list {
+        font-size: small;
+        border-spacing: 1em;
+        overflow-y: auto;
+    }
+
+    .cotd__date {
+        width: max-content;
+        white-space: nowrap;
+    }
+</style>
+<div class="cotd__list">
+    <table>
+        <thead>
+            <tr>
+                <th class="cotd__date" scope="col">Date</th>
+                <th class="cotd__clue" scope="col">Clue</th>
+                <!--            <th scope="col">Author</th>-->
+            </tr>
+        </thead>
+        <tbody>
+            {{#each clues}}
+            <tr>
+                <td class="cotd__date">{{ date }}</td>
+                <td class="link cotd__clue">
+                    <a href="https://cryptick.wildvale.co.uk{{ link }}"
+                        >{{ clue }}</a
+                    >
+                </td>
+                <!--                <td><a href="{{ author_link }}">{{ author_name }}</a></td>-->
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
