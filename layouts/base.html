@@ -1,42 +1,6 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Cryptick</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no, interactive-widget=resizes-content"
-        />
-        <meta name="keywords" content="cryptic, crossword, clues" />
-        <meta
-            name="description"
-            content="{{#if cotd}}{{cotd.clue}}{{else}}Create a cryptic crossword clue and share it with people you know.{{/if}}"
-        />
-        <meta property="og:title" content="Cryptick" />
-        <meta property="og:site_name" content="Cryptick" />
-        <meta property="og:image" content="./logo.svg" />
-        <meta property="og:image:height" content="1200" />
-        <meta property="og:image:width" content="1200" />
-        <meta
-            property="release:repository"
-            content="https://github.com/mrwilson/cryptick"
-        />
-        <meta property="release:filename" content="{{ original_filename }}" />
-        <meta property="release:commit" content="{{ commitHash }}" />
-        <meta property="release:timestamp" content="{{ builtAt }}" />
-        <link rel="manifest" href="./manifest.json" />
-        <link rel="stylesheet" href="./base.css" />
-        <link rel="icon" href="./logo.svg" />
-        <link
-            rel="alternate"
-            type="application/rss+xml"
-            href="/feed.xml"
-            title="Clue of the Day RSS Feed"
-        />
-        <script type="module">
-            import ErrorHandler from './miniclue/errors.js';
-            new ErrorHandler().bind(window);
-        </script>
         <script
             async
             src="https://plausible.io/js/pa-nSHTBj0a2hbn-FVrrHdwg.js"
@@ -57,6 +21,66 @@
                     commit: '{{ commitHash_Short }}',
                 },
             });
+        </script>
+        {{#if redirect}}
+        <script>
+            plausible('COTD::Redirect');
+        </script>
+        <meta http-equiv="refresh" content="0;URL='{{ redirect }}'" />
+        {{/if}}
+        <title>Cryptick</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no, interactive-widget=resizes-content"
+        />
+        <meta name="keywords" content="cryptic, crossword, clues" />
+        <meta
+            name="description"
+            content="{{#if cotd}}{{cotd.clue}}{{else}}Create a cryptic crossword clue and share it with people you know.{{/if}}"
+        />
+        <meta
+            property="og:title"
+            content="Cryptick{{#if redirect}} Clue of the Day{{/if}}"
+        />
+        <meta
+            property="og:site_name"
+            content="Cryptick{{#if redirect}} Clue of the Day{{/if}}"
+        />
+        <meta
+            property="og:description"
+            content="{{#if cotd}}{{cotd.clue}}{{else}}Create a cryptic crossword clue and share it with people you know.{{/if}}"
+        />
+        <meta name="twitter:card" content="summary" />
+
+        {{#if redirect}}
+        <meta name="twitter:creator" content="{{ cotd.author_name }}" />
+        <meta name="twitter:label1" content="Author" />
+        <meta name="twitter:data1" content="{{ cotd.author_name }}" />
+        <meta property="profile:username" content="{{ cotd.author_name }}" />
+        {{/if}}
+        <meta property="og:image" content="logo.png" />
+        <meta property="og:image:height" content="1200" />
+        <meta property="og:image:width" content="1200" />
+        <meta
+            property="release:repository"
+            content="https://github.com/mrwilson/cryptick"
+        />
+        <meta property="release:filename" content="{{ original_filename }}" />
+        <meta property="release:commit" content="{{ commitHash }}" />
+        <meta property="release:timestamp" content="{{ builtAt }}" />
+        <link rel="manifest" href="manifest.json" />
+        <link rel="stylesheet" href="base.css" />
+        <link rel="icon" href="logo.svg" />
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            href="/feed.xml"
+            title="Clue of the Day RSS Feed"
+        />
+        <script type="module">
+            import ErrorHandler from './miniclue/errors.js';
+            new ErrorHandler().bind(window);
         </script>
     </head>
     <body>
