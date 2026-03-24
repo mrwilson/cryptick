@@ -31,6 +31,6 @@
         "jstransformer-handlebars": "^1.2.0",
         "metalsmith": "^2.7.0",
         "prettier": "^3.8.1",
-        "vitest": "^4.1.0"
+        "vitest": "^4.1.1"
     }
 }
