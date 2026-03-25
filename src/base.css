@@ -75,7 +75,7 @@ main {
     font-size: 1.25rem;
     line-height: 1.25;
     justify-content: stretch;
-    min-height: 100%;
+    color: var(--colour-active);
 }
 
 footer {
@@ -166,6 +166,37 @@ footer {
     svg {
         fill: var(--colour-active);
     }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background-clip: border-box;
+    border-radius: 1.5em;
+    height: 30svh;
+    width: min(85vw, 18em);
+    box-shadow: 2px 2px 2px 0 var(--colour-active);
+    border: solid 2px var(--colour-active);
+    background: color-mix(in srgb, var(--colour-bg), white 30%);
+}
+
+.card__top {
+    border-bottom: solid 2px var(--colour-active);
+}
+
+.card__title {
+    font-size: medium;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 0.5em;
+}
+
+.card__text {
+    font-weight: normal;
+    font-size: small;
+    margin: 0;
 }
 
 @media (max-width: 750px) {

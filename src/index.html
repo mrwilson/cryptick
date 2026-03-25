@@ -2,7 +2,6 @@
     .splash p {
         font-size: medium;
         color: var(--colour-active);
-        /*padding: 0;*/
     }
 
     .splash a {
@@ -11,7 +10,7 @@
     }
 
     main {
-        align-content: normal;
+        justify-items: center;
     }
 
     .rss {
@@ -19,16 +18,6 @@
         width: 1em;
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-label='RSS' role='img' viewBox='0 0 512 512'%3E%3Cpath d='m0 0H512V512H0' fill='%23f80'/%3E%3Cpath fill='%23fff' d='m109 271A132 133 0 01241 403h60A192 193 0 00109 211v-54A246 247 0 01355 403h60A306 307 0 00109 97m35 235a35 35 0 102 0'/%3E%3C/svg%3E");
         vertical-align: middle;
-    }
-
-    .cotd {
-        padding: 1em;
-        display: inline-grid;
-        border: solid 2px var(--colour-active);
-        background: color-mix(in srgb, var(--colour-bg), white 30%);
-        border-radius: 1.5em;
-        height: 35vh;
-        align-content: space-between;
     }
 
     .masthead {
@@ -41,26 +30,36 @@
         text-decoration: underline;
         color: var(--colour-active);
     }
+
+    .card__top--clue {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: x-large;
+        padding: 0 0.5em;
+    }
 </style>
 
-<section class="cotd">
-    <h2 class="header masthead">Clue of the Day | {{ cotd.friendlyDate }}</h2>
+<section class="card">
     <a
-        class="plausible-event-name=Home::COTD::Solve"
+        class="card__top card__top--clue header plausible-event-name=Home::COTD::Solve"
         id="solve"
         href="{{cotd.link}}"
-    >
-        <h2 class="header header--medium" id="cotd">{{cotd.clue}}</h2>
+        >{{cotd.clue}}
     </a>
-    <h2 class="header masthead">
+    <h4 class="card__title">Clue of the Day | {{ cotd.friendlyDate }}</h4>
+    <p class="card__text">
         Author:
         <a
             class="author plausible-event-name=Home::COTD::Author"
             href="{{cotd.author_link}}"
             >{{cotd.author_name}}</a
         >
-    </h2>
+    </p>
 </section>
+
 <section class="splash">
     <p class="header masthead">
         You can
