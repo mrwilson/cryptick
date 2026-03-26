@@ -9,6 +9,7 @@ const files = [
 
     '/error.svg',
     '/logo.svg',
+    '/unch.jpg',
 
     '/miniclue/decoder.js',
     '/miniclue/create.js',

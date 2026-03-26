@@ -185,6 +185,13 @@ footer {
     border-bottom: solid 2px var(--colour-active);
 }
 
+.card__top--image {
+    height: 100%;
+    background-size: cover;
+    border-top-right-radius: 1.5em;
+    border-top-left-radius: 1.5em;
+}
+
 .card__title {
     font-size: medium;
     font-weight: normal;
