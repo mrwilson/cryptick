@@ -119,7 +119,6 @@ a {
 
 p {
     text-align: center;
-    padding-bottom: 1em;
     font-size: x-large;
 }
 
@@ -181,7 +180,6 @@ footer {
 }
 
 .card__top {
-    border-bottom: solid 2px var(--colour-active);
     height: 100%;
     display: flex;
     justify-content: center;
@@ -199,11 +197,11 @@ footer {
 }
 
 .card__title {
+    border-top: solid 2px var(--colour-active);
     font-size: medium;
     font-weight: normal;
     text-align: center;
-    margin-bottom: 0;
-    margin-top: 0.5em;
+    margin: 0;
 }
 
 .card__text {

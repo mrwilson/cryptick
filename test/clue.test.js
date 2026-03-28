@@ -8,6 +8,7 @@ describe('MiniClue', () => {
     let answer,
         clue,
         hint,
+        clue_hint_summary,
         explanation,
         revealLetter,
         revealWord,
@@ -17,8 +18,9 @@ describe('MiniClue', () => {
 
     beforeEach(() => {
         answer = document.createElement('form');
-        clue = document.createElement('h1');
-        hint = document.createElement('h4');
+        clue = document.createElement('details');
+        clue_hint_summary = document.createElement('summary');
+        hint = document.createElement('span');
         explanation = document.createElement('h4');
         revealLetter = document.createElement('button');
         revealWord = document.createElement('button');
@@ -35,6 +37,9 @@ describe('MiniClue', () => {
             showHint,
             share,
         );
+
+        clue_hint_summary.appendChild(clue);
+        clue_hint_summary.appendChild(hint);
     });
 
     it('can render a clue', () => {
@@ -58,9 +63,9 @@ describe('MiniClue', () => {
 
     it('can display hint', () => {
         cryptickClue.renderClue(FULL_PAYLOAD);
-        assert.isFalse(hint.classList.contains('hint--revealed'));
+        assert.isFalse(clue_hint_summary.hasAttribute('open'));
         showHint.click();
-        assert.isTrue(hint.classList.contains('hint--revealed'));
+        assert.isTrue(clue_hint_summary.hasAttribute('open'));
     });
 
     it('does not fill out hint if not present', () => {

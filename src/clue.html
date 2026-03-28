@@ -71,7 +71,6 @@
 
     .explanation {
         opacity: 0;
-        grid-row: 3;
         height: auto;
         font-style: italic;
         white-space: pre-wrap;
@@ -81,28 +80,23 @@
         opacity: 1;
     }
 
-    .hint {
-        opacity: 0;
-        grid-row: 2;
-        height: auto;
-        font-style: italic;
-        white-space: pre-wrap;
-    }
-
-    .hint--revealed {
-        animation: fade-in 2s ease-in-out;
-        animation-fill-mode: forwards;
-    }
-
-    .hint--revealed + .explanation + .answer + .list > .pill#show-hint {
+    .card--clue[open] + .explanation + .answer + .list > .pill#show-hint {
         pointer-events: none;
         background: var(--colour-inactive);
         box-shadow: 2px 2px 2px 0 var(--colour-inactive-shadow);
         cursor: not-allowed;
     }
+
+    .card--clue[open] > #hint {
+        animation: fade-in 2s ease-in-out;
+        animation-fill-mode: forwards;
+    }
 </style>
-<h1 class="header" id="clue"></h1>
-<h4 class="header hint" id="hint"></h4>
+
+<details class="card card--clue" style="height: 30svh">
+    <summary class="card__top" style="height: 25svh" id="clue"></summary>
+    <p class="card__title" id="hint"></p>
+</details>
 <h4 class="header explanation" id="explanation"></h4>
 <form class="answer" id="answer" target="_blank"></form>
 <div class="list">
