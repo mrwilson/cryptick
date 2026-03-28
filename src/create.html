@@ -4,7 +4,6 @@
     }
 
     .clue_maker {
-        display: inline-grid;
         grid-row: 1;
         row-gap: 0.5em;
     }
@@ -12,6 +11,9 @@
     .clue_maker__input {
         border: none;
         border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+        display: block;
     }
 
     .clue_maker__input--answer {
@@ -19,8 +21,10 @@
     }
 
     .clue_maker__label {
+        display: block;
         text-align: left;
         color: var(--colour-active);
+        padding: 0.5em 0;
     }
 
     .clue_maker:invalid + .list > .pill {
@@ -72,6 +76,16 @@
         placeholder="SLATE*"
         rows="1"
     ></textarea>
+    <!--    <label class="clue_maker__label" for="author">Author (Optional)</label>-->
+    <!--    <input-->
+    <!--            class="input clue_maker__input"-->
+    <!--            id="author"-->
+    <!--            name="author"-->
+    <!--            placeholder="Wildvale"-->
+    <!--            required-->
+    <!--            minlength="1"-->
+    <!--            maxlength="20"-->
+    <!--    />-->
 </form>
 <div class="list">
     <button class="pill plausible-event-name=Create::Copy" id="copy">
