@@ -31,14 +31,8 @@
         color: var(--colour-active);
     }
 
-    .card__top--clue {
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        font-size: x-large;
-        padding: 0 0.5em;
+    .card--clue {
+        height: 30svh;
     }
 
     .unch {
@@ -46,9 +40,9 @@
     }
 </style>
 
-<section class="card">
+<section class="card card--clue">
     <a
-        class="card__top card__top--clue header plausible-event-name=Home::COTD::Solve"
+        class="card__top header plausible-event-name=Home::COTD::Solve"
         id="solve"
         href="{{cotd.link}}"
         >{{cotd.clue}}
@@ -81,7 +75,7 @@
     </p>
 </section>
 
-<section class="card">
+<section class="card card--clue">
     <a
         class="card__top card__top--image unch"
         href="https://unchcrosswords.com?utm_source=cryptick"

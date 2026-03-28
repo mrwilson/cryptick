@@ -8,6 +8,7 @@
         var(--colour-inactive),
         black 10%
     );
+    --site-width: min(85vw, 18em);
 }
 
 html {
@@ -31,7 +32,6 @@ body > * {
 }
 
 header {
-    grid-row: 1;
     display: inline-flex;
     align-items: center;
     text-align: left;
@@ -68,7 +68,7 @@ header {
 
 main {
     grid-row: 2;
-    width: min(85vw, 22em);
+    width: var(--site-width);
     margin: 0 auto;
     padding: 1em;
     display: grid;
@@ -174,8 +174,7 @@ footer {
     min-width: 0;
     background-clip: border-box;
     border-radius: 1.5em;
-    height: 30svh;
-    width: min(85vw, 18em);
+    width: var(--site-width);
     box-shadow: 2px 2px 2px 0 var(--colour-active);
     border: solid 2px var(--colour-active);
     background: color-mix(in srgb, var(--colour-bg), white 30%);
@@ -183,6 +182,13 @@ footer {
 
 .card__top {
     border-bottom: solid 2px var(--colour-active);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: x-large;
+    padding: 0 0.5em;
 }
 
 .card__top--image {
