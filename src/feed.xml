@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Cryptick Clue of the Day</title>
-        <description>RSS feed of my cryptic crossword clues, posted daily</description>
+        <description>RSS feed of cryptic crossword clues, posted daily</description>
         <link>https://cryptick.wildvale.co.uk/</link>
         <image>
             <url>https://cryptick.wildvale.co.uk/logo.png</url>
@@ -18,7 +18,7 @@
         <item>
             <title>{{ clue }}</title>
             <description><![CDATA[By <a href="{{ author_link }}">{{ author_name }}</a>]]></description>
-            <pubDate>{{ date }}</pubDate>
+            <pubDate>{{ dateWithHours }}</pubDate>
             <link>https://cryptick.wildvale.co.uk{{ link }}</link>
         </item>
         {{/each}}
