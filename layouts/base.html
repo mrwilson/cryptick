@@ -22,12 +22,6 @@
                 },
             });
         </script>
-        {{#if redirect}}
-        <script>
-            plausible('COTD::Redirect');
-        </script>
-        <meta http-equiv="refresh" content="0;URL='{{ redirect }}'" />
-        {{/if}}
         <title>Cryptick</title>
         <meta name="theme-color" content="#286433" />
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -38,28 +32,15 @@
         <meta name="keywords" content="cryptic, crossword, clues" />
         <meta
             name="description"
-            content="{{#if cotd}}{{cotd.clue}}{{else}}Create a cryptic crossword clue and share it with people you know.{{/if}}"
+            content="Create a cryptic crossword clue and share it with people you know."
         />
-        <meta
-            property="og:title"
-            content="Cryptick{{#if redirect}} Clue of the Day{{/if}}"
-        />
-        <meta
-            property="og:site_name"
-            content="Cryptick{{#if redirect}} Clue of the Day{{/if}}"
-        />
+        <meta property="og:title" content="Cryptick" />
+        <meta property="og:site_name" content="Cryptick" />
         <meta
             property="og:description"
-            content="{{#if cotd}}{{cotd.clue}}{{else}}Create a cryptic crossword clue and share it with people you know.{{/if}}"
+            content="Create a cryptic crossword clue and share it with people you know."
         />
         <meta name="twitter:card" content="summary" />
-
-        {{#if redirect}}
-        <meta name="twitter:creator" content="{{ cotd.author_name }}" />
-        <meta name="twitter:label1" content="Author" />
-        <meta name="twitter:data1" content="{{ cotd.author_name }}" />
-        <meta property="profile:username" content="{{ cotd.author_name }}" />
-        {{/if}}
         <meta
             property="release:repository"
             content="https://github.com/mrwilson/cryptick"

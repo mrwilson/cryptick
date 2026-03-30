@@ -1,1 +1,6 @@
-<span></span>
+<script>
+    plausible('COTD::Redirect') &&
+        window.location.replace(
+            `./cotd/${new Date().toISOString().substring(0, 10)}.html`,
+        );
+</script>

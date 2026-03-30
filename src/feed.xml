@@ -19,7 +19,7 @@
             <title>{{ clue }}</title>
             <description><![CDATA[By <a href="{{ author_link }}">{{ author_name }}</a>]]></description>
             <pubDate>{{ dateWithHours }}</pubDate>
-            <link>https://cryptick.wildvale.co.uk/cotd/{{ date }}.html</link>
+            <link>https://cryptick.wildvale.co.uk/cotd/{{ date }}.html?utm_source=rss</link>
         </item>
         {{/each}}
 
