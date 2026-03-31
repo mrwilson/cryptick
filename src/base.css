@@ -192,8 +192,8 @@ footer {
 .card__top--image {
     height: 100%;
     background-size: cover;
-    border-top-right-radius: 1.5em;
-    border-top-left-radius: 1.5em;
+    border-top-right-radius: 1.2em;
+    border-top-left-radius: 1.2em;
 }
 
 .card__title {
