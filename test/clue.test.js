@@ -92,7 +92,7 @@ describe('MiniClue', () => {
         cryptickClue.shareMessage('https://example.com', clipboard);
 
         assert.equal(
-            'I solved a clue on Cryptick!\n\nWhat time is it? (6)\n\nhttps://example.com',
+            '⭐️I solved a clue on Cryptick!✅\n\nWhat time is it? (6)\n\nhttps://example.com',
             output,
         );
     });

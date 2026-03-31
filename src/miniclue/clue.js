@@ -73,11 +73,8 @@ export class CryptickClue {
     }
 
     shareMessage(location, clipboard) {
-        let message = [
-            'I solved a clue on Cryptick!',
-            this.clue.textContent,
-            location,
-        ].join('\n\n');
+        let message = `⭐️I solved a clue on Cryptick!✅\n\n${this.clue.textContent}\n\n${location}`;
+
         clipboard.writeText(message).then((_) => {
             this.share.textContent = 'Copied to clipboard!';
         });

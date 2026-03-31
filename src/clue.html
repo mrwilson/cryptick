@@ -143,8 +143,17 @@
         document.getElementById('share'),
     );
 
-    document.getElementById('share').onclick = (_) =>
-        miniClue.shareMessage(window.location, navigator.clipboard);
+    document.getElementById('share').addEventListener('click', async (e) => {
+        if (navigator.share) {
+            await navigator.share({
+                title: 'Cryptick',
+                text: `⭐️I solved a clue on Cryptick!✅\n\n${clue.clue} (${clue.enumeration})\n\n`,
+                url: window.location,
+            });
+        } else {
+            miniClue.shareMessage(window.location, navigator.clipboard);
+        }
+    });
 
     miniClue.renderClue(clue);
 
