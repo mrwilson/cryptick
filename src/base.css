@@ -240,3 +240,38 @@ footer {
         display: none;
     }
 }
+
+.hint-dialog {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1em;
+    padding-right: 1em;
+    width: var(--site-width);
+    transition: translate 0.5s ease-in-out allow-discrete;
+
+    &[open] {
+        translate: 0 20svh;
+        @starting-style {
+            translate: 0 100svh;
+        }
+        &::backdrop {
+            background-color: transparent;
+        }
+    }
+
+    &:not([open]) {
+        translate: 0 100svh;
+    }
+
+    .close {
+        background: transparent;
+        border: none;
+        font-size: x-small;
+        cursor: pointer;
+        svg {
+            fill: var(--colour-active);
+        }
+    }
+}

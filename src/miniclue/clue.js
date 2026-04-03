@@ -35,7 +35,7 @@ export class CryptickClue {
         }
 
         if (params.hint) {
-            this.hint.textContent = `HINT: ${params.hint}`;
+            this.hint.textContent = params.hint;
         }
 
         words
@@ -66,10 +66,9 @@ export class CryptickClue {
             letter.classList.add('answer__word__letter--revealed');
         };
 
-        this.showHint.onclick = (_) => {
-            this.hint.parentElement.setAttribute('open', 'true');
-            this.showHint.disabled = true;
-        };
+        this.showHint.addEventListener('click', (_) => {
+            this.hint.parentElement.showModal();
+        });
     }
 
     shareMessage(location, clipboard) {
