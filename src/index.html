@@ -32,31 +32,61 @@
     }
 
     .card--clue {
-        height: 30svh;
+        height: max-content;
+        .card__top {
+            height: 4em;
+        }
+
+        .card__title {
+            height: 1.5em;
+        }
+    }
+
+    @keyframes shimmer {
+        to {
+            background-position-x: 0;
+        }
+    }
+
+    .card--clue:first-of-type {
+        background: linear-gradient(
+            -45deg,
+            color-mix(in srgb, var(--colour-bg), white 30%) 48%,
+            white 50%,
+            color-mix(in srgb, var(--colour-bg), white 30%) 52%
+        );
+        background-size: 500%;
+        background-position-x: 100%;
+        animation: shimmer 5s infinite linear;
     }
 
     .unch {
-        background-image: url('/unch.jpg');
+        a {
+            background-image: url('/unch.jpg');
+        }
+
+        height: 20svh;
     }
 </style>
 
+{{#each cotd}}
 <section class="card card--clue">
     <a
         class="card__top header plausible-event-name=Home::COTD::Solve"
         id="solve"
-        href="./cotd/{{ cotd.date }}.html"
-        >{{cotd.clue}}
+        href="./cotd/{{ date }}.html"
+        >{{clue}}
     </a>
-    <h4 class="card__title">Clue of the Day | {{ cotd.friendlyDate }}</h4>
-    <p class="card__text">
-        Author:
+    <h4 class="card__title">
+        COTD | {{ friendlyDate }} | Author:
         <a
             class="author plausible-event-name=Home::COTD::Author"
-            href="{{cotd.author_link}}"
-            >{{cotd.author_name}}</a
+            href="{{author_link}}"
+            >{{author_name}}</a
         >
-    </p>
+    </h4>
 </section>
+{{/each}}
 
 <section class="splash">
     <p class="header masthead">
@@ -75,9 +105,9 @@
     </p>
 </section>
 
-<section class="card card--clue">
+<section class="card unch">
     <a
-        class="card__top card__top--image unch"
+        class="card__top card__top--image"
         href="https://unchcrosswords.com?utm_source=cryptick"
     ></a>
     <h4 class="card__title">Unch Issue 3 | Pre-order now</h4>

@@ -1,38 +1,47 @@
 <style>
     main {
-        padding: 0;
-    }
-
-    .cotd__list {
-        font-size: small;
-        border-spacing: 1em;
+        justify-items: center;
         overflow-y: auto;
+        overflow-x: hidden;
+        height: 100%;
+        scroll-snap-type: y proximity;
     }
 
-    .cotd__date {
-        width: max-content;
-        white-space: nowrap;
+    .card--clue {
+        height: max-content;
+        .card__top {
+            height: 4em;
+        }
+
+        .card__title {
+            height: 1em;
+        }
+
+        &:nth-of-type(2n + 1) {
+            scroll-snap-stop: always;
+            scroll-snap-align: start;
+        }
+
+        padding-bottom: 0.5em;
+        margin-bottom: 0.5em;
     }
 </style>
-<div class="cotd__list">
-    <table>
-        <thead>
-            <tr>
-                <th class="cotd__date" scope="col">Date</th>
-                <th class="cotd__clue" scope="col">Clue</th>
-                <!--            <th scope="col">Author</th>-->
-            </tr>
-        </thead>
-        <tbody>
-            {{#each clues}}
-            <tr>
-                <td class="cotd__date">{{ friendlyDate }}</td>
-                <td class="link cotd__clue">
-                    <a href="./cotd/{{ date }}.html">{{ clue }}</a>
-                </td>
-                <!--                <td><a href="{{ author_link }}">{{ author_name }}</a></td>-->
-            </tr>
-            {{/each}}
-        </tbody>
-    </table>
-</div>
+
+{{#each clues}}
+<section class="card card--clue">
+    <a
+        class="card__top header plausible-event-name=Home::COTD::Solve"
+        id="solve"
+        href="./cotd/{{ date }}.html"
+        >{{clue}}
+    </a>
+    <h4 class="card__title">
+        COTD | {{ friendlyDate }} | Author:
+        <a
+            class="author link plausible-event-name=Home::COTD::Author"
+            href="{{author_link}}"
+            >{{author_name}}</a
+        >
+    </h4>
+</section>
+{{/each}}
