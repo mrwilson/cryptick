@@ -222,6 +222,14 @@
 
             <section class="card card--clue" style="height: 30svh">
                 <span class="card__top" id="clue"></span>
+                <h4 class="card__title">
+                    COTD #{{id}} | {{ friendlyDate }} | Author:
+                    <a
+                        class="link author plausible-event-name=COTD::Historic::Author"
+                        href="{{author_link}}"
+                        >{{author_name}}</a
+                    >
+                </h4>
             </section>
             <dialog class="card hint-dialog">
                 <span class="hint header" id="hint"></span>
