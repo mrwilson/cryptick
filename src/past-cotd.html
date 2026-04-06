@@ -27,21 +27,4 @@
     }
 </style>
 
-{{#each clues}}
-<section class="card card--clue">
-    <a
-        class="card__top header plausible-event-name=Home::COTD::Solve"
-        id="solve"
-        href="./cotd/{{ date }}.html"
-        >{{clue}}
-    </a>
-    <h4 class="card__title">
-        COTD | {{ friendlyDate }} | Author:
-        <a
-            class="author link plausible-event-name=Home::COTD::Author"
-            href="{{author_link}}"
-            >{{author_name}}</a
-        >
-    </h4>
-</section>
-{{/each}}
+{{#each clues}} {{> cotd namespace=Past }} {{/each}}

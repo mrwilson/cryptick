@@ -18,7 +18,8 @@ Metalsmith(dirname(fileURLToPath(import.meta.url)))
     })
     .use(setUpTemplates({
         'header': '_header.html',
-        'footer': '_footer.html'
+        'footer': '_footer.html',
+        'cotd': '_clue_of_the_day.html'
     }))
     .use(versionControl)
     .use(clueOfTheDay(cotd))
