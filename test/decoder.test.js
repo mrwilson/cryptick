@@ -78,6 +78,16 @@ describe('ClueDecoder', () => {
         });
     });
 
+    it('can decode string-based clues from hash fragment with author', () => {
+        let input = '#SW5jcmVkaWJsZSBwdXBpbHxleWUgb3BlbmluZ3x8fFdpbGR2YWxl';
+        assert.deepEqual(decoder.decode(input), {
+            clue: 'Incredible pupil',
+            answer: 'eye opening',
+            enumeration: '3,7',
+            author: 'Wildvale',
+        });
+    });
+
     it('can decode clues with emoji', () => {
         let input =
             '#4p2E77iPK/CflKU98J+Sp3xleGFtcGxlfFRoaXMgaXMgYW4gZXhhbXBsZSBlbW9qaSBjbHVlfFRoaXMgaXMgYW4gZXhhbXBsZSBlbW9qaSBjbHVl';

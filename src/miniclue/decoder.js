@@ -22,6 +22,10 @@ export class ClueDecoder {
             clue.explanation = data.e;
         }
 
+        if (data.u) {
+            clue.author = data.u;
+        }
+
         clue.enumeration = enumerate(clue.answer);
 
         return clue;
@@ -41,6 +45,10 @@ export class ClueDecoder {
 
         if (data.length === 4 && data[3]) {
             clue.explanation = data[3];
+        }
+
+        if (data.length === 5 && data[4]) {
+            clue.author = data[4];
         }
 
         clue.enumeration = enumerate(clue.answer);
