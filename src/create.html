@@ -76,16 +76,15 @@
         placeholder="SLATE*"
         rows="1"
     ></textarea>
-    <!--    <label class="clue_maker__label" for="author">Author (Optional)</label>-->
-    <!--    <input-->
-    <!--            class="input clue_maker__input"-->
-    <!--            id="author"-->
-    <!--            name="author"-->
-    <!--            placeholder="Wildvale"-->
-    <!--            required-->
-    <!--            minlength="1"-->
-    <!--            maxlength="20"-->
-    <!--    />-->
+    <label class="clue_maker__label" for="author">Author (Optional)</label>
+    <input
+        class="input clue_maker__input"
+        id="author"
+        name="author"
+        placeholder="Wildvale"
+        minlength="1"
+        maxlength="20"
+    />
 </form>
 <div class="list">
     <button class="pill plausible-event-name=Create::Copy" id="copy">
@@ -106,6 +105,7 @@
         document.getElementById('answer'),
         document.getElementById('hint'),
         document.getElementById('explanation'),
+        document.getElementById('author'),
     );
 
     document.getElementById('copy').addEventListener('click', (e) => {

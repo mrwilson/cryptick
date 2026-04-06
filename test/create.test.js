@@ -11,6 +11,7 @@ describe('ClueEncoder', () => {
             { value: 'eye opening' },
             {},
             {},
+            {},
         );
 
         assert.deepEqual(decoder.decode(encoder.fragment('')), {
@@ -26,6 +27,7 @@ describe('ClueEncoder', () => {
             { value: 'eye opening' },
             { value: 'this is a hint' },
             {},
+            {},
         );
 
         assert.deepEqual(decoder.decode(encoder.fragment('')), {
@@ -36,12 +38,30 @@ describe('ClueEncoder', () => {
         });
     });
 
+    it('can encode clues with an author', () => {
+        let encoder = new CreateCryptick(
+            { value: 'Incredible pupil' },
+            { value: 'eye opening' },
+            {},
+            {},
+            { value: 'Wildvale' },
+        );
+
+        assert.deepEqual(decoder.decode(encoder.fragment('')), {
+            clue: 'Incredible pupil',
+            answer: 'eye opening',
+            author: 'Wildvale',
+            enumeration: '3,7',
+        });
+    });
+
     it('can encode clues with explanations', () => {
         let encoder = new CreateCryptick(
             { value: 'Incredible pupil' },
             { value: 'eye opening' },
             {},
             { value: 'this is an explanation' },
+            {},
         );
 
         assert.deepEqual(decoder.decode(encoder.fragment('')), {
@@ -58,11 +78,12 @@ describe('ClueEncoder', () => {
             { value: 'eye opening' },
             {},
             {},
+            {},
         );
 
         const clue = 'Incredible pupil (3,7)';
         const url =
-            'https://example.com/#SW5jcmVkaWJsZSBwdXBpbHxleWUgb3BlbmluZ3x8';
+            'https://example.com/#SW5jcmVkaWJsZSBwdXBpbHxleWUgb3BlbmluZ3x8fA==';
 
         assert.equal(
             encoder.copyText('https://example.com/'),
@@ -76,12 +97,13 @@ describe('ClueEncoder', () => {
             { value: 'eye opening' },
             {},
             {},
+            {},
         );
 
         assert.deepEqual(encoder.shareData('https://example.com/'), {
             title: 'Cryptick',
             text: 'Incredible pupil (3,7)\n\n',
-            url: 'https://example.com/#SW5jcmVkaWJsZSBwdXBpbHxleWUgb3BlbmluZ3x8',
+            url: 'https://example.com/#SW5jcmVkaWJsZSBwdXBpbHxleWUgb3BlbmluZ3x8fA==',
         });
     });
 
@@ -91,12 +113,13 @@ describe('ClueEncoder', () => {
             { value: 'example' },
             {},
             {},
+            {},
         );
 
         assert.deepEqual(encoder.shareData('https://example.com/'), {
             title: 'Cryptick',
             text: '🔥+❄️=💧 (7)\n\n',
-            url: 'https://example.com/#8J+UpSvinYTvuI898J+Sp3xleGFtcGxlfHw=',
+            url: 'https://example.com/#8J+UpSvinYTvuI898J+Sp3xleGFtcGxlfHx8',
         });
     });
 });

@@ -43,7 +43,7 @@ export class ClueDecoder {
             clue.hint = data[2];
         }
 
-        if (data.length === 4 && data[3]) {
+        if (data.length >= 4 && data[3]) {
             clue.explanation = data[3];
         }
 
