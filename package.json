@@ -26,6 +26,7 @@
     "devDependencies": {
         "@metalsmith/in-place": "^5.0.0",
         "@metalsmith/layouts": "^3.0.0",
+        "handlebars": "^4.7.9",
         "http-server": "^14.1.1",
         "jsdom": "^29.0.1",
         "jstransformer-handlebars": "^1.2.0",

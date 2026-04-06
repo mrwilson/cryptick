@@ -7,6 +7,7 @@ import inPlace from '@metalsmith/in-place';
 import cotd from './cotd.json' with { type: 'json' };
 import clueOfTheDay from './lib/clue-of-the-day.js';
 import versionControl from './lib/version-control.js';
+import setUpTemplates from "./lib/templates.js";
 
 Metalsmith(dirname(fileURLToPath(import.meta.url)))
     .clean(true)
@@ -15,6 +16,10 @@ Metalsmith(dirname(fileURLToPath(import.meta.url)))
     .metadata({
         builtAt: new Date().toISOString(),
     })
+    .use(setUpTemplates({
+        'header': '_header.html',
+        'footer': '_footer.html'
+    }))
     .use(versionControl)
     .use(clueOfTheDay(cotd))
     .use(function original_filename(files) {
