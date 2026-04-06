@@ -154,6 +154,7 @@
                     <a
                         class="link author plausible-event-name=COTD::Historic::Author"
                         href="{{author_link}}"
+                        id="author"
                         >{{author_name}}</a
                     >
                 </h4>
@@ -220,6 +221,7 @@
                 const miniClue = new CryptickClue(
                     document.getElementById('answer'),
                     document.getElementById('clue'),
+                    document.getElementById('author'),
                     document.getElementById('hint'),
                     document.getElementById('explanation'),
                     document.getElementById('reveal-letter'),
@@ -234,7 +236,7 @@
                         if (navigator.share) {
                             await navigator.share({
                                 title: 'Cryptick',
-                                text: `⭐️I solved a clue on Cryptick!✅\n\n${clue.clue} (${clue.enumeration})\n\n`,
+                                text: `⭐️I solved the Clue of the Day on Cryptick!✅\n\n${clue.clue} (${clue.enumeration})\n\n`,
                                 url: window.location,
                             });
                         } else {

@@ -149,6 +149,7 @@
     const miniClue = new CryptickClue(
         document.getElementById('answer'),
         document.getElementById('clue'),
+        document.getElementById('author'),
         document.getElementById('hint'),
         document.getElementById('explanation'),
         document.getElementById('reveal-letter'),
@@ -157,16 +158,11 @@
         document.getElementById('share'),
     );
 
-    if (clue.author) {
-        document.getElementById('author').textContent =
-            `Author: ${clue.author}`;
-    }
-
     document.getElementById('share').addEventListener('click', async (e) => {
         if (navigator.share) {
             await navigator.share({
                 title: 'Cryptick',
-                text: `⭐️I solved a clue on Cryptick!✅\n\n${clue.clue} (${clue.enumeration})\n\n`,
+                text: `⭐️I solved ${clue.author ? clue.author + "'s" : 'a'} clue on Cryptick!✅\n\n${clue.clue} (${clue.enumeration})\n\n`,
                 url: window.location,
             });
         } else {

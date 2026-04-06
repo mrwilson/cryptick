@@ -4,6 +4,7 @@ export class CryptickClue {
     constructor(
         answer,
         clue,
+        author,
         hint,
         explanation,
         revealLetter,
@@ -13,6 +14,7 @@ export class CryptickClue {
     ) {
         this.answer = answer;
         this.clue = clue;
+        this.author = author;
         this.hint = hint;
         this.explanation = explanation;
         this.revealLetter = revealLetter;
@@ -36,6 +38,10 @@ export class CryptickClue {
 
         if (params.hint) {
             this.hint.textContent = params.hint;
+        }
+
+        if (params.author) {
+            this.author.textContent = `Author: ${params.author}`;
         }
 
         words
@@ -72,7 +78,7 @@ export class CryptickClue {
     }
 
     shareMessage(location, clipboard) {
-        let message = `⭐️I solved a clue on Cryptick!✅\n\n${this.clue.textContent}\n\n${location}`;
+        let message = `⭐️I solved ${this.author.textContent !== '' ? this.author.textContent.split(' ')[1] + "'s" : 'a'} clue on Cryptick!✅\n\n${this.clue.textContent}\n\n${location}`;
 
         clipboard.writeText(message).then((_) => {
             this.share.textContent = 'Copied to clipboard!';

@@ -7,6 +7,7 @@ import { FULL_PAYLOAD, NO_EXPLANATION, NO_HINT } from './test-examples.js';
 describe('MiniClue', () => {
     let answer,
         clue,
+        author,
         hint,
         hint_modal,
         explanation,
@@ -19,6 +20,7 @@ describe('MiniClue', () => {
     beforeEach(() => {
         answer = document.createElement('form');
         clue = document.createElement('span');
+        author = document.createElement('span');
         hint_modal = document.createElement('dialog');
         hint = document.createElement('span');
         explanation = document.createElement('h4');
@@ -30,6 +32,7 @@ describe('MiniClue', () => {
         cryptickClue = new CryptickClue(
             answer,
             clue,
+            author,
             hint,
             explanation,
             revealLetter,
@@ -92,6 +95,25 @@ describe('MiniClue', () => {
 
         assert.equal(
             '⭐️I solved a clue on Cryptick!✅\n\nWhat time is it? (6)\n\nhttps://example.com',
+            output,
+        );
+    });
+
+    it('can copy share message with author to clipboard', () => {
+        cryptickClue.renderClue({ author: 'Wildvale', ...FULL_PAYLOAD });
+        let output = '';
+
+        let clipboard = {
+            writeText: function (text) {
+                output = text;
+                return new Promise(() => text);
+            },
+        };
+
+        cryptickClue.shareMessage('https://example.com', clipboard);
+
+        assert.equal(
+            "⭐️I solved Wildvale's clue on Cryptick!✅\n\nWhat time is it? (6)\n\nhttps://example.com",
             output,
         );
     });
