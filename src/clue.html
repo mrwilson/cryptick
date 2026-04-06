@@ -69,6 +69,10 @@
         display: none;
     }
 
+    #author:empty {
+        display: none;
+    }
+
     .explanation {
         opacity: 0;
         height: auto;
@@ -87,6 +91,7 @@
 
 <section class="card card--clue" style="height: 30svh">
     <span class="card__top" id="clue"></span>
+    <span class="card__title" id="author"></span>
 </section>
 <dialog class="card hint-dialog">
     <span class="hint header" id="hint"></span>
@@ -151,6 +156,11 @@
         document.getElementById('show-hint'),
         document.getElementById('share'),
     );
+
+    if (clue.author) {
+        document.getElementById('author').textContent =
+            `Author: ${clue.author}`;
+    }
 
     document.getElementById('share').addEventListener('click', async (e) => {
         if (navigator.share) {
