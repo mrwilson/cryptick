@@ -41,7 +41,7 @@ export class CryptickClue {
         }
 
         if (params.author) {
-            this.author.textContent = `Author: ${params.author}`;
+            this.author.textContent = params.author;
         }
 
         words
@@ -78,7 +78,7 @@ export class CryptickClue {
     }
 
     shareMessage(location, clipboard) {
-        let message = `⭐️I solved ${this.author.textContent !== '' ? this.author.textContent.split(' ')[1] + "'s" : 'a'} clue on Cryptick!✅\n\n${this.clue.textContent}\n\n${location}`;
+        let message = `⭐️I solved ${this.author.textContent !== '' ? this.author.textContent + "'s" : 'a'} clue on Cryptick!✅\n\n${this.clue.textContent}\n\n${location}`;
 
         clipboard.writeText(message).then((_) => {
             this.share.textContent = 'Copied to clipboard!';
