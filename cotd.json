@@ -1,296 +1,52 @@
 {
-    "2026-03-03": {
-        "hash": "Qm95ZnJpZW5kIHdhbnRzIGEgbGF0aW4gY2VsZWJyaXR5fEZBTUV8RGVmaW5pdGlvbiBpcyAnY2VsZWJyaXR5J3xGTEFNRSAtIEw",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
+    "clues": {
+        "2026-03-03": "Qm95ZnJpZW5kIHdhbnRzIGEgbGF0aW4gY2VsZWJyaXR5fEZBTUV8RGVmaW5pdGlvbiBpcyAnY2VsZWJyaXR5J3xGTEFNRSAtIEx8V2lsZHZhbGU=",
+        "2026-03-04": "QXJ0aXN0cyBhcmUgZXNzZW50aWFsbHkgY29uY2VybmVkIHdpdGggcHJlc3N8SVJPTnxEZWZpbml0aW9uIGlzICdwcmVzcyd8YXJ0KEkpc3RzIGEoUillICsgT058V2lsZHZhbGU=",
+        "2026-03-05": "VGFrZSBsZWdhbCBhY3Rpb24gZm9sbG93aW5nIG51ZGUga2lzcyBwdWJsaWNhdGlvbnxJU1NVRXxEZWZpbml0aW9uIGlzICdwdWJsaWNhdGlvbid8U1VFIGZvbGxvd2luZyBrKElTKXN8V2lsZHZhbGU=",
+        "2026-03-06": "UG9hY2hlciBvbiBzYWZhcmkgc211Z2dsZXMgYmlyZHN8SEVST05TfERlZmluaXRpb24gaXMgJ2JpcmRzJ3xwb2FjKEhFUiBPTiBTKWFmYXJpfFdpbGR2YWxl",
+        "2026-03-07": "VHVybiB1cCBhZnRlciBkZXRlY3RpdmVzIGxlYXZlfERJU0FQUEVBUnxEZWZpbml0aW9uIGlzICdsZWF2ZSd8QVBQRUFSIGFmdGVyIERJU3xXaWxkdmFsZQ==",
+        "2026-03-08": "QWR2aXNlIHNlY3QgdG8gZW1icmFjZSB3YXl3YXJkIHNvbnxDT05TVUxUfERlZmluaXRpb24gaXMgJ2FkdmlzZSd8Q1VMVCBjb250IFNPTip8V2lsZHZhbGU=",
+        "2026-03-09": "Q2hhbm5lbHMgbWlzcmVwcmVzZW50IGEgUmVwdWJsaWNhbiBsZWFkZXIncyB2aWV3cyBhZnRlciBhZ3JlZWluZyBhdCBmaXJzdHxBSVJXQVZFU3xEZWZpbml0aW9uIGlzICdjaGFubmVscyd8KEEgKyBSICsgVklFV1MpKiBhZnRlciBBfFdpbGR2YWxl",
+        "2026-03-10": "UGhvdG8gb2YgbWUgaW4gRS4gRmlsZXMgLSB1bmFjY2VwdGFibGV8U0VMRklFfCdVbmFjY2VwdGFibGUnIGlzIGFuIGFuYWdyYW0gaW5kaWNhdG9yfFNFTEZJRSA9IChFRklMRVMpKnxXaWxkdmFsZQ==",
+        "2026-03-11": "VW53ZWxjb21lIG5ld3MgYnVyaWVzIGEgd2FybmluZ3xvbWVufERlZmluaXRpb24gaXMgJ2Egd2FybmluZyd8dW53ZWxjKE9NRSBOKWV3c3xXaWxkdmFsZQ==",
+        "2026-03-12": "WW91bmcgd29tYW4gam9pbnMgc2V0dGVyIGZvciBhIGRyaW5rfExBU1NJfERlZmluaXRpb24gaXMgJ2EgZHJpbmsnfExBU1MgKyBJfFdpbGR2YWxl",
+        "2026-03-13": "V2lzZSBtYW4gYm9yZWQgYnkgYSB2ZXJ5IHVuY2l2aWxpc2VkIHNvcnR8c2F2YWdlfERlZmluaXRpb24gaXMgJ3VuY2l2aWxpc2VkIHNvcnQnfFNBR0UgY29udCBBVnxkaXhvbmFyeQ==",
+        "2026-03-14": "S2V5IHBhcnR5IG1ha2luZyBhIGNvbWViYWNrfExFVkVSfERlZmluaXRpb24gaXMgJ2tleSd8UkVWRUw+fFdpbGR2YWxl",
+        "2026-03-15": "SGVhZCBoZXJlIHRvIGJlYXQgZGlzZWFzZSF8U0VBU0lERXxUaGlzIGlzIGFuICZsaXQgY2x1ZXxESVNFQVNFKnxXaWxkdmFsZQ==",
+        "2026-03-16": "QSBzaGlwd3JlY2tlZCBiZWFyIGxvc3QgZXNzZW50aWFsIHNhaWxpbmcgdG9vbHxBU1RST0xBQkV8RGVmaW5pdGlvbiBpcyAnZXNzZW50aWFsIHNhaWxpbmcgdG9vbCd8QSArIChCRUFSIExPU1QpKnxXaWxkdmFsZQ==",
+        "2026-03-17": "SW5zYW5lOiBpdCdzIGEgY3JhbmUgb24gYSBwbGFuZSF8Q0FSVEVTSUFOfERlZiBpcyAib24gYSBwbGFuZSJ8ZGl4b25hcnk=",
+        "2026-03-18": "UmVsaWFibGUgcG9saWNlIG9mZmljZXIgdGFpbGVkIGJ5IGxvd2VzdCBqb3VybmFsaXN0fGNvcHBlci1ib3R0b21lZHxEZWZpbml0aW9uIGlzICdyZWxpYWJsZSd8Q09QUEVSICsgQk9UVE9NICsgRUR8V2lsZHZhbGU=",
+        "2026-03-19": "SGVhcnRicm9rZW4gbG9zZXIgcmVidWZmZWQgd2l0aG91dCByZXNpc3RhbmNlIGR1cmluZyBkYXRlfERFU09MQVRFfERlZmluaXRpb24gaXMgJ2hlYXJ0YnJva2VuJ3xMT1NFUj4gLSBSIGluIERBVEV8V2lsZHZhbGU=",
+        "2026-03-20": "UmVwdWJsaWNhbiBqb2lucyBhIGNhbGwgZnJvbSB0aGUgY2VudHJlfFJBRElBTHxEZWZpbml0aW9uIGlzICdmcm9tIHRoZSBjZW50cmUnfFIgKyBBICsgRElBTHxXaWxkdmFsZQ==",
+        "2026-03-21": "QmVudCBvdmVyIG5hdWdodGlseT8gVGhhdCdzIG5vdCBhbGxvd2VkfFZFUkJPVEVOfERlZmluaXRpb24gaXMgJ25vdCBhbGxvd2VkJ3woQkVOVCBPVkVSKSp8ZGl4b25hcnk=",
+        "2026-03-22": "U2hvdyBvZmYgY2VyZWFsIGJvd2x8QlJBTkRJU0h8RGVmaW5pdGlvbiBpcyAnc2hvdyBvZmYnfEJSQU4gKyBESVNIfFdpbGR2YWxl",
+        "2026-03-23": "Q2FyZCBnYW1lIHN3YXBzIGhlYXJ0cyBmb3IgYWNlIGluIHRoZSBtaWRkbGV8V0FJU1R8RGVmaW5pdGlvbiBpcyAnaW4gdGhlIG1pZGRsZSd8V0hJU1QgKEggPT4gQSl8V2lsZHZhbGU=",
+        "2026-03-24": "T25lIHdpdGggcHJldGVuY2VzIGluIHBvaW50IG9mIGZhY3R8dG9mZnxEZWZpbml0aW9uIGlzICdvbmUgd2l0aCBwcmV0ZW5jZXMnfHBvaW4oVCBPRiBGKWFjdHxkaXhvbmFyeQ==",
+        "2026-03-25": "U29iZXI/IERydW5rPyBXZWFyIHRoZXNlfFJPQkVTfERlZmluaXRpb24gaXMgJ3dlYXIgdGhlc2UnfFNPQkVSKnxXaWxkdmFsZQ==",
+        "2026-03-26": "QSBzcG90IHdpdGggZ3J1YiBmb3Igb3JkZXJpbmchfEdBU1RST1BVQnxUaGlzIGlzIGEgJmxpdCBjbHVlfChBIFNQT1QgKyBHUlVCKSp8V2lsZHZhbGU=",
+        "2026-03-27": "QXNzdW1lIHRoZSB3cml0ZXIgb2YgdGhpcyBjbHVlJ3MgYSBuZXcgZm9ybSBvZiBHZW4gQUl8SU1BR0lORXxJJ00gdGhlIHdyaXRlciBvZiB0aGlzIGNsdWUgKG5vdCBDb3BpbG90IG9yIENoYXRHUFQpfEknTSArIChHRU4gQUkpKnxMb3dkb3du",
+        "2026-03-28": "RmlnaHQgYSBVUyBzb2xkaWVyIG5leHQgdG8gYW4gYXJ0IGdhbGxlcnl8YWdpdGF0ZXxEZWZpbml0aW9uIGlzICdmaWdodCd8QSArIEdJICsgVEFURXxXaWxkdmFsZQ==",
+        "2026-03-29": "UnVsZSBvdXQgUGhpbGFkZWxwaGlhJ3Mgc3RhciBwbGF5ZXI/IEknbGwgcGFzc3xOTyBUSEFOS1N8VGhpbmsgb2YgYW4gYWN0b3J8IkknbGwgcGFzcyIgLyBOT1QgSEFOS1MgW3JlZiBUb20sIHN0YXIgb2YgUGhpbGFkZWxwaGlhXXxIZW5yaQ==",
+        "2026-03-30": "QmVhbiBzaWNrZW5zIGEgZGFtZSwgbGVhZHMgdG8gbWVkaWNhbCBlbWVyZ2VuY3l8RURBTUFNRXxEZWZpbml0aW9uIGlzICdiZWFuJ3woQSBEQU1FKSogKyBNLi4gRS4ufFdpbGR2YWxl",
+        "2026-03-31": "Q2VudHVyaW9uIGRlY2FwaXRhdGVkIHNvbWV3aGVyZSBpbiB0aGUgTWlkZGxlIEVhc3R8T01BTnxEZWZpbml0aW9uIGlzICdzb21ld2hlcmUgaW4gdGhlIE1pZGRsZSBFYXN0J3xST01BTiAtIFJ8V2lsZHZhbGU=",
+        "2026-04-01": "TmFtZSBhbmQgYWRkcmVzc3xIYW5kbGV8QW5zd2VyIGlzIGJvdGggYSBub3VuIGFuZCBhIHZlcmJ8RG91YmxlIGRlZmluaXRpb246ICduYW1lJyAoYWxpYXMpIGFuZCAnYWRkcmVzcycgYSBwcm9ibGVtfExvd2Rvd24=",
+        "2026-04-02": "R3VpZGVib29rIGluIGEgd2Fpc3Rjb2F0IGZlYXR1cmVzIGEgdHJvcGljYWwgaXNsYW5kfE9LSU5BV0F8RGVmaW5pdGlvbiBpcyAnYSB0cm9waWNhbCBpc2xhbmQnfGd1aWRlYm8oT0sgSU4gQSBXQSlpc3Rjb2F0fFdpbGR2YWxl",
+        "2026-04-03": "MG1nIXxXRUlHSFRMRVNTfExvb2sgY2xvc2VseSBhdCB0aGUgZmlyc3QgY2hhcmFjdGVyIXxDcnlwdGljIGRlZiwgMG1nID0gemVybyBtaWxsaWdyYW1zID0gV0VJR0hUTEVTU3xIZW5yaQ==",
+        "2026-04-04": "SGFiaXRhdCByZWNlaXZlcyBhIGdvdmVybm1lbnQgaG9ub3VyfEhPTUFHRXxEZWZpbml0aW9uIGlzICdob25vdXInfEhPTUUgY29udCAoQSArIEcpfFdpbGR2YWxl",
+        "2026-04-05": "UnVzaCBNciBSb3NlIHRvIHRoZSB0b2lsZXR8UkVTVCBST09NfERlZmluaXRpb24gaXMgJ3RoZSB0b2lsZXQnfChNUiBST1NFIFRPKSp8V2lsZHZhbGU=",
+        "2026-04-06": "SW5qZWN0IHN0cnVnZ2xpbmcgRHIgTm8gd2l0aCBhIGRlYWRseSBjaGVtaWNhbHxSQURPTnxEZWZpbml0aW9uIGlzICdkZWFkbHkgY2hlbWljYWwnfChEUiBOTykqIGNvbnQgQXxXaWxkdmFsZQ==",
+        "2026-04-07": "TmV3cyBidXp6ZWQgZnJvbSB0aGUgc3BlYWtlcnN8d09SRHxEZWZpbml0aW9uIGlzICduZXdzJ3xCVVpaRUQgc291bmRzIGxpa2UgV0hJUlJFRHxMb3dkb3du",
+        "2026-04-08": "Q29jYWluZSBsZWFkcyB0byBzaGFrZXMsIG5hdXNlYSwgb3Igd2l0aGRyYXdhbHxTTk9XfERlZmluaXRpb24gaXMgJ2NvY2FpbmUnIChhIHNsYW5nIHRlcm0gZm9yIGl0ISl8Uy4uIE4uLiBPLi4gVy4ufFdpbGR2YWxl",
+        "2026-04-09": "VW5rbm93biBhbGllbiBwdXJzdWVkIGJ5IHNldHRlciBjb3VsZCBiZSBhIGxlZ2VuZGFyeSBjcmVhdHVyZXxZRVRJfERlZmluaXRpb24gaXMgJ2EgbGVnZW5kYXJ5IGNyZWF0dXJlJ3xZICsgRVQgKyBJfFdpbGR2YWxl",
+        "2026-04-10": "SGFsZiBhIHRyaWZsZXxTTUFMTCBCZWVyfERvdWJsZSBkZWZpbml0aW9ufEEgaGFsZiBwaW50IC8gU29tZXRoaW5nIHVuaW1wb3J0YW50fEhlbnJp",
+        "2026-04-11": "RGlnIHNtYWxsIGhvbGV8U0hPVkVMfERlZmluaXRpb24gaXMgJ2RpZyd8UyArIEhPVkVMfFdpbGR2YWxl",
+        "2026-04-12": "U2NhcmUgYSBkZXBsb3JhYmxlIHR5cmFudHxDQUVTQVJ8RGVmaW5pdGlvbiBpcyAndHlyYW50J3woU0NBUkUgQSkqfFdpbGR2YWxl",
+        "2026-04-13": "QXJzZSBzcXVlZXplIGZyb20gdGhlIFJldmVyZW5kOyBjb3VsZCBiZSBhbiBpbXBvc3RlcnxIVU1CVUd8RGVmaW5pdGlvbiBpcyAnYW4gaW1wb3N0ZXInfFNwb29uZXJpc206IEJVTSBIVUd8ZGl4b25hcnk="
     },
-    "2026-03-04": {
-        "hash": "QXJ0aXN0cyBhcmUgZXNzZW50aWFsbHkgY29uY2VybmVkIHdpdGggcHJlc3N8SVJPTnxEZWZpbml0aW9uIGlzICdwcmVzcyd8YXJ0KEkpc3RzIGEoUillICsgT04",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-03-05": {
-        "hash": "VGFrZSBsZWdhbCBhY3Rpb24gZm9sbG93aW5nIG51ZGUga2lzcyBwdWJsaWNhdGlvbnxJU1NVRXxEZWZpbml0aW9uIGlzICdwdWJsaWNhdGlvbid8U1VFIGZvbGxvd2luZyBrKElTKXM",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-03-06": {
-        "hash": "UG9hY2hlciBvbiBzYWZhcmkgc211Z2dsZXMgYmlyZHN8SEVST05TfERlZmluaXRpb24gaXMgJ2JpcmRzJ3xwb2FjKEhFUiBPTiBTKWFmYXJp",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-03-07": {
-        "hash": "VHVybiB1cCBhZnRlciBkZXRlY3RpdmVzIGxlYXZlfERJU0FQUEVBUnxEZWZpbml0aW9uIGlzICdsZWF2ZSd8QVBQRUFSIGFmdGVyIERJUw==",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-03-08": {
-        "hash": "QWR2aXNlIHNlY3QgdG8gZW1icmFjZSB3YXl3YXJkIHNvbnxDT05TVUxUfERlZmluaXRpb24gaXMgJ2FkdmlzZSd8Q1VMVCBjb250IFNPTio",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-03-09": {
-        "hash": "Q2hhbm5lbHMgbWlzcmVwcmVzZW50IGEgUmVwdWJsaWNhbiBsZWFkZXIncyB2aWV3cyBhZnRlciBhZ3JlZWluZyBhdCBmaXJzdHxBSVJXQVZFU3xEZWZpbml0aW9uIGlzICdjaGFubmVscyd8KEEgKyBSICsgVklFV1MpKiBhZnRlciBB",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-03-10": {
-        "hash": "UGhvdG8gb2YgbWUgaW4gRS4gRmlsZXMgLSB1bmFjY2VwdGFibGV8U0VMRklFfCdVbmFjY2VwdGFibGUnIGlzIGFuIGFuYWdyYW0gaW5kaWNhdG9yfFNFTEZJRSA9IChFRklMRVMpKg==",
-        "author": {
-            "name": "dixonary",
-            "link": "https://dixonary.co.uk/?utm_source=cryptick"
-        }
-    },
-    "2026-03-11": {
-        "hash": "VW53ZWxjb21lIG5ld3MgYnVyaWVzIGEgd2FybmluZ3xvbWVufERlZmluaXRpb24gaXMgJ2Egd2FybmluZyd8dW53ZWxjKE9NRSBOKWV3cw==",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-03-12": {
-        "hash": "WW91bmcgd29tYW4gam9pbnMgc2V0dGVyIGZvciBhIGRyaW5rfExBU1NJfERlZmluaXRpb24gaXMgJ2EgZHJpbmsnfExBU1MgKyBJ",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-03-13": {
-        "hash": "V2lzZSBtYW4gYm9yZWQgYnkgYSB2ZXJ5IHVuY2l2aWxpc2VkIHNvcnR8c2F2YWdlfERlZmluaXRpb24gaXMgJ3VuY2l2aWxpc2VkIHNvcnQnfFNBR0UgY29udCBBVg==",
-        "author": {
-            "name": "dixonary",
-            "link": "https://dixonary.co.uk/?utm_source=cryptick"
-        }
-    },
-    "2026-03-14": {
-        "hash": "S2V5IHBhcnR5IG1ha2luZyBhIGNvbWViYWNrfExFVkVSfERlZmluaXRpb24gaXMgJ2tleSd8UkVWRUw+",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-03-15": {
-        "hash": "SGVhZCBoZXJlIHRvIGJlYXQgZGlzZWFzZSF8U0VBU0lERXxUaGlzIGlzIGFuICZsaXQgY2x1ZXxESVNFQVNFKg==",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-03-16": {
-        "hash": "QSBzaGlwd3JlY2tlZCBiZWFyIGxvc3QgZXNzZW50aWFsIHNhaWxpbmcgdG9vbHxBU1RST0xBQkV8RGVmaW5pdGlvbiBpcyAnZXNzZW50aWFsIHNhaWxpbmcgdG9vbCd8QSArIChCRUFSIExPU1QpKg==",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-03-17": {
-        "hash": "SW5zYW5lOiBpdCdzIGEgY3JhbmUgb24gYSBwbGFuZSF8Q0FSVEVTSUFOfERlZiBpcyAib24gYSBwbGFuZSI=",
-        "author": {
-            "name": "dixonary",
-            "link": "https://dixonary.co.uk/?utm_source=cryptick"
-        }
-    },
-    "2026-03-18": {
-        "hash": "UmVsaWFibGUgcG9saWNlIG9mZmljZXIgdGFpbGVkIGJ5IGxvd2VzdCBqb3VybmFsaXN0fGNvcHBlci1ib3R0b21lZHxEZWZpbml0aW9uIGlzICdyZWxpYWJsZSd8Q09QUEVSICsgQk9UVE9NICsgRUQ=",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd_author"
-        }
-    },
-    "2026-03-19": {
-        "hash": "SGVhcnRicm9rZW4gbG9zZXIgcmVidWZmZWQgd2l0aG91dCByZXNpc3RhbmNlIGR1cmluZyBkYXRlfERFU09MQVRFfERlZmluaXRpb24gaXMgJ2hlYXJ0YnJva2VuJ3xMT1NFUj4gLSBSIGluIERBVEU=",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd_author"
-        }
-    },
-    "2026-03-20": {
-        "hash": "UmVwdWJsaWNhbiBqb2lucyBhIGNhbGwgZnJvbSB0aGUgY2VudHJlfFJBRElBTHxEZWZpbml0aW9uIGlzICdmcm9tIHRoZSBjZW50cmUnfFIgKyBBICsgRElBTA==",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd_author"
-        }
-    },
-    "2026-03-21": {
-        "hash": "QmVudCBvdmVyIG5hdWdodGlseT8gVGhhdCdzIG5vdCBhbGxvd2VkfFZFUkJPVEVOfERlZmluaXRpb24gaXMgJ25vdCBhbGxvd2VkJ3woQkVOVCBPVkVSKSo=",
-        "author": {
-            "name": "dixonary",
-            "link": "https://dixonary.co.uk/?utm_source=cryptick"
-        }
-    },
-    "2026-03-22": {
-        "hash": "U2hvdyBvZmYgY2VyZWFsIGJvd2x8QlJBTkRJU0h8RGVmaW5pdGlvbiBpcyAnc2hvdyBvZmYnfEJSQU4gKyBESVNI",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd_author"
-        }
-    },
-    "2026-03-23": {
-        "hash": "Q2FyZCBnYW1lIHN3YXBzIGhlYXJ0cyBmb3IgYWNlIGluIHRoZSBtaWRkbGV8V0FJU1R8RGVmaW5pdGlvbiBpcyAnaW4gdGhlIG1pZGRsZSd8V0hJU1QgKEggPT4gQSk",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-03-24": {
-        "hash": "T25lIHdpdGggcHJldGVuY2VzIGluIHBvaW50IG9mIGZhY3R8dG9mZnxEZWZpbml0aW9uIGlzICdvbmUgd2l0aCBwcmV0ZW5jZXMnfHBvaW4oVCBPRiBGKWFjdA",
-        "author": {
-            "name": "dixonary",
-            "link": "https://dixonary.co.uk/?utm_source=cryptick"
-        }
-    },
-    "2026-03-25": {
-        "hash": "U29iZXI/IERydW5rPyBXZWFyIHRoZXNlfFJPQkVTfERlZmluaXRpb24gaXMgJ3dlYXIgdGhlc2UnfFNPQkVSKg",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-03-26": {
-        "hash": "QSBzcG90IHdpdGggZ3J1YiBmb3Igb3JkZXJpbmchfEdBU1RST1BVQnxUaGlzIGlzIGEgJmxpdCBjbHVlfChBIFNQT1QgKyBHUlVCKSo",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-03-27": {
-        "hash": "QXNzdW1lIHRoZSB3cml0ZXIgb2YgdGhpcyBjbHVlJ3MgYSBuZXcgZm9ybSBvZiBHZW4gQUl8SU1BR0lORXxJJ00gdGhlIHdyaXRlciBvZiB0aGlzIGNsdWUgKG5vdCBDb3BpbG90IG9yIENoYXRHUFQpfEknTSArIChHRU4gQUkpKg",
-        "author": {
-            "name": "Lowdown",
-            "link": "https://bsky.app/profile/lowdowncryptic.bsky.social"
-        }
-    },
-    "2026-03-28": {
-        "hash": "RmlnaHQgYSBVUyBzb2xkaWVyIG5leHQgdG8gYW4gYXJ0IGdhbGxlcnl8YWdpdGF0ZXxEZWZpbml0aW9uIGlzICdmaWdodCd8QSArIEdJICsgVEFURQ",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-03-29": {
-        "hash": "UnVsZSBvdXQgUGhpbGFkZWxwaGlhJ3Mgc3RhciBwbGF5ZXI/IEknbGwgcGFzc3xOTyBUSEFOS1N8VGhpbmsgb2YgYW4gYWN0b3J8IkknbGwgcGFzcyIgLyBOT1QgSEFOS1MgW3JlZiBUb20sIHN0YXIgb2YgUGhpbGFkZWxwaGlhXQ",
-        "author": {
-            "name": "Henri",
-            "link": "https://bsky.app/profile/henriwords.com"
-        }
-    },
-    "2026-03-30": {
-        "hash": "QmVhbiBzaWNrZW5zIGEgZGFtZSwgbGVhZHMgdG8gbWVkaWNhbCBlbWVyZ2VuY3l8RURBTUFNRXxEZWZpbml0aW9uIGlzICdiZWFuJ3woQSBEQU1FKSogKyBNLi4gRS4u",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-03-31": {
-        "hash": "Q2VudHVyaW9uIGRlY2FwaXRhdGVkIHNvbWV3aGVyZSBpbiB0aGUgTWlkZGxlIEVhc3R8T01BTnxEZWZpbml0aW9uIGlzICdzb21ld2hlcmUgaW4gdGhlIE1pZGRsZSBFYXN0J3xST01BTiAtIFI",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-04-01": {
-        "hash": "TmFtZSBhbmQgYWRkcmVzc3xIYW5kbGV8QW5zd2VyIGlzIGJvdGggYSBub3VuIGFuZCBhIHZlcmJ8RG91YmxlIGRlZmluaXRpb246ICduYW1lJyAoYWxpYXMpIGFuZCAnYWRkcmVzcycgYSBwcm9ibGVt",
-        "author": {
-            "name": "Lowdown",
-            "link": "https://bsky.app/profile/lowdowncryptic.bsky.social"
-        }
-    },
-    "2026-04-02": {
-        "hash": "R3VpZGVib29rIGluIGEgd2Fpc3Rjb2F0IGZlYXR1cmVzIGEgdHJvcGljYWwgaXNsYW5kfE9LSU5BV0F8RGVmaW5pdGlvbiBpcyAnYSB0cm9waWNhbCBpc2xhbmQnfGd1aWRlYm8oT0sgSU4gQSBXQSlpc3Rjb2F0",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-04-03": {
-        "hash": "MG1nIXxXRUlHSFRMRVNTfExvb2sgY2xvc2VseSBhdCB0aGUgZmlyc3QgY2hhcmFjdGVyIXxDcnlwdGljIGRlZiwgMG1nID0gemVybyBtaWxsaWdyYW1zID0gV0VJR0hUTEVTUw",
-        "author": {
-            "name": "Henri",
-            "link": "https://bsky.app/profile/henriwords.com"
-        }
-    },
-    "2026-04-04": {
-        "hash": "SGFiaXRhdCByZWNlaXZlcyBhIGdvdmVybm1lbnQgaG9ub3VyfEhPTUFHRXxEZWZpbml0aW9uIGlzICdob25vdXInfEhPTUUgY29udCAoQSArIEcp",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-04-05": {
-        "hash": "UnVzaCBNciBSb3NlIHRvIHRoZSB0b2lsZXR8UkVTVCBST09NfERlZmluaXRpb24gaXMgJ3RoZSB0b2lsZXQnfChNUiBST1NFIFRPKSo",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-04-06": {
-        "hash": "SW5qZWN0IHN0cnVnZ2xpbmcgRHIgTm8gd2l0aCBhIGRlYWRseSBjaGVtaWNhbHxSQURPTnxEZWZpbml0aW9uIGlzICdkZWFkbHkgY2hlbWljYWwnfChEUiBOTykqIGNvbnQgQQ",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-04-07": {
-        "hash": "TmV3cyBidXp6ZWQgZnJvbSB0aGUgc3BlYWtlcnN8d09SRHxEZWZpbml0aW9uIGlzICduZXdzJ3xCVVpaRUQgc291bmRzIGxpa2UgV0hJUlJFRA",
-        "author": {
-            "name": "Lowdown",
-            "link": "https://bsky.app/profile/lowdowncryptic.bsky.social"
-        }
-    },
-    "2026-04-08": {
-        "hash": "Q29jYWluZSBsZWFkcyB0byBzaGFrZXMsIG5hdXNlYSwgb3Igd2l0aGRyYXdhbHxTTk9XfERlZmluaXRpb24gaXMgJ2NvY2FpbmUnIChhIHNsYW5nIHRlcm0gZm9yIGl0ISl8Uy4uIE4uLiBPLi4gVy4u",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-04-09": {
-        "hash": "VW5rbm93biBhbGllbiBwdXJzdWVkIGJ5IHNldHRlciBjb3VsZCBiZSBhIGxlZ2VuZGFyeSBjcmVhdHVyZXxZRVRJfERlZmluaXRpb24gaXMgJ2EgbGVnZW5kYXJ5IGNyZWF0dXJlJ3xZICsgRVQgKyBJ",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-04-10": {
-        "hash": "SGFsZiBhIHRyaWZsZXxTTUFMTCBCZWVyfERvdWJsZSBkZWZpbml0aW9ufEEgaGFsZiBwaW50IC8gU29tZXRoaW5nIHVuaW1wb3J0YW50",
-        "author": {
-            "name": "Henri",
-            "link": "https://bsky.app/profile/henriwords.com"
-        }
-    },
-    "2026-04-11": {
-        "hash": "RGlnIHNtYWxsIGhvbGV8U0hPVkVMfERlZmluaXRpb24gaXMgJ2RpZyd8UyArIEhPVkVM",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-04-12": {
-        "hash": "U2NhcmUgYSBkZXBsb3JhYmxlIHR5cmFudHxDQUVTQVJ8RGVmaW5pdGlvbiBpcyAndHlyYW50J3woU0NBUkUgQSkq",
-        "author": {
-            "name": "Wildvale",
-            "link": "https://cryptick.wildvale.co.uk/?utm_source=cotd"
-        }
-    },
-    "2026-04-13": {
-        "hash": "QXJzZSBzcXVlZXplIGZyb20gdGhlIFJldmVyZW5kOyBjb3VsZCBiZSBhbiBpbXBvc3RlcnxIVU1CVUd8RGVmaW5pdGlvbiBpcyAnYW4gaW1wb3N0ZXInfFNwb29uZXJpc206IEJVTSBIVUc",
-        "author": {
-            "name": "dixonary",
-            "link": "https://dixonary.co.uk/?utm_source=cryptick"
-        }
+    "authors": {
+        "Wildvale": "https://www.wildvale.co.uk/",
+        "dixonary": "https://dixonary.co.uk/?utm_source=cryptick",
+        "Lowdown": "https://bsky.app/profile/lowdowncryptic.bsky.social",
+        "Henri": "https://bsky.app/profile/henriwords.com"
     }
 }
