@@ -25,7 +25,6 @@ describe('MiniClue', () => {
         hint = document.createElement('span');
         explanation = document.createElement('h4');
         revealLetter = document.createElement('button');
-        revealWord = document.createElement('button');
         showHint = document.createElement('button');
         share = document.createElement('button');
 
@@ -36,7 +35,6 @@ describe('MiniClue', () => {
             hint,
             explanation,
             revealLetter,
-            revealWord,
             showHint,
             share,
         );
@@ -54,13 +52,6 @@ describe('MiniClue', () => {
         assert.equal(answerValue(), '');
         revealLetter.click();
         assert.equal(answerValue(), 'A');
-    });
-
-    it('can reveal whole word', () => {
-        cryptickClue.renderClue(FULL_PAYLOAD);
-        assert.equal(answerValue(), '');
-        revealWord.click();
-        assert.equal(answerValue(), 'AAAAAA');
     });
 
     // it('can display hint', () => {

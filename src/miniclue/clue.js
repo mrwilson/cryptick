@@ -8,7 +8,6 @@ export class CryptickClue {
         hint,
         explanation,
         revealLetter,
-        revealWord,
         showHint,
         share,
     ) {
@@ -18,7 +17,6 @@ export class CryptickClue {
         this.hint = hint;
         this.explanation = explanation;
         this.revealLetter = revealLetter;
-        this.revealWord = revealWord;
         this.showHint = showHint;
         this.share = share;
         this.letters = [];
@@ -49,12 +47,6 @@ export class CryptickClue {
             .forEach((l) => this.answer.appendChild(l));
 
         this.#navigate();
-
-        this.revealWord.onclick = (_) => {
-            this.letters.forEach(
-                (letter) => (letter.value = letter.pattern[1]),
-            );
-        };
 
         const random = new PRNG(params.clue);
 
