@@ -1,23 +1,27 @@
 const files = [
-    '/index.html',
-    '/create.html',
+    '/about.html',
     '/clue.html',
-    '/error.html',
-    '/recent.html',
     '/cotd.html',
+    '/create.html',
+    '/error.html',
+    '/index.html',
+    '/past-cotd.html',
+    '/recent.html',
+
     '/base.css',
 
     '/error.svg',
     '/logo.svg',
+    '/logo.png',
     '/unch.jpg',
 
-    '/miniclue/decoder.js',
-    '/miniclue/create.js',
-    '/miniclue/errors.js',
-    '/miniclue/utils.js',
     '/miniclue/clue.js',
+    '/miniclue/create.js',
+    '/miniclue/decoder.js',
+    '/miniclue/errors.js',
     '/miniclue/examples.js',
     '/miniclue/history.js',
+    '/miniclue/utils.js',
 
     '/robots.txt',
     '/manifest.json',
@@ -46,7 +50,9 @@ self.addEventListener('fetch', (event) => {
 
     event.respondWith(
         caches.open('cryptick').then((cache) => {
-            return fetch(event.request.url)
+            return fetch(event.request.url, {
+                signal: AbortSignal.timeout(1000),
+            })
                 .then((fetchedResponse) => {
                     cache.put(event.request, fetchedResponse.clone());
                     return fetchedResponse;
