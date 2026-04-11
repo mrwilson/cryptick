@@ -80,22 +80,26 @@ export class CryptickClue {
     #navigate() {
         for (const [idx, value] of this.letters.entries()) {
             value.oninput = () => {
-                idx !== this.letters.length &&
-                    value.value &&
-                    this.letters
-                        .slice(idx + 1)
-                        .find((x) => !x.readOnly)
-                        .focus();
+                setTimeout(() => {
+                    idx !== this.letters.length &&
+                        value.value &&
+                        this.letters
+                            .slice(idx + 1)
+                            .find((x) => !x.readOnly)
+                            .focus();
+                }, 50);
             };
 
             value.onkeydown = (e) => {
-                idx !== 0 &&
-                    !value.value &&
-                    e.keyCode === 8 &&
-                    this.letters
-                        .slice(0, idx)
-                        .findLast((x) => !x.readOnly)
-                        .focus();
+                setTimeout(() => {
+                    idx !== 0 &&
+                        !value.value &&
+                        e.keyCode === 8 &&
+                        this.letters
+                            .slice(0, idx)
+                            .findLast((x) => !x.readOnly)
+                            .focus();
+                }, 50);
             };
         }
     }
