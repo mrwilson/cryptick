@@ -44,15 +44,15 @@ header {
     }
 
     h1 {
-        font-size: 3vh;
+        font-size: xx-large;
     }
 }
 
 .tick {
-    height: 5vh;
-    width: 5vh;
+    height: 3em;
+    width: 3em;
     background: url('./logo.svg');
-    background-size: 5vh 5vh;
+    background-size: 3em;
 }
 
 .about {
