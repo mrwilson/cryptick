@@ -124,6 +124,7 @@ export class CryptickClue {
         l.maxLength = 1;
         l.minLength = 1;
         l.setAttribute('aria-label', 'letter');
+        l.setAttribute('virtualkeyboardpolicy', 'manual');
         this.letters.push(l);
         return l;
     }

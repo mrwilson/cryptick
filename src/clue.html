@@ -146,8 +146,10 @@
 
     const clue = new ClueDecoder(examples).decode(window.location.hash);
 
+    const answer = document.getElementById('answer');
+
     const miniClue = new CryptickClue(
-        document.getElementById('answer'),
+        answer,
         document.getElementById('clue'),
         document.getElementById('author'),
         document.getElementById('hint'),
@@ -156,6 +158,18 @@
         document.getElementById('show-hint'),
         document.getElementById('share'),
     );
+
+    if ('virtualKeyboard' in navigator) {
+        answer.addEventListener('focusin', (_) => {
+            navigator.virtualKeyboard.show();
+        });
+
+        answer.addEventListener('focusout', (event) => {
+            if (!answer.contains(event.relatedTarget)) {
+                navigator.virtualKeyboard.show();
+            }
+        });
+    }
 
     document.getElementById('share').addEventListener('click', async (e) => {
         if (navigator.share) {
