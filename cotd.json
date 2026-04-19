@@ -47,12 +47,28 @@
         "2026-04-16": "SGVhZCdzIGxhY2sgb2YgYSBwYXJ0aWN1bGFyIHNwaXJpdCBoYXZpbmcgZHJ1bmsgZ2FsbG9uc3xOT0dHSU58RGVmaW5pdGlvbiBpcyAnaGVhZCd8Tk8gR0lOIGNvbnQgR3xXaWxkdmFsZQ",
         "2026-04-17": "QmUgbWVhbiBhZnRlciB0aGUgZmlyc3QgZHJpbmt8QmV2ZXJhZ2V8V2hhdCBlbHNlIGNhbiAnbWVhbicgbWVhbj98QkUgKyAoYSlWRVJBR0V8TG93ZG93bg",
         "2026-04-18": "SW5pdGlhbGx5LCBCb3JpcyBvcmRlcmVkIHByaXZhdGUgZGFuY2V8Qk9QfERlZmluaXRpb24gaXMgJ2RhbmNlJ3xCLi4gby4uIHAuLnxXaWxkdmFsZQ",
-        "2026-04-19": "UGFyaWFoIGRpc2NhcmRzIHR3byB0b25zIG9mIGZhYnJpY3xFWElMRXxEZWZpbml0aW9uIGlzICdwYXJpYWgnfC0yeCBUIGZyb20gVEVYVElMRXxXaWxkdmFsZQ"
+        "2026-04-19": "UGFyaWFoIGRpc2NhcmRzIHR3byB0b25zIG9mIGZhYnJpY3xFWElMRXxEZWZpbml0aW9uIGlzICdwYXJpYWgnfC0yeCBUIGZyb20gVEVYVElMRXxXaWxkdmFsZQ",
+        "2026-04-20": "QWNyb3NzIFRoYWlsYW5kLCBlYXRpbmcgYXNzIGlzIGEgZmV0aXNofGFtdWxldHxEZWZpbml0aW9uIGlzICJhIGZldGlzaCIgYnV0IG5vdCB0aGUgc29ydCB5b3UgbWlnaHQgdGhpbmsuLi58QSArIFQgY29udCBNVUxFfFdpbGR2YWxl",
+        "2026-04-21": "Q2x1YiBoaXJlcyBhIGRpc29yZ2FuaXNlZCB0cmVhc3VyZXJ8Q0FTSElFUnxEZWZpbml0aW9uIGlzICJ0cmVhc3VyZXIifEMgKyAoSElSRVMgQSkqfFdpbGR2YWxl",
+        "2026-04-22": "VmVyeSBoYXJkIGNyeXB0aWMgY2x1ZSBmb3IgImZseSJ8Zm9yY2VmdWxseXwiQ3J5cHRpYyIgaXMgYW4gYW5hZ3JhbSBpbmRpY2F0b3J8KENMVUUgRk9SIEZMWSkqfEthcm9sIFM",
+        "2026-04-23": "TWFrZXMgYSBtZXNzIGZyb20gTXMgQi4gQmx1ZSdzIGd5cmF0aW9uc3xCdW1ibGVzfERlZmluaXRpb24gaXMgJ21ha2VzIGEgbWVzcyd8KE1TIEIgQkxVRSkqfFdpbGR2YWxl",
+        "2026-04-24": "UmVub3ZhdGlvbiBlbmRsZXNzbHkgYWZmbGljdGVkIHdpdGggY2hhbmdlc3xmYWNlbGlmdHxGb2RkZXIgaXMgJ2FmZmxpY3RlZCcgKGFuZCBpdCBnZXRzIGFmZmxpY3RlZCEpfChBRkZMSUNURUQgLSBEKSp8TG93ZG93bg",
+        "2026-04-25": "RGljdGF0b3IncyBjcnVlbCBhdXJhfG1pZW58RGVmaW5pdGlvbiBpcyAiYXVyYSJ8U291bmRzIGxpa2UgTUVBTiAoY3J1ZWwpfFdpbGR2YWxl",
+        "2026-04-26": "U3F1YXJlLCB0d28tdGhpcmRzIG9mIHNpeHxOSU5FfEl04oCZcyBub3QgRk9VUiDwn5iBfERvdWJsZSBkZWZpbml0aW9uOiA5IGlzIGEgc3F1YXJlIG51bWJlciwgKHMpSVggaXMgOXxIZW5yaQ",
+        "2026-04-27": "RmFudGFzdGljIEZvdXIgaXMgZHJ1bmsgYnkgbHVuY2h8RElWSU5FfERlZmluaXRpb24gaXMgJ2ZhbnRhc3RpYyd8SVYgaW5zaWRlIERJTkV8V2lsZHZhbGU",
+        "2026-04-28": "TWFuY2hpbGQgdG8gY3Jvc3Mgb3ZlciBhbnkgZGF5IG5vd3xzb29ufERlZmluaXRpb24gaXMgJ2FueSBkYXkgbm93J3xTT04gY29udCBPfGRpeG9uYXJ5",
+        "2026-04-29": "U3R1ZHkgKGFuZCBlcnIpIGluIGEgcGxhY2Ugb2YgZW5saWdodGVubWVudHxtdXNldW18RGVmaW5pdGlvbiBpcyAnYSBwbGFjZSBvZiBlbmxpZ2h0ZW5tZW50J3xNVVNFICsgVU18V2lsZHZhbGU",
+        "2026-04-30": "RnJpZW5kIHdpdGggZ3VpdGFyIHNuYXJsZWQgIk9oIFtCRUVQXSEifHBob2ViZXxGcmllbmQgYXMgaW4gb25lIG9mIHNpeCBmYW1vdXMgb25lc3woT0ggQkVFUCkqfEhlbnJp",
+        "2026-05-01": "TXkgc29uLCBjbG9zZSB0byBhIGJlYXRpbmcsIGNvdWxkIG1ha2UgYSB0b3BpY2FsIG1lbWV8aXRzIGdvbm5hIGJlIG1heXxEZWZpbml0aW9uIGlzICJhIHRvcGljYWwgbWVtZSJ8KE1ZIFNPTiArIEEgQkVBVElORykqfFdpbGR2YWxl",
+        "2026-05-02": "R3JpbGxlZCByaWIgbm90IGZvdW5kIGluIFVLfGJyaXRvbnxEZWZpbml0aW9uIGlzICJmb3VuZCBpbiBVSyJ8KFJJQiBOT1QpKnxXaWxkdmFsZQ",
+        "2026-05-03": "UHJpY2sgZnJvbSBzb3V0aCAob3Igbm9ydGgpfFRIT1JOfERlZmluaXRpb24gaXMgInByaWNrInxzb3UoVEggT1IgTilvcnRofFdpbGR2YWxl",
+        "2026-05-04": "RmlsbSBmcmFuY2hpc2UgbGF1bmNoIHNudWJiZWQsIG9yaWdpbmFsIGZvb3RhZ2Ugc2VudCBiYWNrIHdpdGggZXh0cmEgc2VjdGlvbnxTVEFSIFdBUlN8RGVmaW5pdGlvbiBpcyAiZmlsbSBmcmFuY2hpc2UiIGFuZCBhbiBhcHByb3ByaWF0ZSBvbmUgZm9yIHRvZGF5IXwoU1RBUil0ICsgKFJBVyk+ICsgU3xXaWxkdmFsZQ"
     },
     "authors": {
         "Wildvale": "https://www.wildvale.co.uk/",
         "dixonary": "https://dixonary.co.uk/?utm_source=cryptick",
         "Lowdown": "https://bsky.app/profile/lowdowncryptic.bsky.social",
-        "Henri": "https://bsky.app/profile/henriwords.com"
+        "Henri": "https://bsky.app/profile/henriwords.com",
+        "Karol S": "https://bsky.app/profile/karolszym.bsky.social"
     }
 }
