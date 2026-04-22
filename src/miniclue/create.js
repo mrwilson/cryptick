@@ -1,4 +1,5 @@
 import { enumerate } from './utils.js';
+import { Highlighter } from './highlighter.js';
 
 export class CreateCryptick {
     constructor(clue, answer, hint, explanation, author) {
@@ -20,7 +21,7 @@ export class CreateCryptick {
 
     copyText(baseUrl) {
         return [
-            `${this.clue.value} (${enumerate(this.answer.value)})`,
+            `${new Highlighter().process(this.clue.value).cleaned} (${enumerate(this.answer.value)})`,
             this.fragment(baseUrl),
             'Solve it, and create your own cryptic clue!',
         ].join('\n\n');
@@ -29,7 +30,7 @@ export class CreateCryptick {
     shareData(baseUrl) {
         return {
             title: 'Cryptick',
-            text: `${this.clue.value} (${enumerate(this.answer.value)})\n\n`,
+            text: `${new Highlighter().process(this.clue.value).cleaned} (${enumerate(this.answer.value)})\n\n`,
             url: this.fragment(baseUrl),
         };
     }
