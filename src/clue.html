@@ -191,7 +191,9 @@
 
     const highlight = highlighter.process(clue.clue);
 
-    if (clue.clue !== highlight.cleaned) {
+    const isHighlightedClue = clue.clue !== highlight.cleaned;
+
+    if (isHighlightedClue) {
         clue.clue = highlight.cleaned;
     }
 
@@ -234,7 +236,7 @@
 
     miniClue.renderClue(clue);
 
-    if (clue.author === 'HighlightTest') {
+    if (isHighlightedClue) {
         highlighter.render(highlight, document.getElementById('clue'));
         document.querySelector('.help-list').style.display = 'flex';
     }

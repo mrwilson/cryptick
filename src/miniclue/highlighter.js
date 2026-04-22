@@ -58,12 +58,15 @@ export class Highlighter {
         let clueBody = clue.firstChild;
 
         if (highlight.definition) {
-            this.showDefn.addEventListener('click', (e) => {
+            this.showDefn.addEventListener('click', (_) => {
                 CSS.highlights.set(
                     'definition',
                     this.highlight([highlight.definition], clueBody),
                 );
+                this.showDefn.toggleAttribute('disabled');
             });
+        } else {
+            this.showDefn.toggleAttribute('disabled');
         }
 
         if (highlight.fodders) {
@@ -72,7 +75,10 @@ export class Highlighter {
                     'fodders',
                     this.highlight(highlight.fodders, clueBody),
                 );
+                this.showFods.toggleAttribute('disabled');
             });
+        } else {
+            this.showFods.toggleAttribute('disabled');
         }
 
         if (highlight.indicators) {
@@ -81,7 +87,10 @@ export class Highlighter {
                     'indicators',
                     this.highlight(highlight.indicators, clueBody),
                 );
+                this.showInds.toggleAttribute('disabled');
             });
+        } else {
+            this.showInds.toggleAttribute('disabled');
         }
     }
 

@@ -107,6 +107,11 @@ footer {
     box-shadow: 2px 2px 2px 0 var(--colour-active);
 }
 
+.pill:disabled {
+    background: var(--colour-inactive);
+    box-shadow: 2px 2px 2px 0 var(--colour-inactive-shadow);
+}
+
 @supports not (-webkit-text-size-adjust: none) {
     .pill:hover {
         background: var(--colour-active);
