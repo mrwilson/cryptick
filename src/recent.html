@@ -35,6 +35,8 @@
 </section>
 
 <script type="module">
+    import { Highlighter } from './miniclue/highlighter.js';
+
     const list = document.getElementById('clues');
 
     import { ClueDecoder } from './miniclue/decoder.js';
@@ -43,15 +45,17 @@
     import { History } from './miniclue/history.js';
 
     const decoder = new ClueDecoder(examples);
+    const highlighter = new Highlighter();
 
     for (const clue of new History(localStorage).get()) {
         let l = document.createElement('li');
         let link = document.createElement('a');
         try {
             let c = decoder.decode(clue);
+            let trueClue = highlighter.process(c.clue).cleaned;
             link.href = `./clue.html${clue}`;
             link.classList.add('plausible-event-name=Recent::Go+To+Clue');
-            link.textContent = `${c.clue} (${enumerate(c.answer)})`;
+            link.textContent = `${trueClue} (${enumerate(c.answer)})`;
             l.appendChild(link);
 
             list.appendChild(l);

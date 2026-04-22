@@ -9,6 +9,9 @@
         black 10%
     );
     --site-width: min(85vw, 18em);
+    --highlight-defn: lightblue;
+    --highlight-inds: lightgoldenrodyellow;
+    --highlight-fods: lightpink;
 }
 
 html {
@@ -21,6 +24,7 @@ body {
     font-family: system-ui, Roboto, 'Helvetica Neue', Arial, sans-serif;
     display: grid;
     height: 100svh;
+    width: 100svw;
     grid-template:
         'header' 8svh
         'main' auto
@@ -249,20 +253,9 @@ footer {
     padding-top: 1em;
     padding-right: 1em;
     width: var(--site-width);
-    transition: translate 0.5s ease-in-out allow-discrete;
-
-    &[open] {
-        translate: 0 20svh;
-        @starting-style {
-            translate: 0 100svh;
-        }
-        &::backdrop {
-            background-color: transparent;
-        }
-    }
 
     &:not([open]) {
-        translate: 0 100svh;
+        display: none;
     }
 
     .close {

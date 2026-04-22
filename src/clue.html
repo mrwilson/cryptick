@@ -56,7 +56,7 @@
         background-color: color-mix(in srgb, lightgreen, black 30%);
     }
 
-    .answer:valid + .list > .pill:not(.hidden),
+    .answer:valid + * > .pill:not(.hidden),
     .answer:invalid + .list > .hidden {
         display: none;
     }
@@ -86,6 +86,26 @@
 
     .hint {
         padding: 1em;
+    }
+
+    .card--clue {
+        background-color: color-mix(in srgb, var(--colour-bg), white 80%);
+    }
+
+    #clue::highlight(definition) {
+        background-color: var(--highlight-defn);
+    }
+
+    #clue::highlight(indicators) {
+        background-color: var(--highlight-inds);
+    }
+
+    #clue::highlight(fodders) {
+        background-color: var(--highlight-fods);
+    }
+
+    .help-list {
+        display: none;
     }
 </style>
 
@@ -118,13 +138,13 @@
 <form autocomplete="off" class="answer" id="answer" target="_blank"></form>
 <div class="list">
     <button class="pill plausible-event-name=Clue::Show::Hint" id="show-hint">
-        Show hint
+        Hint
     </button>
     <button
         class="pill plausible-event-name=Clue::Show::Letter"
         id="reveal-letter"
     >
-        Show letter
+        Reveal letter
     </button>
     <button
         class="pill hidden plausible-event-name=Clue::Solved::Share"
@@ -138,13 +158,42 @@
         >Create your own!</a
     >
 </div>
+<div class="help-list list">
+    <button class="pill plausible-event-name=Clue::Show::Defn" id="show-defn">
+        Definition
+    </button>
+    <button
+        class="pill plausible-event-name=Clue::Show::Indicators"
+        id="show-inds"
+    >
+        Indicators
+    </button>
+    <button
+        class="pill plausible-event-name=Clue::Show::Fodders"
+        id="show-fods"
+    >
+        Fodder
+    </button>
+</div>
 <script type="module">
     import { CryptickClue } from './miniclue/clue.js';
     import { ClueDecoder } from './miniclue/decoder.js';
     import examples from './miniclue/examples.js';
     import { History } from './miniclue/history.js';
+    import { Highlighter } from './miniclue/highlighter.js';
 
     const clue = new ClueDecoder(examples).decode(window.location.hash);
+    const highlighter = new Highlighter(
+        document.getElementById('show-defn'),
+        document.getElementById('show-inds'),
+        document.getElementById('show-fods'),
+    );
+
+    const highlight = highlighter.process(clue.clue);
+
+    if (clue.clue !== highlight.cleaned) {
+        clue.clue = highlight.cleaned;
+    }
 
     const answer = document.getElementById('answer');
 
@@ -184,6 +233,11 @@
     });
 
     miniClue.renderClue(clue);
+
+    if (clue.author === 'HighlightTest') {
+        highlighter.render(highlight, document.getElementById('clue'));
+        document.querySelector('.help-list').style.display = 'flex';
+    }
 
     new History(localStorage).add(window.location.hash);
 </script>
