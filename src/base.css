@@ -9,9 +9,10 @@
         black 10%
     );
     --site-width: min(85vw, 18em);
-    --highlight-defn: lightblue;
-    --highlight-inds: lightgoldenrodyellow;
+    --highlight-defn: palegreen;
+    --highlight-inds: goldenrod;
     --highlight-fods: lightpink;
+    --card-bg: color-mix(in srgb, var(--colour-bg), white 70%);
 }
 
 html {
@@ -185,7 +186,7 @@ footer {
     width: var(--site-width);
     box-shadow: 2px 2px 2px 0 var(--colour-active);
     border: solid 2px var(--colour-active);
-    background: color-mix(in srgb, var(--colour-bg), white 30%);
+    background: var(--card-bg);
 }
 
 .card__top {
