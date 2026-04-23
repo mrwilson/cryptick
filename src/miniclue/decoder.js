@@ -77,7 +77,7 @@ export class ClueDecoder {
             data = atob(hash);
         }
 
-        return data.startsWith('{')
+        return data.startsWith('{"')
             ? this.#decodeJson(data)
             : this.#decodeString(data);
     }

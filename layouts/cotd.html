@@ -143,6 +143,35 @@
                 .hint {
                     padding: 1em;
                 }
+
+                .pill--defn {
+                    border: solid 3px var(--highlight-defn);
+                }
+
+                .pill--inds {
+                    border: solid 3px var(--highlight-inds);
+                }
+
+                .pill--fods {
+                    border: solid 3px var(--highlight-fods);
+                }
+
+                #clue::highlight(definition) {
+                    background-color: var(--highlight-defn);
+                    text-decoration: underline;
+                }
+
+                #clue::highlight(indicators) {
+                    background-color: var(--highlight-inds);
+                }
+
+                #clue::highlight(fodders) {
+                    background-color: var(--highlight-fods);
+                }
+
+                .help-list {
+                    display: none;
+                }
             </style>
 
             <section class="card card--clue">
@@ -207,13 +236,47 @@
                     >Create your own!</a
                 >
             </div>
+            <div class="help-list list">
+                <button
+                    class="pill pill--defn plausible-event-name=Clue::Show::Defn"
+                    id="show-defn"
+                >
+                    Definition
+                </button>
+                <button
+                    class="pill pill--inds plausible-event-name=Clue::Show::Indicators"
+                    id="show-inds"
+                >
+                    Indicators
+                </button>
+                <button
+                    class="pill pill--fods plausible-event-name=Clue::Show::Fodders"
+                    id="show-fods"
+                >
+                    Fodder
+                </button>
+            </div>
             <script type="module">
                 import { CryptickClue } from '../miniclue/clue.js';
                 import { ClueDecoder } from '../miniclue/decoder.js';
                 import examples from '../miniclue/examples.js';
                 import { History } from '../miniclue/history.js';
+                import { Highlighter } from '../miniclue/highlighter.js';
 
                 const clue = new ClueDecoder(examples).decode('#{{ hash }}');
+                const highlighter = new Highlighter(
+                    document.getElementById('show-defn'),
+                    document.getElementById('show-inds'),
+                    document.getElementById('show-fods'),
+                );
+
+                const highlight = highlighter.process(clue.clue);
+
+                const isHighlightedClue = clue.clue !== highlight.cleaned;
+
+                if (isHighlightedClue) {
+                    clue.clue = highlight.cleaned;
+                }
 
                 const answer = document.getElementById('answer');
 
@@ -258,6 +321,14 @@
                     });
 
                 miniClue.renderClue(clue);
+
+                if (isHighlightedClue) {
+                    highlighter.render(
+                        highlight,
+                        document.getElementById('clue'),
+                    );
+                    document.querySelector('.help-list').style.display = 'flex';
+                }
 
                 new History(localStorage).add('#{{ hash }}');
             </script>
