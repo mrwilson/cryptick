@@ -88,8 +88,21 @@
         padding: 1em;
     }
 
+    .pill--defn {
+        border: solid 3px var(--highlight-defn);
+    }
+
+    .pill--inds {
+        border: solid 3px var(--highlight-inds);
+    }
+
+    .pill--fods {
+        border: solid 3px var(--highlight-fods);
+    }
+
     #clue::highlight(definition) {
         background-color: var(--highlight-defn);
+        text-decoration: underline;
     }
 
     #clue::highlight(indicators) {
@@ -155,17 +168,20 @@
     >
 </div>
 <div class="help-list list">
-    <button class="pill plausible-event-name=Clue::Show::Defn" id="show-defn">
+    <button
+        class="pill pill--defn plausible-event-name=Clue::Show::Defn"
+        id="show-defn"
+    >
         Definition
     </button>
     <button
-        class="pill plausible-event-name=Clue::Show::Indicators"
+        class="pill pill--inds plausible-event-name=Clue::Show::Indicators"
         id="show-inds"
     >
         Indicators
     </button>
     <button
-        class="pill plausible-event-name=Clue::Show::Fodders"
+        class="pill pill--fods plausible-event-name=Clue::Show::Fodders"
         id="show-fods"
     >
         Fodder
