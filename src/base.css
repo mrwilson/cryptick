@@ -114,7 +114,7 @@ footer {
 }
 
 @supports not (-webkit-text-size-adjust: none) {
-    .pill:hover {
+    .pill:not(:disabled):hover {
         background: var(--colour-active);
     }
 }

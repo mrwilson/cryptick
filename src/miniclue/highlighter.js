@@ -57,7 +57,7 @@ export class Highlighter {
     render(highlight, clue) {
         let clueBody = clue.firstChild;
 
-        if (highlight.definition) {
+        if (highlight.definition?.length !== 0) {
             this.showDefn.addEventListener('click', (_) => {
                 CSS.highlights.set(
                     'definition',
@@ -69,7 +69,7 @@ export class Highlighter {
             this.showDefn.toggleAttribute('disabled');
         }
 
-        if (highlight.fodders) {
+        if (highlight.fodders?.length !== 0) {
             this.showFods.addEventListener('click', (_) => {
                 CSS.highlights.set(
                     'fodders',
@@ -81,7 +81,7 @@ export class Highlighter {
             this.showFods.toggleAttribute('disabled');
         }
 
-        if (highlight.indicators) {
+        if (highlight.indicators?.length !== 0) {
             this.showInds.addEventListener('click', (_) => {
                 CSS.highlights.set(
                     'indicators',
