@@ -100,7 +100,7 @@
         border: solid 3px var(--highlight-fods);
     }
 
-    #clue::highlight(definition) {
+    #clue::highlight(definitions) {
         background-color: var(--highlight-defn);
         text-decoration: underline;
     }
@@ -179,18 +179,21 @@
 </div>
 <div class="help-list list">
     <button
+        disabled
         class="pill pill--defn plausible-event-name=Clue::Show::Defn"
         id="show-defn"
     >
         Definition
     </button>
     <button
+        disabled
         class="pill pill--inds plausible-event-name=Clue::Show::Indicators"
         id="show-inds"
     >
         Indicators
     </button>
     <button
+        disabled
         class="pill pill--fods plausible-event-name=Clue::Show::Fodders"
         id="show-fods"
     >

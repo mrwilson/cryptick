@@ -14,8 +14,8 @@ export class Highlighter {
         let indicator = -1;
         let indicators = [];
 
-        let definitionStart = -1;
-        let definition = undefined;
+        let definition = -1;
+        let definitions = [];
 
         for (let i = 0, j = 0; i < clue.length; i++) {
             const token = clue.slice(i, i + 2);
@@ -34,11 +34,12 @@ export class Highlighter {
                 indicators.push([indicator, j]);
                 indicator = -1;
                 i += 1;
-            } else if (token === '[[' && definition === undefined) {
-                definitionStart = j;
+            } else if (token === '[[') {
+                definition = j;
                 i += 1;
-            } else if (token === ']]' && definition === undefined) {
-                definition = [definitionStart, j];
+            } else if (token === ']]') {
+                definitions.push([definition, j]);
+                definition = -1;
                 i += 1;
             } else {
                 j += 1;
@@ -50,22 +51,21 @@ export class Highlighter {
             cleaned: clean,
             fodders: fodders,
             indicators: indicators,
-            definition: definition,
+            definitions: definitions,
         };
     }
 
     render(highlight, clue) {
         let clueBody = clue.firstChild;
 
-        if (highlight.definition?.length !== 0) {
+        if (highlight.definitions?.length !== 0) {
             this.showDefn.addEventListener('click', (_) => {
                 CSS.highlights.set(
-                    'definition',
-                    this.highlight([highlight.definition], clueBody),
+                    'definitions',
+                    this.highlight(highlight.definitions, clueBody),
                 );
                 this.showDefn.toggleAttribute('disabled');
             });
-        } else {
             this.showDefn.toggleAttribute('disabled');
         }
 
@@ -77,7 +77,6 @@ export class Highlighter {
                 );
                 this.showFods.toggleAttribute('disabled');
             });
-        } else {
             this.showFods.toggleAttribute('disabled');
         }
 
@@ -89,7 +88,6 @@ export class Highlighter {
                 );
                 this.showInds.toggleAttribute('disabled');
             });
-        } else {
             this.showInds.toggleAttribute('disabled');
         }
     }

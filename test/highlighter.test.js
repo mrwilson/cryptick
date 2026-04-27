@@ -9,7 +9,7 @@ describe('Highlighter', () => {
             cleaned: 'test clue',
             fodders: [],
             indicators: [],
-            definition: undefined,
+            definitions: [],
         });
     });
 
@@ -23,7 +23,7 @@ describe('Highlighter', () => {
                 [10, 14],
             ],
             indicators: [],
-            definition: undefined,
+            definitions: [],
         });
     });
 
@@ -37,18 +37,21 @@ describe('Highlighter', () => {
                 [8, 9],
                 [15, 19],
             ],
-            definition: undefined,
+            definitions: [],
         });
     });
 
     it('identifies and cleans definitions', () => {
-        const output = new Highlighter().process('[[this]] is a test clue');
+        const output = new Highlighter().process('[[this]] is a [[test]] clue');
 
         assert.deepEqual(output, {
             cleaned: 'this is a test clue',
             fodders: [],
             indicators: [],
-            definition: [0, 4],
+            definitions: [
+                [0, 4],
+                [10, 14],
+            ],
         });
     });
 });
