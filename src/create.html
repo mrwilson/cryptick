@@ -117,6 +117,10 @@
 
         navigator.clipboard.writeText(copyText);
         e.target.textContent = 'Copied!';
+
+        setTimeout(() => {
+            e.target.textContent = 'Copy';
+        }, 1500);
     });
 
     document.getElementById('share').addEventListener('click', async () => {
