@@ -21,6 +21,7 @@ Metalsmith(dirname(fileURLToPath(import.meta.url)))
             header: '_header.html',
             footer: '_footer.html',
             cotd: '_clue_of_the_day.html',
+            solve: '_solve.html',
         }),
     )
     .use(versionControl)
