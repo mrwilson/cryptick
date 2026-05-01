@@ -29,7 +29,7 @@
         "canvas": "^3.2.3",
         "handlebars": "^4.7.9",
         "http-server": "^14.1.1",
-        "jsdom": "^29.1.0",
+        "jsdom": "^29.1.1",
         "jstransformer-handlebars": "^1.2.0",
         "metalsmith": "^2.7.0",
         "prettier": "^3.8.3",
