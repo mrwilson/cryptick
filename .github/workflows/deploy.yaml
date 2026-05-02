@@ -22,6 +22,8 @@ jobs:
       - run: npm test
       - run: npm run lint
       - run: npm run build
+        env:
+          TZ: Europe/London
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v6
         with:
