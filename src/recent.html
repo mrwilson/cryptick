@@ -1,43 +1,36 @@
 <style>
-    ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    li {
-        padding: 0.5em 0;
-    }
-
-    .history {
-        height: 100%;
+    main {
+        justify-items: center;
         overflow-y: auto;
+        overflow-x: hidden;
+        height: 100%;
+        scroll-snap-type: y proximity;
     }
 
-    .history a {
-        color: var(--colour-active);
-    }
+    .card--clue {
+        height: max-content;
+        .card__top {
+            height: 4em;
+        }
 
-    .history:has(> .clues:empty) {
-        display: none;
-    }
+        .card__title {
+            height: 1em;
+        }
 
-    .history:has(> .clues:not(:empty)) + .splash {
-        display: none;
+        &:nth-of-type(2n + 1) {
+            scroll-snap-stop: always;
+            scroll-snap-align: start;
+        }
+
+        padding-bottom: 0.5em;
+        margin-bottom: 0.5em;
     }
 </style>
-
-<section class="history">
-    <ul class="clues" id="clues"></ul>
-</section>
-
-<section class="splash">
-    <h2 class="header">You've not viewed any clues yet!</h2>
-</section>
 
 <script type="module">
     import { Highlighter } from './miniclue/highlighter.js';
 
-    const list = document.getElementById('clues');
+    const list = document.querySelector('main');
 
     import { ClueDecoder } from './miniclue/decoder.js';
     import examples from './miniclue/examples.js';
@@ -47,16 +40,29 @@
     const decoder = new ClueDecoder(examples);
     const highlighter = new Highlighter();
 
-    for (const clue of new History(localStorage).get()) {
-        let l = document.createElement('li');
-        let link = document.createElement('a');
+    for (const clue of new History(localStorage).get().reverse()) {
+        let l = document.createElement('section');
+        l.classList.add('card', 'card--clue');
+
         try {
+            let link = document.createElement('a');
+
             let c = decoder.decode(clue);
             let trueClue = highlighter.process(c.clue).cleaned;
             link.href = `./clue.html${clue}`;
-            link.classList.add('plausible-event-name=Recent::Go+To+Clue');
+            link.classList.add(
+                'card__top',
+                'header',
+                'plausible-event-name={{namespace}}::COTD::Solve',
+            );
             link.textContent = `${trueClue} (${enumerate(c.answer)})`;
+
+            let title = document.createElement('h4');
+            title.textContent = `Author: ${c.author || '???'}`;
+            title.classList.add('card__title');
+
             l.appendChild(link);
+            l.appendChild(title);
 
             list.appendChild(l);
         } catch (e) {}
