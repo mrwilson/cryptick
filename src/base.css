@@ -29,7 +29,7 @@ body {
     grid-template:
         'header' 8svh
         'main' auto
-        'footer' 8svh;
+        'footer' 6svh;
 }
 
 body > * {
@@ -237,7 +237,7 @@ footer {
         display: block;
         align-content: center;
         color: var(--colour-bg);
-        font-weight: bold;
+        font-size: small;
 
         svg {
             fill: var(--colour-bg);
