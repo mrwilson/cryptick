@@ -43,6 +43,12 @@
     }
 </style>
 <form class="clue_maker" autocomplete="off">
+    <input
+        autocomplete="false"
+        name="hidden"
+        type="text"
+        style="display: none"
+    />
     <label class="clue_maker__label" for="clue">Clue</label>
     <textarea
         class="input clue_maker__input input--clue"
@@ -63,7 +69,8 @@
         required
         minlength="1"
         maxlength="20"
-        autocomplete="off"
+        type="text"
+        autocomplete="new-text"
     />
     <label class="clue_maker__label" for="hint">Hint (Optional)</label>
     <textarea
@@ -93,6 +100,8 @@
         placeholder="Wildvale"
         minlength="1"
         maxlength="20"
+        type="text"
+        autocomplete="new-text"
     />
 </form>
 <div class="list">

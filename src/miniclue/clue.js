@@ -123,6 +123,8 @@ export class CryptickClue {
         l.name = `letter${letter}`;
         l.maxLength = 1;
         l.minLength = 1;
+        l.type = 'text';
+        l.autocomplete = 'off';
         l.setAttribute('aria-label', 'letter');
         l.setAttribute('virtualkeyboardpolicy', 'manual');
         this.letters.push(l);
