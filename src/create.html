@@ -43,12 +43,6 @@
     }
 </style>
 <form class="clue_maker" autocomplete="off">
-    <input
-        autocomplete="false"
-        name="hidden"
-        type="text"
-        style="display: none"
-    />
     <label class="clue_maker__label" for="clue">Clue</label>
     <textarea
         class="input clue_maker__input input--clue"
@@ -61,17 +55,18 @@
         autocomplete="off"
     ></textarea>
     <label class="clue_maker__label" for="answer">Answer</label>
-    <input
+    <textarea
         class="input clue_maker__input clue_maker__input--answer"
         id="answer"
         name="answer"
         placeholder="SLATE"
         required
+        rows="1"
         minlength="1"
         maxlength="20"
         type="text"
         autocomplete="new-text"
-    />
+    ></textarea>
     <label class="clue_maker__label" for="hint">Hint (Optional)</label>
     <textarea
         class="input clue_maker__input"
@@ -93,7 +88,7 @@
         autocomplete="off"
     ></textarea>
     <label class="clue_maker__label" for="author">Author (Optional)</label>
-    <input
+    <textarea
         class="input clue_maker__input"
         id="author"
         name="author"
@@ -102,7 +97,8 @@
         maxlength="20"
         type="text"
         autocomplete="new-text"
-    />
+        rows="1"
+    ></textarea>
 </form>
 <div class="list">
     <button class="pill plausible-event-name=Create::Copy" id="copy">
