@@ -41,9 +41,18 @@
     .list {
         grid-row: 2;
     }
+
+    .markup {
+        font-size: small;
+    }
 </style>
 <form class="clue_maker" autocomplete="off">
-    <label class="clue_maker__label" for="clue">Clue</label>
+    <label class="clue_maker__label" for="clue"
+        >Clue
+        <sup class="markup"
+            >(<a href="/markup.html">How do I mark up my clue?</a>)</sup
+        ></label
+    >
     <textarea
         class="input clue_maker__input input--clue"
         id="clue"

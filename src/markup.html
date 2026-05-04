@@ -1,0 +1,48 @@
+<style>
+    main {
+        display: flex;
+        justify-items: center;
+        flex-direction: column;
+        row-gap: 1em;
+    }
+
+    details {
+        height: 15svh;
+    }
+
+    p {
+        font-size: medium;
+    }
+</style>
+<p>
+    Cryptick supports a way to make definitions, indicators, and fodder
+    available as help options for solvers.
+</p>
+
+<details class="card" name="help">
+    <summary class="card__top">
+        <code>[[Definition]]</code>
+    </summary>
+    <p class="card__title">
+        Place double square brackets around the bits of your clue that are
+        definitions.
+    </p>
+</details>
+
+<details class="card" name="help">
+    <summary class="card__top"><code>\{{Indicator}}</code></summary>
+    <p class="card__title">
+        Place double curly brackets around the bits of your clue that are
+        indicators, usually placed next to pieces of fodder.
+    </p>
+</details>
+
+<details class="card" name="help">
+    <summary class="card__top"><code>((Fodder))</code></summary>
+    <p class="card__title">
+        Place double parentheses around the bits of your clue that are fodder
+        for an adjacent indicator.
+    </p>
+</details>
+
+<p>To make use of these options, mark them up in your clue as appropriate.</p>
