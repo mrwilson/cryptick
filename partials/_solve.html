@@ -117,7 +117,7 @@
         display: none;
     }
 
-    .card__top {
+    #clue {
         text-align: center;
         font-size: x-large;
         margin-top: auto;
@@ -126,14 +126,32 @@
         height: auto;
         display: block;
     }
+
+    .card__header,
+    .card__footer {
+        --card-separator: solid 2px var(--colour-active);
+        font-size: medium;
+        font-weight: normal;
+        text-align: center;
+        margin: 0;
+    }
+
+    .card__header:not(:empty) {
+        border-bottom: var(--card-separator);
+    }
+
+    .card__footer:not(:empty) {
+        border-top: var(--card-separator);
+    }
 </style>
 
 <section class="card card--clue" style="height: 30svh">
-    <span class="card__top" id="clue"></span>
-    <span class="card__title">
+    <div class="card__header">{{cotd_title}}</div>
+    <p id="clue"></p>
+    <div class="card__footer">
         <span>Author: </span>
         <span id="author"></span>
-    </span>
+    </div>
 </section>
 <dialog class="card hint-dialog">
     <span class="hint header" id="hint"></span>
