@@ -69,10 +69,6 @@
         display: none;
     }
 
-    #author:empty {
-        display: none;
-    }
-
     .explanation {
         opacity: 0;
         height: auto;
@@ -142,6 +138,10 @@
 
     .card__footer:not(:empty) {
         border-top: var(--card-separator);
+    }
+
+    .card__footer:has(#author:empty) {
+        display: none;
     }
 </style>
 
