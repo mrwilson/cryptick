@@ -1,6 +1,7 @@
 <script>
-    plausible('COTD::Redirect') &&
-        window.location.replace(
-            `./cotd/${new Date().toISOString().substring(0, 10)}.html`,
-        );
+    plausible('COTD::Redirect');
+
+    window.location.replace(
+        `/cotd/${new Date().toISOString().substring(0, 10)}.html?utm_content=cotd_redirect`,
+    );
 </script>
