@@ -56,7 +56,7 @@ header {
 .tick {
     height: 3em;
     width: 3em;
-    background: url('./logo.svg');
+    background: url('/logo.svg');
     background-size: 3em;
 }
 

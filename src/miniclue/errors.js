@@ -6,7 +6,7 @@ export default class ErrorHandler {
     handler(window) {
         return (errorEvent) => {
             if (errorEvent.error instanceof CryptickError) {
-                window.location.replace('./error.html');
+                window.location.replace('/error.html');
             }
             return false;
         };
