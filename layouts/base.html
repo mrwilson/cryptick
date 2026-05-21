@@ -17,9 +17,7 @@
                         plausible.o = i || {};
                     }));
             plausible.init({
-                customProperties: {
-                    commit: '{{ commitHash_Short }}',
-                },
+                hashBasedRouting: true,
             });
         </script>
         <title>Cryptick</title>
