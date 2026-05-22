@@ -279,6 +279,15 @@
 
     miniClue.renderClue(clue);
 
+    let unsolved = true;
+
+    answer.addEventListener('input', (_) => {
+        if (unsolved && answer.checkValidity()) {
+            plausible('Clue::Solved');
+            unsolved = false;
+        }
+    });
+
     if (isHighlightedClue) {
         highlighter.render(highlight, document.getElementById('clue'));
         document.querySelector('.help-list').style.display = 'flex';

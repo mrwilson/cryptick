@@ -62,6 +62,7 @@ export class CryptickClue {
             letter.value = letter.pattern[1];
             letter.readOnly = true;
             letter.classList.add('answer__word__letter--revealed');
+            letter.dispatchEvent(new Event('input', { bubbles: true }));
         };
 
         this.showHint.addEventListener('click', (_) => {
