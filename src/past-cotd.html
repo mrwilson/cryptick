@@ -7,22 +7,28 @@
         scroll-snap-type: y proximity;
     }
 
+    .author {
+        text-decoration: underline;
+        color: var(--colour-active);
+    }
+
     .card--clue {
         height: max-content;
         .card__top {
-            height: 4em;
+            height: 5em;
+            font-size: large;
+            padding: 0 1em;
         }
 
         .card__title {
-            height: 1em;
+            height: 1.5em;
         }
 
-        &:nth-of-type(2n + 1) {
+        &:nth-of-type(3n + 1) {
             scroll-snap-stop: always;
             scroll-snap-align: start;
         }
 
-        padding-bottom: 0.5em;
         margin-bottom: 0.5em;
     }
 </style>
