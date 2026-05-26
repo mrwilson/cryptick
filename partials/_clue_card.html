@@ -2,7 +2,7 @@
     <a
         class="card__top header plausible-event-name={{namespace}}::Solve"
         id="solve"
-        href="/cotd/{{ date }}.html"
+        href="{{#if date}}/cotd/{{ date }}.html{{else}}/clue.html{{ hash }}{{/if}}"
         >{{clue}}
     </a>
     <h4 class="card__title">
