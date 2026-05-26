@@ -171,6 +171,7 @@ footer {
 .navigation-link {
     align-items: center;
     display: inline-flex;
+    font-weight: lighter;
 
     svg {
         fill: var(--colour-active);
