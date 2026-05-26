@@ -8,7 +8,6 @@
     }
 
     .author {
-        text-decoration: underline;
         color: var(--colour-active);
     }
 
@@ -33,4 +32,4 @@
     }
 </style>
 
-{{#each clues}} {{> cotd namespace="Past::COTD" }} {{/each}}
+{{#each hot_clues}} {{> cotd namespace=Hot }} {{/each}}

@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /error.html
 Disallow: /clue.html
 Disallow: /cotd.html
-Disallow: /past-cotd.html
+Disallow: /hot.html

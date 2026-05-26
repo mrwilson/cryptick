@@ -8,6 +8,7 @@ import cotd from './cotd.json' with { type: 'json' };
 import clueOfTheDay from './lib/clue-of-the-day.js';
 import versionControl from './lib/version-control.js';
 import setUpTemplates from './lib/templates.js';
+import hotClues from './lib/hot-clues.js';
 
 Metalsmith(dirname(fileURLToPath(import.meta.url)))
     .clean(true)
@@ -20,10 +21,11 @@ Metalsmith(dirname(fileURLToPath(import.meta.url)))
         setUpTemplates({
             header: '_header.html',
             footer: '_footer.html',
-            cotd: '_clue_of_the_day.html',
+            cotd: '_clue_card.html',
             solve: '_solve.html',
         }),
     )
+    .use(hotClues)
     .use(versionControl)
     .use(clueOfTheDay(cotd))
     .use(function original_filename(files) {

@@ -1,0 +1,19 @@
+<section class="card card--clue">
+    <a
+        class="card__top header plausible-event-name={{namespace}}::Solve"
+        id="solve"
+        href="/cotd/{{ date }}.html"
+        >{{clue}}
+    </a>
+    <h4 class="card__title">
+        {{ label }} | Author: {{#if author_link}}
+        <a
+            class="author plausible-event-name={{namespace}}::Author"
+            href="{{author_link}}"
+            >{{author_name}}</a
+        >
+        {{else}}
+        <span class="author">{{author_name}}</span>
+        {{/if}}
+    </h4>
+</section>
