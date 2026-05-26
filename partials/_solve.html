@@ -293,5 +293,7 @@
         document.querySelector('.help-list').style.display = 'flex';
     }
 
-    new History(localStorage).add({{ encoded_clue }});
+    if (!encoded_clue) {
+        new History(localStorage).add({{ encoded_clue }});
+    }
 </script>
