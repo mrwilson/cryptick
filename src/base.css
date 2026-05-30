@@ -265,6 +265,11 @@ footer {
         display: none;
     }
 
+    &::backdrop {
+        background-color: var(--colour-active);
+        opacity: 0.7;
+    }
+
     .close {
         background: transparent;
         border: none;
