@@ -2,7 +2,7 @@
 
 DAY=$1
 URL=https://plausible.io/cryptick.wildvale.co.uk/export
-QUERY="period=7d&date=${DAY}&filters=%5B%5B%22contains%22%2C%22event%3Apage%22%2C%5B%22%2Fclue%2Ehtml%23%22%5D%5D%5D&interval=day&comparison=undefined"
+QUERY="period=168h&date=${DAY}&filters=%5B%5B%22contains%22%2C%22event%3Apage%22%2C%5B%22%2Fclue%2Ehtml%23%22%5D%5D%5D&interval=day&comparison=undefined"
 
 mkdir -p data/
 
