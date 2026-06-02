@@ -5,25 +5,13 @@
         overflow-x: hidden;
         height: 100%;
         scroll-snap-type: y proximity;
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox, Safari 18.2+, Chromium 121+ */
     }
 
-    .card--clue {
-        height: max-content;
-        .card__top {
-            height: 4em;
-        }
-
-        .card__title {
-            height: 1em;
-        }
-
-        &:nth-of-type(2n + 1) {
-            scroll-snap-stop: always;
-            scroll-snap-align: start;
-        }
-
-        padding-bottom: 0.5em;
-        margin-bottom: 0.5em;
+    .card:nth-of-type(3n + 1) {
+        scroll-snap-stop: always;
+        scroll-snap-align: start;
     }
 
     .navigation-link--recent {
@@ -46,7 +34,7 @@
 
     for (const clue of new History(localStorage).get().reverse()) {
         let l = document.createElement('section');
-        l.classList.add('card', 'card--clue');
+        l.classList.add('card');
 
         try {
             let link = document.createElement('a');

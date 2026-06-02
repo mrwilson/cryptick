@@ -6,12 +6,22 @@
         row-gap: 1em;
     }
 
-    details {
-        height: 15svh;
-    }
-
     p {
         font-size: medium;
+    }
+
+    .card__top {
+        height: 2em;
+    }
+
+    .card__title {
+        height: 4em;
+        padding: 0.5em;
+    }
+
+    code {
+        font-weight: bold;
+        font-size: x-large;
     }
 
     .navigation-link--docs {
@@ -23,30 +33,30 @@
     available as help options for solvers.
 </p>
 
-<details class="card" name="help">
-    <summary class="card__top">
+<div class="card" name="help">
+    <div class="card__top">
         <code>[[Definition]]</code>
-    </summary>
-    <p class="card__title">
+    </div>
+    <div class="card__title">
         Place double square brackets around the bits of your clue that are
         definitions.
-    </p>
-</details>
+    </div>
+</div>
 
-<details class="card" name="help">
+<div class="card" name="help">
     <summary class="card__top"><code>\{{Indicator}}</code></summary>
     <p class="card__title">
         Place double curly brackets around the bits of your clue that are
         indicators, usually placed next to pieces of fodder.
     </p>
-</details>
+</div>
 
-<details class="card" name="help">
-    <summary class="card__top"><code>((Fodder))</code></summary>
-    <p class="card__title">
+<div class="card" name="help">
+    <div class="card__top"><code>((Fodder))</code></div>
+    <div class="card__title">
         Place double parentheses around the bits of your clue that are fodder
         for an adjacent indicator.
-    </p>
-</details>
+    </div>
+</div>
 
 <p>To make use of these options, mark them up in your clue as appropriate.</p>

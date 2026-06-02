@@ -31,26 +31,13 @@
         color: var(--colour-active);
     }
 
-    .card--clue {
-        height: max-content;
-        .card__top {
-            height: 5em;
-            font-size: large;
-            padding: 0 1em;
-        }
-
-        .card__title {
-            height: 1.5em;
-        }
-    }
-
     @keyframes shimmer {
         to {
             background-position-x: 0;
         }
     }
 
-    .card--clue:first-of-type {
+    .card:first-of-type {
         background: linear-gradient(
             -45deg,
             var(--card-bg) 48%,
@@ -62,15 +49,15 @@
         animation: shimmer 5s infinite linear;
     }
 
-    .card--clue:nth-of-type(2) {
+    .card:nth-of-type(2) {
         opacity: 0.7;
     }
 
-    .card--clue:nth-of-type(3) {
+    .card:nth-of-type(3) {
         opacity: 0.6;
     }
 
-    .card--clue:nth-of-type(4) {
+    .card:nth-of-type(4) {
         opacity: 0.5;
     }
 

@@ -183,21 +183,23 @@ footer {
     flex-direction: column;
     min-width: 0;
     background-clip: border-box;
-    border-radius: 1.5em;
+    border-radius: 0.5em;
     width: var(--site-width);
     box-shadow: 2px 2px 2px 0 var(--colour-active);
     border: solid 2px var(--colour-active);
     background: var(--card-bg);
+    height: max-content;
+    margin-bottom: 0.5em;
 }
 
 .card__top {
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    font-size: x-large;
-    padding: 0 0.5em;
+    height: 6em;
+    font-size: large;
+    padding: 0 1em;
 }
 
 .card__top--image {
@@ -213,6 +215,7 @@ footer {
     font-weight: normal;
     text-align: center;
     margin: 0;
+    height: 1.5em;
 }
 
 .card__text {
