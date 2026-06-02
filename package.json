@@ -21,7 +21,8 @@
         "test": "npx vitest run --reporter=tree",
         "lint": "npx prettier --check src/ test/ layouts/ lib/ metalsmith.js",
         "serve": "npx http-server -c-1 build/",
-        "build": "node metalsmith.js"
+        "build": "node metalsmith.js",
+        "build:fast": "SKIP_META_IMAGES=true SKIP_HOT_CLUES=true node metalsmith.js"
     },
     "devDependencies": {
         "@metalsmith/in-place": "^5.0.0",
