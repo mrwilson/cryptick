@@ -3,8 +3,10 @@
         justify-items: center;
         overflow-y: auto;
         overflow-x: hidden;
-        height: 100%;
+        padding-bottom: 0.5em;
         scroll-snap-type: y proximity;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
     }
 
     .author {
@@ -14,6 +16,18 @@
     .card:nth-of-type(3n + 1) {
         scroll-snap-stop: always;
         scroll-snap-align: start;
+    }
+
+    .card {
+        height: 8svh;
+
+        .card__top {
+            font-size: small;
+        }
+
+        .card__title {
+            font-size: x-small;
+        }
     }
 </style>
 
