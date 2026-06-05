@@ -175,6 +175,8 @@ footer {
 
     svg {
         fill: var(--colour-active);
+        height: 24px;
+        width: 24px;
     }
 }
 
