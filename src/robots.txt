@@ -1,4 +1,4 @@
 User-agent: *
 Disallow: /clue.html
 Disallow: /cotd.html
-Disallow: /hot.html
+Disallow: /trending.html

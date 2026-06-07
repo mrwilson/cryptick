@@ -33,6 +33,21 @@ Metalsmith(dirname(fileURLToPath(import.meta.url)))
             files[file].original_filename = `src/${file}`;
         });
     })
+    .use(function customMetadata(files) {
+        const custom = {
+            'trending.html': {
+                title: 'Cryptick | Trending Clues',
+                description: 'See what clues are being solved right now!',
+            },
+        };
+
+        Object.keys(files).forEach((file) => {
+            files[file].title = custom[file]?.title || 'Cryptick';
+            files[file].description =
+                custom[file]?.description ||
+                'Create a cryptic crossword clue and share it with people you know.';
+        });
+    })
     .use(
         inPlace({
             transform: 'handlebars',
