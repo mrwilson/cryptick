@@ -117,17 +117,21 @@ export class CryptickClue {
     }
 
     #createLetter(letter) {
-        let l = document.createElement('input');
+        let l = document.createElement('textarea');
         l.classList.add('answer__word__letter');
-        l.pattern = `[${letter.toUpperCase()}${letter.toLowerCase()}]`;
         l.required = true;
         l.name = `letter${letter}`;
         l.maxLength = 1;
         l.minLength = 1;
-        l.type = 'text';
         l.autocomplete = 'off';
+        l.addEventListener('input', (e) => {
+            l.setCustomValidity(
+                letter.toLowerCase() === e.target.value.toLowerCase()
+                    ? ''
+                    : 'did not match',
+            );
+        });
         l.setAttribute('aria-label', 'letter');
-        l.setAttribute('virtualkeyboardpolicy', 'manual');
         this.letters.push(l);
         return l;
     }
