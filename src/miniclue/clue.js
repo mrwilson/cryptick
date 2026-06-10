@@ -59,7 +59,7 @@ export class CryptickClue {
             let letter =
                 missingLetters[Math.floor(random() * missingLetters.length)];
 
-            letter.value = letter.pattern[1];
+            letter.value = letter.name.slice(-1);
             letter.readOnly = true;
             letter.classList.add('answer__word__letter--revealed');
             letter.dispatchEvent(new Event('input', { bubbles: true }));
@@ -81,26 +81,27 @@ export class CryptickClue {
     #navigate() {
         for (const [idx, value] of this.letters.entries()) {
             value.oninput = () => {
-                setTimeout(() => {
-                    idx !== this.letters.length &&
-                        value.value &&
-                        this.letters
-                            .slice(idx + 1)
-                            .find((x) => !x.readOnly)
-                            .focus();
-                }, 50);
+                if (idx !== this.letters.length && value.value) {
+                    const nextLetter = this.letters
+                        .slice(idx + 1)
+                        .find((x) => !x.readOnly);
+
+                    if (nextLetter) {
+                        nextLetter.focus();
+                    }
+                }
             };
 
             value.onkeydown = (e) => {
-                setTimeout(() => {
-                    idx !== 0 &&
-                        !value.value &&
-                        e.keyCode === 8 &&
-                        this.letters
-                            .slice(0, idx)
-                            .findLast((x) => !x.readOnly)
-                            .focus();
-                }, 50);
+                if (idx !== 0 && !value.value && e.keyCode === 8) {
+                    const previousLetter = this.letters
+                        .slice(0, idx)
+                        .findLast((x) => !x.readOnly);
+
+                    if (previousLetter) {
+                        previousLetter.focus();
+                    }
+                }
             };
         }
     }
@@ -120,7 +121,7 @@ export class CryptickClue {
         let l = document.createElement('textarea');
         l.classList.add('answer__word__letter');
         l.required = true;
-        l.name = `letter${letter}`;
+        l.name = `letter${letter.toUpperCase()}`;
         l.maxLength = 1;
         l.minLength = 1;
         l.autocomplete = 'off';
