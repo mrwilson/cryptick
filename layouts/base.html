@@ -60,7 +60,9 @@
     </head>
     <body>
         {{> header }}
-        <main>{{{ contents }}}</main>
+        <main class="{{#if scrollable}}scrollable{{/if}}">
+            {{{ contents }}}
+        </main>
         {{> footer }}
     </body>
 </html>
