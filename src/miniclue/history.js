@@ -29,7 +29,7 @@ export class History {
 
         history.push(hash);
 
-        history = history.slice(Math.max(0, history.length - 10));
+        history = history.slice(Math.max(0, history.length - 30));
 
         this.storage.setItem('cryptick', JSON.stringify({ history: history }));
     }

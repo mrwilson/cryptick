@@ -62,13 +62,17 @@ describe('History', () => {
         });
 
         it('enforces size limit', () => {
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 30; i++) {
                 history.add(`${i}`);
             }
 
             history.add('a');
+            history.add('b');
 
-            assert.equal(history.get().join(''), '123456789a');
+            assert.equal(
+                history.get().join(''),
+                '234567891011121314151617181920212223242526272829ab',
+            );
         });
     });
 });
