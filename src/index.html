@@ -14,10 +14,6 @@ description: Create and share crossword clues with people you know!
         color: var(--colour-active);
     }
 
-    main {
-        justify-items: center;
-    }
-
     .rss {
         height: 1em;
         width: 1em;
@@ -39,6 +35,43 @@ description: Create and share crossword clues with people you know!
     @keyframes shimmer {
         to {
             background-position-x: 0;
+        }
+    }
+
+    .cotd {
+        width: var(--site-width);
+        height: max-content;
+        display: flex;
+        list-style: none;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        overflow-y: hidden;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        padding: 0.1em;
+    }
+
+    .card {
+        flex-shrink: 0;
+        width: 95%;
+        scroll-snap-align: center;
+        margin: 0 2rem;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .no-ai {
+        justify-items: center;
+        align-items: center;
+        display: inline-flex;
+        gap: 1em;
+        p {
+            font-size: small;
+            text-align: left;
         }
     }
 
@@ -66,38 +99,69 @@ description: Create and share crossword clues with people you know!
         opacity: 0.5;
     }
 
-    .unch {
-        a {
-            background-image: url('/unch.jpg');
+    section {
+        span {
+            font-size: medium;
         }
-
-        height: 20svh;
-    }
-
-    .navigation-link--home {
-        font-weight: bolder;
+        h4 {
+            margin-bottom: 0;
+        }
     }
 </style>
-
-{{#each cotd}} {{> cotd namespace="Home::COTD" }} {{/each}}
+<span style="font-size: x-large; text-align: center; font-weight: bold">
+    Dive into the fun of cryptic crossword clues!
+</span>
+<div class="cotd">
+    {{#each cotd}} {{> cotd namespace="Home::COTD" }} {{/each}}
+    <section class="card">
+        <a
+            class="card__top link plausible-event-name=Home::COTD::Past"
+            href="/past-cotd.html"
+        >
+            ... see more previous Clues of the Day!</a
+        >
+    </section>
+</div>
 
 <section class="splash">
-    <p class="header masthead">
+    <h4>Never solved a cryptic clue before?</h4>
+    <span
+        >Learn how with tips from the FT
         <a
+            href="https://www.ft.com/content/711698d5-af60-4c9b-ab2e-83519844dbd1"
+            >here</a
+        >!</span
+    >
+
+    <h4>Can't get enough?</h4>
+    <span
+        ><a
             class="link plausible-event-name=Home::COTD::Subscribe"
             href="/feed.xml"
-            >Subscribe<img class="rss" /></a
-        >, see
-        <a
-            class="link plausible-event-name=Home::COTD::Past"
-            href="/past-cotd.html"
-            >previous</a
-        >
-        Clues of the Day, or
+            >Subscribe<img class="rss"
+        /></a>
+        to our free daily RSS feed!</span
+    >
+
+    <h4>Why Cryptick?</h4>
+    <span
+        >I'm so glad you asked! You can
+
         <a class="link plausible-event-name=Home::About" href="/about.html"
-            >learn more</a
+            >learn more here</a
         >
-        about Cryptick!
+    </span>
+</section>
+
+<section class="no-ai">
+    <img
+        style="width: calc(var(--site-width) * 0.6)"
+        alt="Black text on white background with a smiley face and the text 'created by humans, not by ai'"
+        src="/not-by-ai.svg"
+    />
+    <p>
+        We will never use generative AI in the creation of cryptic clues or this
+        website.
     </p>
 </section>
 
