@@ -21,17 +21,6 @@ description: Create and share crossword clues with people you know!
         vertical-align: middle;
     }
 
-    .masthead {
-        font-size: large;
-        margin: 0;
-        font-weight: normal;
-    }
-
-    .author {
-        text-decoration: underline;
-        color: var(--colour-active);
-    }
-
     @keyframes shimmer {
         to {
             background-position-x: 0;
@@ -46,9 +35,10 @@ description: Create and share crossword clues with people you know!
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
         overflow-y: hidden;
-        -ms-overflow-style: none;
-        scrollbar-width: none;
-        padding: 0.1em;
+        padding: 1em 0.1em;
+        scrollbar-color: var(--colour-active) var(--colour-bg);
+        scrollbar-width: thin;
+        scrollbar-gutter: stable;
     }
 
     .card {
@@ -113,14 +103,6 @@ description: Create and share crossword clues with people you know!
 </span>
 <div class="cotd">
     {{#each cotd}} {{> cotd namespace="Home::COTD" }} {{/each}}
-    <section class="card">
-        <a
-            class="card__top link plausible-event-name=Home::COTD::Past"
-            href="/past-cotd.html"
-        >
-            ... see more previous Clues of the Day!</a
-        >
-    </section>
 </div>
 
 <section class="splash">
@@ -128,6 +110,7 @@ description: Create and share crossword clues with people you know!
     <span
         >Learn how with tips from the FT
         <a
+            class="plausible-event-name=Home::Learn"
             href="https://www.ft.com/content/711698d5-af60-4c9b-ab2e-83519844dbd1"
             >here</a
         >!</span
@@ -140,8 +123,14 @@ description: Create and share crossword clues with people you know!
             href="/feed.xml"
             >Subscribe<img class="rss"
         /></a>
-        to our free daily RSS feed!</span
-    >
+        to our free daily RSS feed or see more
+        <a
+            class="link plausible-event-name=Home::COTD::Past"
+            href="/past-cotd.html"
+            >previous</a
+        >
+        Clues of the Day!
+    </span>
 
     <h4>Why Cryptick?</h4>
     <span
