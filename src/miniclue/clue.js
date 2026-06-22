@@ -50,7 +50,7 @@ export class CryptickClue {
 
         const random = new PRNG(params.clue);
 
-        this.revealLetter.onclick = (_) => {
+        this.revealLetter.addEventListener('click', (_) => {
             let missingLetters = this.letters.filter(
                 (letter) =>
                     letter.validity.valueMissing || !letter.validity.valid,
@@ -63,7 +63,7 @@ export class CryptickClue {
             letter.readOnly = true;
             letter.classList.add('answer__word__letter--revealed');
             letter.dispatchEvent(new Event('input', { bubbles: true }));
-        };
+        });
 
         this.showHint.addEventListener('click', (_) => {
             this.hint.parentElement.showModal();
@@ -80,7 +80,7 @@ export class CryptickClue {
 
     #navigate() {
         for (const [idx, value] of this.letters.entries()) {
-            value.oninput = () => {
+            value.addEventListener('input', (_) => {
                 if (idx !== this.letters.length && value.value) {
                     const nextLetter = this.letters
                         .slice(idx + 1)
@@ -90,9 +90,9 @@ export class CryptickClue {
                         nextLetter.focus();
                     }
                 }
-            };
+            });
 
-            value.onkeydown = (e) => {
+            value.addEventListener('keydown', (e) => {
                 if (idx !== 0 && !value.value && e.keyCode === 8) {
                     const previousLetter = this.letters
                         .slice(0, idx)
@@ -102,7 +102,7 @@ export class CryptickClue {
                         previousLetter.focus();
                     }
                 }
-            };
+            });
         }
     }
 
