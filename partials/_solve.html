@@ -5,6 +5,24 @@
         }
     }
 
+    @keyframes shake {
+        0% {
+            transform: translateX(0);
+        }
+        25% {
+            transform: translateX(5px);
+        }
+        50% {
+            transform: translateX(-5px);
+        }
+        75% {
+            transform: translateX(5px);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
     @keyframes fade-in {
         0% {
             opacity: 0;
@@ -44,14 +62,28 @@
             color-mix(in srgb, var(--colour-inactive), black 10%);
     }
 
-    .answer__word__letter--revealed {
-        background: var(--colour-inactive);
+    .answer:invalid .answer__word .answer__word__letter--revealed {
+        background: var(--colour-inactive) !important;
         cursor: none;
         animation: grow-shrink 500ms ease-out 0s normal;
     }
 
     .answer:valid .answer__word__letter {
         background-color: lightgreen;
+    }
+
+    .answer:has(> * > .answer__word__letter:placeholder-shown) {
+        .answer__word__letter {
+            background-color: white;
+        }
+    }
+
+    .answer:invalid:not(:has(> * > .answer__word__letter:placeholder-shown)) {
+        .answer__word__letter {
+            background-color: palevioletred;
+        }
+
+        animation: shake 250ms ease-out 0s normal;
     }
 
     .answer:valid .answer__word__letter--revealed {

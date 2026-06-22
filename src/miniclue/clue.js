@@ -125,6 +125,7 @@ export class CryptickClue {
         l.maxLength = 1;
         l.minLength = 1;
         l.autocomplete = 'off';
+        l.placeholder = '';
         l.addEventListener('input', (e) => {
             l.setCustomValidity(
                 letter.toLowerCase() === e.target.value.toLowerCase()
