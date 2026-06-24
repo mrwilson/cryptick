@@ -77,20 +77,9 @@ description: Create and share crossword clues with people you know!
         animation: shimmer 5s infinite linear;
     }
 
-    .card:nth-of-type(2) {
-        opacity: 0.7;
-    }
-
-    .card:nth-of-type(3) {
-        opacity: 0.6;
-    }
-
-    .card:nth-of-type(4) {
-        opacity: 0.5;
-    }
-
     section {
-        span {
+        span,
+        ul {
             font-size: medium;
         }
         h4 {
@@ -117,20 +106,30 @@ description: Create and share crossword clues with people you know!
     >
 
     <h4>Can't get enough?</h4>
-    <span
-        ><a
-            class="link plausible-event-name=Home::COTD::Subscribe"
-            href="/feed.xml"
-            >Subscribe<img class="rss"
-        /></a>
-        to our free daily RSS feed or see more
-        <a
-            class="link plausible-event-name=Home::COTD::Past"
-            href="/past-cotd.html"
-            >previous</a
-        >
-        Clues of the Day!
-    </span>
+    <ul>
+        <li>
+            <a
+                class="link plausible-event-name=Home::COTD::Subscribe"
+                href="/feed.xml"
+                >Subscribe<img class="rss"
+            /></a>
+            to our free daily RSS feed!
+        </li>
+        <li>
+            Check out
+            <a
+                class="link plausible-event-name=Home::COTD::Past"
+                href="/past-cotd.html"
+                >previous</a
+            >
+            Clues of the Day!
+        </li>
+        <li>
+            Get yourself a copy of
+            <a href="https://unchcrosswords.com?utm_source=cryptick">Unch</a>
+            magazine!
+        </li>
+    </ul>
 
     <h4>Why Cryptick?</h4>
     <span
@@ -161,8 +160,10 @@ description: Create and share crossword clues with people you know!
     </p>
 </noscript>
 <script type="module">
-    window.location.hash &&
+    if (window.location.hash) {
+        plausible('Home::Redirect');
         window.location.replace(`/clue.html${window.location.hash}`);
+    }
 
     'serviceWorker' in navigator && navigator.serviceWorker.register('/sw.js');
 </script>
