@@ -31,7 +31,7 @@ export class CryptickClue {
         this.clue.textContent = `${params.clue} (${enumerate(params.answer)})`;
 
         if (params.explanation) {
-            this.explanation.textContent = `EXPLANATION: ${params.explanation}`;
+            this.explanation.textContent = params.explanation;
         }
 
         if (params.hint) {

@@ -273,7 +273,8 @@ footer {
     }
 }
 
-.hint-dialog {
+.hint-dialog,
+.solved-dialog {
     display: inline-flex;
     flex-direction: row;
     justify-content: space-between;
@@ -300,4 +301,11 @@ footer {
             fill: var(--colour-active);
         }
     }
+}
+
+.solved-dialog-content {
+    display: inline-flex;
+    flex-direction: column;
+    height: 50svh;
+    margin-bottom: 25svh;
 }
