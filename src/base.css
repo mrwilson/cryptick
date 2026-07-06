@@ -180,6 +180,10 @@ nav a {
     padding: 0 1em;
 }
 
+@view-transition {
+    navigation: auto;
+}
+
 footer {
     display: none;
 }
