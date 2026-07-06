@@ -307,17 +307,16 @@
 
     let hints = 0;
     let checkedLetters = 0;
-    let duration = new Date();
 
     ['show-hint', 'show-defn', 'show-fods', 'show-inds']
-        .map(id => document.getElementById(id))
-        .forEach(elem => {
+        .map((id) => document.getElementById(id))
+        .forEach((elem) => {
             elem.addEventListener('click', (_) => {
-               hints++;
+                hints++;
             });
         });
 
-    document.getElementById('reveal-letter').addEventListener('click', e => {
+    document.getElementById('reveal-letter').addEventListener('click', (e) => {
         checkedLetters++;
     });
 
@@ -328,10 +327,12 @@
                 text: [
                     `I solved ${clue.author ? clue.author + "'s" : 'a'} {{ message }} on Cryptick!\n`,
                     `${clue.clue} (${clue.enumeration})\n`,
-                    `⏱️ ${duration} seconds`,
+                    hints + checkedLetters === 0 ? '⭐ Perfect!' : '',
                     `💡 ${hints} hint(s)`,
-                    `✅ ${checkedLetters} checked letter(s)\n`
-                ].join('\n'),
+                    `✅ ${checkedLetters} checked letter(s)\n`,
+                ]
+                    .filter((x) => x.length > 0)
+                    .join('\n'),
                 url: window.location,
             });
         } else {
@@ -345,14 +346,17 @@
 
     answer.addEventListener('input', (_) => {
         if (unsolved && answer.checkValidity()) {
-            duration = ((new Date().getTime() - duration.getTime()) / 1000 ) | 0;
             plausible('Clue::Solved');
             unsolved = false;
             const solved = document.querySelector('dialog.solved-dialog');
 
-            solved.querySelector('span#solved').innerHTML = [`⏱️ ${duration} seconds`,
+            solved.querySelector('span#solved').innerHTML = [
+                hints + checkedLetters === 0 ? '⭐ Perfect!' : '',
                 `💡 ${hints} hint(s)`,
-                `✅ ${checkedLetters} checked letter(s)`].join("<br/>")
+                `✅ ${checkedLetters} checked letter(s)`,
+            ]
+                .filter((x) => x.length > 0)
+                .join('<br/>');
 
             window.addEventListener('popstate', (_) => {
                 if (solved.open) {
