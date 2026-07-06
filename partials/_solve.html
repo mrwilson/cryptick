@@ -293,18 +293,6 @@
         document.getElementById('share'),
     );
 
-    if ('virtualKeyboard' in navigator) {
-        answer.addEventListener('focusin', (_) => {
-            navigator.virtualKeyboard.show();
-        });
-
-        answer.addEventListener('focusout', (event) => {
-            if (!answer.contains(event.relatedTarget)) {
-                navigator.virtualKeyboard.show();
-            }
-        });
-    }
-
     let hints = 0;
     let checkedLetters = 0;
 
