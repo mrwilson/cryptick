@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
         <title>Cryptick Clue of the Day</title>
         <description>RSS feed of cryptic crossword clues, posted daily</description>
@@ -19,6 +19,9 @@
             <pubDate>{{ dateWithHours }}</pubDate>
             <link>https://cryptick.wildvale.co.uk/cotd/{{ date }}.html?utm_content=RSS</link>
             <dc:creator>{{ author_name }}</dc:creator>
+            <content:encoded>
+                <![CDATA[<img src="https://cryptick.wildvale.co.uk/cotd/img/{{ date }}_social.png" />]]>
+            </content:encoded>
         </item>
         {{/each}}
     </channel>
