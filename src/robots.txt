@@ -2,3 +2,4 @@ User-agent: *
 Disallow: /clue.html
 Disallow: /cotd.html
 Disallow: /trending.html
+Disallow: /beta.html

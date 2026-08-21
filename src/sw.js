@@ -1,12 +1,15 @@
 const files = [
     '/about.html',
+    '/beta.html',
     '/clue.html',
     '/cotd.html',
     '/create.html',
     '/error.html',
     '/index.html',
+    '/markup.html',
     '/past-cotd.html',
     '/recent.html',
+    '/trending.html',
 
     '/base.css',
 

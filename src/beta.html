@@ -1,0 +1,24 @@
+---
+title: (BETA) Experimental features
+---
+
+<h2 class="header">Beta / Experimental features</h2>
+<p>
+    <button id="enable-notifications" class="pill">Enable notifications</button>
+    <script>
+        if ('Notification' in window) {
+            document
+                .getElementById('enable-notifications')
+                .addEventListener('click', (_) => {
+                    if (Notification?.permission === 'granted') {
+                        new Notification('Cryptick', {
+                            body: 'Test (4)',
+                            icon: '/logo.png',
+                            tag: 'cotd:2026-08-21',
+                        });
+                    }
+                    Notification.requestPermission().then((_) => {});
+                });
+        }
+    </script>
+</p>
